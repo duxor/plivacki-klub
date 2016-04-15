@@ -38,8 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
-                <div class="title">Laravel 5</div>
+                <div class="title"><h2>Laravel 5</h2></div>
+
             </div>
         </div>
     </body>
