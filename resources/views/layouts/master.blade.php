@@ -49,7 +49,8 @@
                         <li><a href="#">Rezultati</a></li>
                         <li><a href="#">Galerija</a></li>
                         <li><a href="#">Norme</a></li>
-                        <li><a href="#">Prijava</a></li>
+                        <li><a href="/prijava">Prijava</a></li>
+                        <li><a href="/odjava">Odjava</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

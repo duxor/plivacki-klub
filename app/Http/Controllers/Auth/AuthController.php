@@ -20,6 +20,8 @@ class AuthController extends Controller
     | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
+    protected $username = 'username';
+    protected $redirectAfterLogout = '/' ;
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
@@ -49,9 +51,33 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'ime' => 'required|min:3|max:255',
+            'username' => 'required|min:4|max:255|unique:korisnici',
+            'password' => 'required|confirmed|min:6|max:255',
+            'email' => 'required|email|max:255|unique:korisnici',
+        ], [
+            //ime
+            'ime.required'=>'Име је обавезно за унос.',
+            'ime.min'=>'Минимална дужина имена је :min.',
+            'ime.max'=>'Максимална дужина имена је :max.',
+            //username
+            'username.required'=>'Корисничко име је обавезно за унос.',
+            'username.min'=>'Минимална дужина корисничког имена је :min.',
+            'username.max'=>'Максимална дужина корисничког имена је :max.',
+            'username.unique'=>'Наведено корисничко име је у употреби.',
+            //password
+            'password.required'=>'Корисничка шифра је обавезна за унос.',
+            'password.min'=>'Минимална дужина корисничке шифре је :min.',
+            'password.max'=>'Максимална дужина корисничке шифре је :max.',
+            'password.confirmed'=>'Унесене шифре се не поклапају.',
+            //pass_conf
+            'password_confirmation.required'=>'Корисничка шифра је обавезна за унос.',
+            'password_confirmation.min'=>'Минимална дужина корисничке шифре је :min.',
+            //email
+            'email.required'=>'Мејл је обавезан за унос.',
+            'email.email'=>'Погрешно унесен мејл.',
+            'email.unique'=>'Наведени мејл је у употреби.',
+            'email.max'=>'Максимална дужина мејла је :max.',
         ]);
     }
 
@@ -64,7 +90,8 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'ime' => $data['ime'],
+            'username' => $data['username'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
