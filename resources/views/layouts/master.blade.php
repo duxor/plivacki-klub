@@ -31,7 +31,7 @@
         <nav class="navigation" class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id="linkovi" class="nav navbar-nav">
-                        <li><a  href="#">Početna </a></li>
+                        <li class="active"><a  href="#">Početna </a></li>
                         <li><a href="#">O nama</a></li>
                         <li><a href="#">Vizija</a></li>
                         <li><a href="#">Takmičari</a></li>
@@ -53,6 +53,14 @@
                         <li><a href="/odjava">Odjava</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
+                <script>
+                    $(function() {
+                        $( '#linkovi li' ).on( 'click', function() {
+                            $( this ).parent().find( 'li.active' ).removeClass( 'active' );
+                            $( this ).addClass( 'active' );
+                        });
+                    });
+                </script>
             </div><!-- /.container-fluid -->
         </nav>
     </div>

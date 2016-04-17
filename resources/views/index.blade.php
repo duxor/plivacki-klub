@@ -2,63 +2,12 @@
 @section('body')
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/slider/jssor.slider.mini.js"></script>
-
-    <!-- use jssor.slider.debug.js instead for debug -->
-    <script>
-        jQuery(document).ready(function ($) {
-
-            var jssor_1_options = {
-                $AutoPlay: true,
-                $ArrowNavigatorOptions: {
-                    $Class: $JssorArrowNavigator$
-                },
-                $ThumbnailNavigatorOptions: {
-                    $Class: $JssorThumbnailNavigator$,
-                    $Cols: 4,
-                    $SpacingX: 4,
-                    $SpacingY: 4,
-                    $Orientation: 2,
-                    $Align: 0
-                }
-            };
-
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-            //responsive code begin
-            //you can remove responsive code if you don't want the slider scales while window resizing
-            function ScaleSlider() {
-                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-                if (refSize) {
-                    refSize = Math.min(refSize, 1510);
-                    jssor_1_slider.$ScaleWidth(refSize);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-            ScaleSlider();
-            $(window).bind("load", ScaleSlider);
-            $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
-            //responsive code end
-        });
-    </script>
-
+    <script type="text/javascript" src="js/slider/custom.js"></script>
+    <link rel="stylesheet" href="css/slider.css">
     <style>
-
-        /* jssor slider arrow navigator skin 02 css */
-        /*
-        .jssora02l                  (normal)
-        .jssora02r                  (normal)
-        .jssora02l:hover            (normal mouseover)
-        .jssora02r:hover            (normal mouseover)
-        .jssora02l.jssora02ldn      (mousedown)
-        .jssora02r.jssora02rdn      (mousedown)
-        */
         .jssora02l, .jssora02r {
             display: block;
             position: absolute;
-            /* size of arrow element */
             width: 55px;
             height: 55px;
             cursor: pointer;
@@ -71,11 +20,10 @@
         .jssora02r:hover { background-position: -183px -33px; }
         .jssora02l.jssora02ldn { background-position: -3px -33px; }
         .jssora02r.jssora02rdn { background-position: -63px -33px; }
-        /* jssor slider thumbnail navigator skin 11 css *//*.jssort11 .p            (normal).jssort11 .p:hover      (normal mouseover).jssort11 .pav          (active).jssort11 .pav:hover    (active mouseover).jssort11 .pdn          (mousedown)*/.jssort11 .p {    position: absolute;    top: 0;    left: 0;    width: 300px;    height: 100px;    background: #181818;}.jssort11 .tp {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort11 .i, .jssort11 .pav:hover .i {    position: absolute;    top: 3px;    left: 3px;    width: 80px;    height: 50px;    border: white 1px dashed;}* html .jssort11 .i {    width /**/: 62px;    height /**/: 32px;}.jssort11 .pav .i {    border: white 1px solid;}.jssort11 .t, .jssort11 .pav:hover .t {    position: absolute;    top: 3px;    left: 68px;    width: 129px;    height: 32px;    line-height: 32px;    text-align: center;    color: #fc9835;    font-size: 13px;    font-weight: 700;}.jssort11 .pav .t, .jssort11 .p:hover .t {    color: #fff;}.jssort11 .c, .jssort11 .pav:hover .c {    position: absolute;    top: 48px;    left: 3px;    width: 197px;    height: 31px;    line-height: 31px;    color: #fff;    font-size: 14px;    font-weight: 400;    overflow: hidden;}.jssort11 .pav .c, .jssort11 .p:hover .c {    color: #fc9835;}.jssort11 .t, .jssort11 .c {    transition: color 2s;    -moz-transition: color 2s;    -webkit-transition: color 2s;    -o-transition: color 2s;}.jssort11 .p:hover .t, .jssort11 .pav:hover .t, .jssort11 .p:hover .c, .jssort11 .pav:hover .c {    transition: none;    -moz-transition: none;    -webkit-transition: none;    -o-transition: none;}.jssort11 .p:hover, .jssort11 .pav:hover {    background: #333;}.jssort11 .pav, .jssort11 .p.pdn {    background: #462300;}
+        .jssort11 .p {    position: absolute;    top: 0;    left: 0;    width: 300px;    height: 100px;    background: #181818;}.jssort11 .tp {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort11 .i, .jssort11 .pav:hover .i {    position: absolute;    top: 3px;    left: 3px;    width: 80px;    height: 50px;    border: white 1px dashed;}* html .jssort11 .i {    width /**/: 62px;    height /**/: 32px;}.jssort11 .pav .i {    border: white 1px solid;}.jssort11 .t, .jssort11 .pav:hover .t {    position: absolute;    top: 3px;    left: 68px;    width: 129px;    height: 32px;    line-height: 32px;    text-align: center;    color: #fc9835;    font-size: 13px;    font-weight: 700;}.jssort11 .pav .t, .jssort11 .p:hover .t {    color: #fff;}.jssort11 .c, .jssort11 .pav:hover .c {    position: absolute;    top: 48px;    left: 3px;    width: 197px;    height: 31px;    line-height: 31px;    color: #fff;    font-size: 14px;    font-weight: 400;    overflow: hidden;}.jssort11 .pav .c, .jssort11 .p:hover .c {    color: #fc9835;}.jssort11 .t, .jssort11 .c {    transition: color 2s;    -moz-transition: color 2s;    -webkit-transition: color 2s;    -o-transition: color 2s;}.jssort11 .p:hover .t, .jssort11 .pav:hover .t, .jssort11 .p:hover .c, .jssort11 .pav:hover .c {    transition: none;    -moz-transition: none;    -webkit-transition: none;    -o-transition: none;}.jssort11 .p:hover, .jssort11 .pav:hover {    background: #333;}.jssort11 .pav, .jssort11 .p.pdn {    background: #462300;}
 
     </style>
-
-
+ {{-- SLIDER START--}}
     <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 1510px; height: 400px; overflow: hidden; visibility: hidden; background-color: #000000;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -148,4 +96,101 @@
         <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
         <span data-u="arrowright" class="jssora02r" style="top:0px;right:418px;width:55px;height:55px;" data-autocenter="2"></span>
     </div>
+    {{-- SLIDER END--}}
+    <br/>
+<div class="container-fluid" >
+    {{-- OBAVEŠTENJE START--}}
+    <div style="background-color:#e8e8e8; padding: 5px;" class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="row">
+                    <a class="pull-left" href="#" target="_parent">
+                        <img style="width: 100%;" alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg">
+                    </a>
+                    <ul style="position: absolute; margin-right: 0px; width: 100%; background-color: #080808;top:0; right: 0; opacity: 0.6; ">
+                        <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
+                        <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
+                        <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <h2  class="media-heading">
+                    <a style="color: #E9C126;" href="#">Naslov1</a>
+                </h2>
+                <p style="color: #00A3D8; font-size: 16px;" >
+                    alsdfj aasdl ačsdflka ačsdlk asdl ačld ačsdf časdlf časd fčasldfk ačsdf časdf časd fčasldf časd fčalsdf č
+                    ačsdlfk asčd asldkf ačsdfk a sdčalsd fč ačsldkf pčpasldfk čas dčflaskdf l ... >
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="row">
+                    <a class="pull-left" href="#" target="_parent">
+                        <img style="width: 100%;" alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg">
+                    </a>
+                    <ul style="position: absolute; margin-right: 0px; width: 100%; background-color: #080808;top:0; right: 0; opacity: 0.6; ">
+                        <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
+                        <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
+                        <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <h2  class="media-heading">
+                    <a style="color: #E9C126;" href="#">Naslov2</a>
+                </h2>
+                <p style="color: #00A3D8; font-size: 16px;" >
+                    alsdfj aasdl ačsdflka ačsdlk asdl ačld ačsdf časdlf časd fčasldfk ačsdf časdf časd fčasldf časd fčalsdf č
+                    ačsdlfk asčd asldkf ačsdfk a sdčalsd fč ačsldkf pčpasldfk čas dčflaskdf l ... >
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="row">
+                    <a class="pull-left" href="#" target="_parent">
+                        <img style="width: 100%;" alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg">
+                    </a>
+                    <ul style="position: absolute; margin-right: 0px; width: 100%; background-color: #080808;top:0; right: 0; opacity: 0.6; ">
+                        <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
+                        <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
+                        <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <h2  class="media-heading">
+                    <a style="color: #E9C126;" href="#">Naslov3</a>
+                </h2>
+                <p style="color: #00A3D8; font-size: 16px;" >
+                    alsdfj aasdl ačsdflka ačsdlk asdl ačld ačsdf časdlf časd fčasldfk ačsdf časdf časd fčasldf časd fčalsdf č
+                    ačsdlfk asčd asldkf ačsdfk a sdčalsd fč ačsldkf pčpasldfk čas dčflaskdf l ... >
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {{-- OBAVEŠTENJE END--}}
+    <div class="col-sm-2">{{-- SPONZORI START--}}
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Sponzori</h3>
+            </div>
+            <div class="panel-body">
+               <a href="#"><p>Zdravlje Leskovac</p></a>
+            </div>
+            <div class="panel-body">
+                <a href="#"><p>Zdravlje Leskovac</p></a>
+            </div>
+            <div class="panel-body">
+                <a href="#"><p>Zdravlje Leskovac</p></a>
+            </div>
+            <div class="panel-body">
+                <a href="#"><p>Zdravlje Leskovac</p></a>
+            </div>
+        </div>
+    </div>{{-- SPONZORI END--}}
+</div>
 @endsection
