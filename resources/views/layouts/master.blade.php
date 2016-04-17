@@ -40,7 +40,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id="linkovi" class="nav navbar-nav">
-                        <li class="active"><a  href="#">Početna </a></li>
+                        <li><a  href="#">Početna </a></li>
                         <li><a href="#">O nama</a></li>
                         <li><a href="#">Vizija</a></li>
                         <li><a href="#">Takmičari</a></li>
