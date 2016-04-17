@@ -1,0 +1,43 @@
+.navbar{
+    background-color: #003748;
+    border: none;
+}
+ #logo{
+     max-height: 40px;
+}
+.twiter{
+    background: url('/img/twiter-hover.png') 0 0 no-repeat;
+}
+.twiter:hover{
+    content:url("/img/twitter-hover.png");
+}
+.face:hover{
+    content:url("/img/facebook-hover.png");
+}
+.face{
+    background: url('/img/facebook-hover.png') 0 0 no-repeat;
+}
+.link{
+    background: url('/img/linkedin-hover.png') 0 0 no-repeat;
+}
+.link:hover{
+    content:url("/img/linkedin-hover.png");
+}
+#sitemap{
+    color: #ffffff;
+    line-height: 30px;
+}
+#header-img{
+    width:100%;
+}
+#linkovi li a{
+    color:white;line-height:50px;
+    font-size: 20px;
+    font-weight: 700;
+}
+#linkovi > li > a:hover,#linkovi > li > a:active,#linkovi > li > a:focus {
+    background-color: rgba(1, 17, 19, 0.2);
+    color:#E9C126;
+}
+
+
