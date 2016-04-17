@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('body')
-    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/slider/jssor.slider.mini.js"></script>
     <script type="text/javascript" src="js/slider/custom.js"></script>
     <link rel="stylesheet" href="css/slider.css">

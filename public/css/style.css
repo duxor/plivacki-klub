@@ -35,7 +35,8 @@
     font-size: 20px;
     font-weight: 700;
 }
-#linkovi > li > a:hover,#linkovi > li > a:active,#linkovi > li > a:focus {
+#linkovi > li > a:hover, #linkovi > li > a.active, #linkovi > li > a:focus {
     background-color: rgba(1, 17, 19, 0.2);
     color:#E9C126;
 }
+

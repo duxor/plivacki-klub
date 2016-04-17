@@ -7,9 +7,8 @@
     <title></title>
     {!!Html::style('bootstrap-3.3.5-dist/css/bootstrap.min.css')!!}
     {!!HTML::style('css/style.css')!!}
-    {!!Html::script('bootstrap-3.3.5-dist/js/jquery.min.js')!!}
+    {!!Html::script('bootstrap-3.3.5-dist/js/jquery-3.0.js')!!}
     {!!Html::script('bootstrap-3.3.5-dist/js/bootstrap.min.js')!!}
-
 </head>
 
 <body>
@@ -27,45 +26,35 @@
     <div id="header-img">
         <img src="img/header-img.png" class="img-responsive">
     </div>
-    <div  style="background-image: url(img/nav-bg.png);background-repeat: repeat-x;height: 80px; width: 100%;">
-        <nav class="navigation" class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul id="linkovi" class="nav navbar-nav">
-                        <li class="active"><a  href="#">Početna </a></li>
-                        <li><a href="#">O nama</a></li>
-                        <li><a href="#">Vizija</a></li>
-                        <li><a href="#">Takmičari</a></li>
-                        <li><a href="#">Rekordi</a></li>
-                        <li><a href="#">Kalendar</a></li>
-                        <li><a href="#">Rezultati</a></li>
-                        <li><a href="#">Galerija</a></li>
-                        <li><a href="#">Norme</a></li>
-                        <li><a href="/prijava">Prijava</a></li>
-                        <li><a href="/odjava">Odjava</a></li>
-                    </ul>
-                </div><!-- /.navbar-collapse -->
-                <script>
-                    $(function() {
-                        $( '#linkovi li' ).on( 'click', function() {
-                            $( this ).parent().find( 'li.active' ).removeClass( 'active' );
-                            $( this ).addClass( 'active' );
-                        });
-                    });
-                </script>
-            </div><!-- /.container-fluid -->
-        </nav>
-    </div>
-    @yield('body')
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <nav  style="margin-bottom: 5px; background-image: url(img/nav-bg.png);background-repeat: repeat-x;height: 80px; width: 100%;" class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button  type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" >
+                <ul id="linkovi" class="nav navbar-nav">
+                    <li><a href="#">Početna </a></li>
+                    <li ><a href="#">O nama</a></li>
+                    <li><a href="#">Vizija</a></li>
+                    <li><a href="#">Takmičari</a></li>
+                    <li><a href="#">Rekordi</a></li>
+                    <li><a href="#">Kalendar</a></li>
+                    <li><a href="#">Rezultati</a></li>
+                    <li><a href="#">Galerija</a></li>
+                    <li><a href="#">Norme</a></li>
+                    <li><a href="/prijava">Prijava</a></li>
+                    <li><a href="/odjava">Odjava</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    @yield('body')
 </body>
 </html>
