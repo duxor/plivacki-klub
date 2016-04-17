@@ -55,9 +55,7 @@
             </div><!-- /.container-fluid -->
         </nav>
     </div>
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        lhlhl
-    </div>
+    @yield('body')
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </body>
