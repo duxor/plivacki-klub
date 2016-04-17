@@ -50,6 +50,7 @@
                         <li><a href="#">Galerija</a></li>
                         <li><a href="#">Norme</a></li>
                         <li><a href="#">Prijava</a></li>
+                        <li><a href="#">Odjava</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
