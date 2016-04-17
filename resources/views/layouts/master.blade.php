@@ -40,7 +40,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul id="linkovi" class="nav navbar-nav">
-                        <li ><a href="#">Početna </a></li>
+                        <li class="active"><a  href="#">Početna </a></li>
                         <li><a href="#">O nama</a></li>
                         <li><a href="#">Vizija</a></li>
                         <li><a href="#">Takmičari</a></li>
@@ -49,10 +49,14 @@
                         <li><a href="#">Rezultati</a></li>
                         <li><a href="#">Galerija</a></li>
                         <li><a href="#">Norme</a></li>
+                        <li><a href="#">Prijava</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        lhlhl
     </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
