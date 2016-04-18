@@ -35,3 +35,5 @@ $this->post('password/reset', 'Auth\PasswordController@reset');
 
 
 //-------------------------------
+
+Route::controller('/administracija','AdministracijaController');

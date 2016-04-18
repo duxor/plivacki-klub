@@ -22,6 +22,17 @@ class KreiranjeBaze extends Migration
             $table->string('token')->index();
             $table->timestamp('created_at');
         });
+        Schema::create('objava', function (Blueprint $table) {
+            $table->string('naslov',150);
+            $table->string('slug',250);
+            $table->string('foto',250)->nullable();
+            $table->text('sadrzaj')->nullable();
+            $table->string('dodaci',250);
+            $table->timestamp('datum')->nullable();
+            $table->tinyint('prioritet')->default(0);
+            $table->timestamp('created_at')->default('CURRENT_TIMESTAMP');
+            $table->timestamp('updated_at');
+        });
     }
 
  
@@ -29,5 +40,6 @@ class KreiranjeBaze extends Migration
     {
         Schema::drop('korisnici');
         Schema::drop('password_resets');
+        Schema::drop('objava');
     }
 }
