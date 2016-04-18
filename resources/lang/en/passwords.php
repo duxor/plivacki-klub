@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'password' => 'Passwords must be at least six characters and match the confirmation.',
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have e-mailed your password reset link!',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that e-mail address.",
+    'password' => 'Šifra mora biti minimalne dužine 6 karaktera i mora biti ista kao u polkju "Potvrdi šifru".',
+    'reset' => 'Vaša šifra će biti resetovana!',
+    'sent' => 'Poslali smo Vam link za resetovanje šifre!',
+    'token' => 'Token za resetovanje šifre nije validan.',
+    'user' => "Ne možemo pronaći korisnika sa unešenem e-mail adresom .",
 
 ];

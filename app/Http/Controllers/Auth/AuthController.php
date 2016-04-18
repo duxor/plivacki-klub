@@ -57,27 +57,27 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:korisnici',
         ], [
             //ime
-            'ime.required'=>'Име је обавезно за унос.',
-            'ime.min'=>'Минимална дужина имена је :min.',
-            'ime.max'=>'Максимална дужина имена је :max.',
+            'ime.required'=>'Ime je obavezno za unos.',
+            'ime.min'=>'Minimalna dužina je :min.',
+            'ime.max'=>'Maksimalna dužina je :max.',
             //username
-            'username.required'=>'Корисничко име је обавезно за унос.',
-            'username.min'=>'Минимална дужина корисничког имена је :min.',
-            'username.max'=>'Максимална дужина корисничког имена је :max.',
-            'username.unique'=>'Наведено корисничко име је у употреби.',
+            'username.required'=>'Korisničko ime je obavezno za unos.',
+            'username.min'=>'Minimalna dužina korisničkog imena je :min.',
+            'username.max'=>'МMaksimalna dužina korisničkog imena je :max.',
+            'username.unique'=>'Navedeno korisničko ime je u upotrebi.',
             //password
-            'password.required'=>'Корисничка шифра је обавезна за унос.',
-            'password.min'=>'Минимална дужина корисничке шифре је :min.',
-            'password.max'=>'Максимална дужина корисничке шифре је :max.',
-            'password.confirmed'=>'Унесене шифре се не поклапају.',
+            'password.required'=>'Korisnička šifra je obavezna za unos.',
+            'password.min'=>'Minimalna dužina korisničke šifre je :min.',
+            'password.max'=>'Maksimalna dužina korisničke šifre je :max.',
+            'password.confirmed'=>'Unesene šifre se ne poklapaju.',
             //pass_conf
-            'password_confirmation.required'=>'Корисничка шифра је обавезна за унос.',
-            'password_confirmation.min'=>'Минимална дужина корисничке шифре је :min.',
+            'password_confirmation.required'=>'Korisnička šifra je obavezna za unos.',
+            'password_confirmation.min'=>'Minimalna dužina korisničke šifre je :min.',
             //email
-            'email.required'=>'Мејл је обавезан за унос.',
-            'email.email'=>'Погрешно унесен мејл.',
-            'email.unique'=>'Наведени мејл је у употреби.',
-            'email.max'=>'Максимална дужина мејла је :max.',
+            'email.required'=>'E-mail je obavezan za unos.',
+            'email.email'=>'Pogrešno unesen e-mail.',
+            'email.unique'=>'Navedeni e-mail je u upotrebui.',
+            'email.max'=>'Maksimalna dužina e-mail-a je :max.',
         ]);
     }
 

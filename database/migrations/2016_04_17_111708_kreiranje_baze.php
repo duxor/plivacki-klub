@@ -30,7 +30,8 @@ class KreiranjeBaze extends Migration
             $table->string('dodaci',250);
             $table->timestamp('datum')->nullable();
             $table->tinyInteger('prioritet')->default(0);
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->nullable();;
         });
     }
 

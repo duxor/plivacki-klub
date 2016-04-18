@@ -15,25 +15,5 @@ Route::get('/', function () {
     return view('index');
 });
 
-//------------Autentifikacija-------------------Jovic Aleksandar
-
 Route::auth();
-//Rute koje se koriste su:
-
-$this->get('prijava', 'Auth\AuthController@showLoginForm');
-$this->post('prijava', 'Auth\AuthController@login');
-$this->get('odjava', 'Auth\AuthController@logout');
-
-// Registration Routes...
-$this->get('registracija', 'Auth\AuthController@showRegistrationForm');
-$this->post('registracija', 'Auth\AuthController@register');
-
-// Password Reset Routes...
-$this->get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
-$this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
-$this->post('password/reset', 'Auth\PasswordController@reset');
-
-
-//-------------------------------
-
 Route::controller('/administracija','AdministracijaController');
