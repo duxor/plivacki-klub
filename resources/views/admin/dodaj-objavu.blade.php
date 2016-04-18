@@ -3,6 +3,8 @@
     {!!Html::style('/datepicker/datetimepicker.css')!!}
     {!!Html::script('/datepicker/moment.js')!!}
     {!!Html::script('/datepicker/datetimepicker.js')!!}
+    {!!Html::style('/trumbowyg/ui/trumbowyg.min.css')!!}
+    {!!Html::script('/trumbowyg/trumbowyg.min.js')!!}
     @if(count($errors)>0)
         <div class="alert alert-danger">
             <ul>
@@ -55,6 +57,7 @@
                                 reader.readAsDataURL(fotoFajl.files[0]);
                         }
         }
+        $(function(){$('textarea').trumbowyg();})
     </script>
     {!!Form::open(['files'=>true])!!}
         <h1>Dodaj objavu</h1>
@@ -80,6 +83,7 @@
                 });
             </script>
         </div>
+        <div id="test"></div>
         {!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['type'=>'submit','class'=>'btn btn-primary'])!!}
     {!!Form::close()!!}
 @endsection
