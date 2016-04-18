@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DodajObjavu;
+
 class AdministracijaController extends Controller{
     public function __construct(){
         
@@ -12,7 +14,8 @@ class AdministracijaController extends Controller{
     public function getDodajObjavu(){
         return view('admin.dodaj-objavu');
     }
-    public function postDodajObjavu(){
-        dd($_POST);
+    public function postDodajObjavu(DodajObjavu $podaci){
+
+        dd($podaci);
     }
 }
