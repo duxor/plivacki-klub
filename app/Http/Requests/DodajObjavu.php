@@ -13,7 +13,7 @@ class DodajObjavu extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class DodajObjavu extends Request
     public function rules()
     {
         return [
-            //
+            'naslov'=>'required',
+            'sadrzaj'=>'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'naslov.required' => 'Naslov je obavezan za unos.',
+            'sadrzaj.required' => 'Sadržaj je obavezna stavka objave.',
         ];
     }
 }
