@@ -3,7 +3,7 @@
     border: none;
 }
  #logo{
-     max-height: 40px;
+     max-height: 33px;
 }
 .twiter{
     background: url('/img/twiter-hover.png') 0 0 no-repeat;
@@ -32,11 +32,35 @@
 }
 #linkovi li a{
     color:white;line-height:50px;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 400;
 }
 #linkovi > li > a:hover, #linkovi > li > a.active, #linkovi > li > a:focus {
     background-color: rgba(1, 17, 19, 0.2);
     color:#E9C126;
 }
-
+#linkovi_dropdown  li a{
+    color:white;line-height:50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+#linkovi_dropdown > li > a:hover, #linkovi_dropdown > li > a.active, #linkovi_dropdown  > li > a:focus {
+    background-color: rgba(1, 17, 19, 0.2);
+    color:#E9C126;
+}
+.active1 {
+    background-color: rgba(1, 17, 19, 0.2);
+    color:#E9C126;
+}
+.footer_link{
+    list-style-type: none;
+}
+.footer_link a{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+.footer_link a:hover{
+    color:#E9C126;
+    text-decoration: none;
+}
