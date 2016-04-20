@@ -7,7 +7,7 @@
             <div class="panel panel-default panel-c">
                 <div class="panel-heading">Prijava</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/prijava') }}">
+                    <form class="form-horizontal" role="form" method="POST">
                         {!! csrf_field() !!}
 
                         <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">

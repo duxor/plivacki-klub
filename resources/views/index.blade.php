@@ -31,18 +31,28 @@
             <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1200px; height: 400px; overflow: hidden;">
-            <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="img/002.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
-                    <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
-                    asdfasdf asdf asdf asdf asdf asdf asdf</a>
+
+
+
+
+            @foreach($slajder as $slajd)
+                <div data-p="112.50" style="display: none;">
+                    <img data-u="image" src="{{$slajd->foto}}" />
+                    <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
+                        <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="/{{$slajd->slug}}">
+                            <h2>{{$slajd->naslov}}</h2>
+                        </a>
+                    </div>
+                    <div data-u="thumb">
+                        <img class="i" src="{{$slajd->foto}}" />
+                        <div class="t">{{$slajd->naslov}}</div>
+                        <div class="c">{{$slajd->naslov}}</div>
+                    </div>
                 </div>
-                <div data-u="thumb">
-                    <img class="i" src="img/thumb-002.jpg" />
-                    <div class="t">Banner Rotator</div>
-                    <div class="c">360+ touch swipe slideshow effects</div>
-                </div>
-            </div>
+            @endforeach
+            
+
+
             <div data-p="112.50" style="display: none;">
                 <img data-u="image" src="img/003.jpg" />
                 <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; "">
@@ -129,7 +139,8 @@
 
 
 
-
+{{-- PRIKAZ-OBJAVA START::--}}
+        <style>.atr{position: absolute;top: 5px;right: 5px}</style>
         @foreach($objave as $objava)
         <div class="row">
             <div class="col-sm-2">
@@ -147,6 +158,11 @@
             <div class="col-sm-10">
                 <h2  class="media-heading">
                     <a style="color: #E9C126;" href="/{{$objava->slug}}">{{$objava->naslov}}</a>
+                    @if($admin)
+                        <a href="/administracija/objava/{{$objava->slug}}" class="btn btn-success">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </a>
+                    @endif
                 </h2>
                 <p style="color: #00A3D8; font-size: 16px;" >
                     {!!$objava->sadrzaj!!}
@@ -154,6 +170,7 @@
             </div>
         </div>
         @endforeach
+{{-- PRIKAZ-OBJAVA START::--}}
 
 
 

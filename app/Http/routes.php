@@ -11,9 +11,13 @@
 |
 */
 use App\Objava;
+use \Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return view('index')->with('objave',Objava::getObjaveSkraceno());
+    return view('index')
+        ->with('objave',Objava::getObjaveSkraceno())
+        ->with('slajder',Objava::getSlajder())
+        ->with('admin',Auth::check());
 });
 
 Route::auth();

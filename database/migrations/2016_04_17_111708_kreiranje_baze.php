@@ -23,6 +23,7 @@ class KreiranjeBaze extends Migration
             $table->timestamp('created_at');
         });
         Schema::create('objava', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('naslov',150);
             $table->string('slug',250);
             $table->string('foto',250)->nullable();

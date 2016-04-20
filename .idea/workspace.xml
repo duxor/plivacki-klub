@@ -35,34 +35,72 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93576825" vertical-offset="2334" max-vertical-offset="5576">
-              <caret line="151" column="39" selection-start-line="151" selection-start-column="39" selection-end-line="151" selection-end-column="39" />
+            <state vertical-scroll-proportion="-4.994962" vertical-offset="5173" max-vertical-offset="5967">
+              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
               <folding>
                 <element signature="e#2543#2701#0#HTML" expanded="true" />
                 <element signature="e#2765#2813#0#HTML" expanded="true" />
                 <element signature="e#2832#2964#0#HTML" expanded="true" />
                 <element signature="e#2989#3127#0#HTML" expanded="true" />
-                <element signature="e#3327#3349#0#HTML" expanded="true" />
-                <element signature="e#3429#3576#0#HTML" expanded="true" />
-                <element signature="e#3601#3665#0#HTML" expanded="true" />
-                <element signature="e#4124#4146#0#HTML" expanded="true" />
-                <element signature="e#4226#4373#0#HTML" expanded="true" />
-                <element signature="e#4395#4459#0#HTML" expanded="true" />
-                <element signature="e#4918#4940#0#HTML" expanded="true" />
-                <element signature="e#5020#5167#0#HTML" expanded="true" />
-                <element signature="e#5188#5252#0#HTML" expanded="true" />
-                <element signature="e#5703#5725#0#HTML" expanded="true" />
-                <element signature="e#5805#5952#0#HTML" expanded="true" />
-                <element signature="e#5973#6037#0#HTML" expanded="true" />
-                <element signature="e#6484#6506#0#HTML" expanded="true" />
-                <element signature="e#6586#6733#0#HTML" expanded="true" />
-                <element signature="e#6754#6818#0#HTML" expanded="true" />
-                <element signature="e#7268#7290#0#HTML" expanded="true" />
-                <element signature="e#7370#7517#0#HTML" expanded="true" />
-                <element signature="e#7538#7602#0#HTML" expanded="true" />
-                <element signature="e#8074#8094#0#HTML" expanded="true" />
-                <element signature="e#9633#9750#0#HTML" expanded="true" />
-                <element signature="e#10388#10428#0#HTML" expanded="true" />
+                <element signature="e#3376#3398#0#HTML" expanded="true" />
+                <element signature="e#3491#3638#0#HTML" expanded="true" />
+                <element signature="e#3667#3731#0#HTML" expanded="true" />
+                <element signature="e#4226#4248#0#HTML" expanded="true" />
+                <element signature="e#4328#4475#0#HTML" expanded="true" />
+                <element signature="e#4497#4561#0#HTML" expanded="true" />
+                <element signature="e#5020#5042#0#HTML" expanded="true" />
+                <element signature="e#5122#5269#0#HTML" expanded="true" />
+                <element signature="e#5290#5354#0#HTML" expanded="true" />
+                <element signature="e#5805#5827#0#HTML" expanded="true" />
+                <element signature="e#5907#6054#0#HTML" expanded="true" />
+                <element signature="e#6075#6139#0#HTML" expanded="true" />
+                <element signature="e#6586#6608#0#HTML" expanded="true" />
+                <element signature="e#6688#6835#0#HTML" expanded="true" />
+                <element signature="e#6856#6920#0#HTML" expanded="true" />
+                <element signature="e#7370#7392#0#HTML" expanded="true" />
+                <element signature="e#7472#7619#0#HTML" expanded="true" />
+                <element signature="e#7640#7704#0#HTML" expanded="true" />
+                <element signature="e#8176#8196#0#HTML" expanded="true" />
+                <element signature="e#9703#9723#0#HTML" expanded="true" />
+                <element signature="e#9833#9950#0#HTML" expanded="true" />
+                <element signature="e#9980#10004#0#HTML" expanded="true" />
+                <element signature="e#10098#10122#0#HTML" expanded="true" />
+                <element signature="e#10214#10238#0#HTML" expanded="true" />
+                <element signature="e#10473#10496#0#HTML" expanded="true" />
+                <element signature="e#10847#10887#0#HTML" expanded="true" />
+                <element signature="e#11235#11255#0#HTML" expanded="true" />
+                <element signature="e#11476#11593#0#HTML" expanded="true" />
+                <element signature="e#11623#11647#0#HTML" expanded="true" />
+                <element signature="e#11741#11765#0#HTML" expanded="true" />
+                <element signature="e#11857#11881#0#HTML" expanded="true" />
+                <element signature="e#12116#12139#0#HTML" expanded="true" />
+                <element signature="e#12202#12242#0#HTML" expanded="true" />
+                <element signature="e#12718#12738#0#HTML" expanded="true" />
+                <element signature="e#12959#13076#0#HTML" expanded="true" />
+                <element signature="e#13106#13130#0#HTML" expanded="true" />
+                <element signature="e#13224#13248#0#HTML" expanded="true" />
+                <element signature="e#13340#13364#0#HTML" expanded="true" />
+                <element signature="e#13599#13622#0#HTML" expanded="true" />
+                <element signature="e#13685#13725#0#HTML" expanded="true" />
+                <element signature="e#14022#14048#0#HTML" expanded="true" />
+                <element signature="e#15585#15632#0#HTML" expanded="true" />
+                <element signature="e#15753#15782#0#HTML" expanded="true" />
+                <element signature="e#16456#16498#0#HTML" expanded="true" />
+                <element signature="e#16912#16936#0#HTML" expanded="true" />
+                <element signature="e#17026#17050#0#HTML" expanded="true" />
+                <element signature="e#17138#17162#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdministracijaController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="510">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="e#395#3439#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -71,18 +109,8 @@
       <file leaf-file-name="Objava.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Objava.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="408">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdministracijaController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.846154" vertical-offset="149" max-vertical-offset="1275">
-              <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="476">
+              <caret line="20" column="101" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -91,9 +119,11 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="272">
-              <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
-              <folding />
+            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="340">
+              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+              <folding>
+                <element signature="e#393#408#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -111,15 +141,18 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_17_111708_kreiranje_baze.php" />
         <option value="$PROJECT_DIR$/config/database.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/DodajObjavu.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/objave.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/master.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_17_111708_kreiranje_baze.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php" />
-        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Objava.php" />
+        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
       </list>
     </option>
   </component>
@@ -135,9 +168,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="1366" />
+    <option name="x" value="1370" />
     <option name="y" value="3" />
-    <option name="width" value="1280" />
+    <option name="width" value="1276" />
     <option name="height" value="980" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -220,6 +253,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plivacki-klub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plivacki-klub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -267,6 +322,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="datepicker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plivacki-klub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plivacki-klub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plivacki-klub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plivacki-klub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,10 +446,11 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;FormBu&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;FormBu&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJEKTI\plivacki-klub\resources\views\admin" />
       <recent name="D:\PROJEKTI\plivacki-klub\public\trumbowyg" />
       <recent name="D:\PROJEKTI\plivacki-klub\public\datepicker" />
     </key>
@@ -429,7 +517,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="3" width="1280" height="980" extended-state="1" />
+    <frame x="1370" y="3" width="1276" height="980" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -439,7 +527,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295082" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2409836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24177632" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938075" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -473,7 +561,9 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -639,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_17_111708_kreiranje_baze.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62407863" vertical-offset="19" max-vertical-offset="833">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/app.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.58476657" vertical-offset="0" max-vertical-offset="3672">
@@ -681,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/DodajObjavu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41769043" vertical-offset="0" max-vertical-offset="814">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/trumbowyg/langs/ar.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.124087594" vertical-offset="0" max-vertical-offset="822">
@@ -709,30 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/datepicker/datetimepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.062195122" vertical-offset="0" max-vertical-offset="6018">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravelcollective/html/src/FormBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.7222223" vertical-offset="11815" max-vertical-offset="20553">
-          <caret line="717" column="23" selection-start-line="717" selection-start-column="16" selection-end-line="717" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47103274" vertical-offset="0" max-vertical-offset="1819">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="820">
@@ -741,60 +793,154 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.846154" vertical-offset="149" max-vertical-offset="1275">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.19269522" vertical-offset="0" max-vertical-offset="1309">
+          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Objava.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="408">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.62090683" vertical-offset="0" max-vertical-offset="799">
+          <caret line="28" column="84" selection-start-line="28" selection-start-column="84" selection-end-line="28" selection-end-column="84" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/objave.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25692695" vertical-offset="0" max-vertical-offset="794">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravelcollective/html/src/FormBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33289817" vertical-offset="6562" max-vertical-offset="20553">
+          <caret line="408" column="59" selection-start-line="408" selection-start-column="54" selection-end-line="408" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/DodajObjavu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4282116" vertical-offset="0" max-vertical-offset="794">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_17_111708_kreiranje_baze.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64483625" vertical-offset="15" max-vertical-offset="867">
+          <caret line="32" column="42" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/datepicker/datetimepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.062195122" vertical-offset="0" max-vertical-offset="6018">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.3943663" vertical-offset="0" max-vertical-offset="2074">
+          <caret line="110" column="18" selection-start-line="110" selection-start-column="18" selection-end-line="110" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="510">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="e#395#3439#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="272">
-          <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="340">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+          <folding>
+            <element signature="e#393#408#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Objava.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="476">
+          <caret line="20" column="101" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93576825" vertical-offset="2334" max-vertical-offset="5576">
-          <caret line="151" column="39" selection-start-line="151" selection-start-column="39" selection-end-line="151" selection-end-column="39" />
+        <state vertical-scroll-proportion="-4.994962" vertical-offset="5173" max-vertical-offset="5967">
+          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
           <folding>
             <element signature="e#2543#2701#0#HTML" expanded="true" />
             <element signature="e#2765#2813#0#HTML" expanded="true" />
             <element signature="e#2832#2964#0#HTML" expanded="true" />
             <element signature="e#2989#3127#0#HTML" expanded="true" />
-            <element signature="e#3327#3349#0#HTML" expanded="true" />
-            <element signature="e#3429#3576#0#HTML" expanded="true" />
-            <element signature="e#3601#3665#0#HTML" expanded="true" />
-            <element signature="e#4124#4146#0#HTML" expanded="true" />
-            <element signature="e#4226#4373#0#HTML" expanded="true" />
-            <element signature="e#4395#4459#0#HTML" expanded="true" />
-            <element signature="e#4918#4940#0#HTML" expanded="true" />
-            <element signature="e#5020#5167#0#HTML" expanded="true" />
-            <element signature="e#5188#5252#0#HTML" expanded="true" />
-            <element signature="e#5703#5725#0#HTML" expanded="true" />
-            <element signature="e#5805#5952#0#HTML" expanded="true" />
-            <element signature="e#5973#6037#0#HTML" expanded="true" />
-            <element signature="e#6484#6506#0#HTML" expanded="true" />
-            <element signature="e#6586#6733#0#HTML" expanded="true" />
-            <element signature="e#6754#6818#0#HTML" expanded="true" />
-            <element signature="e#7268#7290#0#HTML" expanded="true" />
-            <element signature="e#7370#7517#0#HTML" expanded="true" />
-            <element signature="e#7538#7602#0#HTML" expanded="true" />
-            <element signature="e#8074#8094#0#HTML" expanded="true" />
-            <element signature="e#9633#9750#0#HTML" expanded="true" />
-            <element signature="e#10388#10428#0#HTML" expanded="true" />
+            <element signature="e#3376#3398#0#HTML" expanded="true" />
+            <element signature="e#3491#3638#0#HTML" expanded="true" />
+            <element signature="e#3667#3731#0#HTML" expanded="true" />
+            <element signature="e#4226#4248#0#HTML" expanded="true" />
+            <element signature="e#4328#4475#0#HTML" expanded="true" />
+            <element signature="e#4497#4561#0#HTML" expanded="true" />
+            <element signature="e#5020#5042#0#HTML" expanded="true" />
+            <element signature="e#5122#5269#0#HTML" expanded="true" />
+            <element signature="e#5290#5354#0#HTML" expanded="true" />
+            <element signature="e#5805#5827#0#HTML" expanded="true" />
+            <element signature="e#5907#6054#0#HTML" expanded="true" />
+            <element signature="e#6075#6139#0#HTML" expanded="true" />
+            <element signature="e#6586#6608#0#HTML" expanded="true" />
+            <element signature="e#6688#6835#0#HTML" expanded="true" />
+            <element signature="e#6856#6920#0#HTML" expanded="true" />
+            <element signature="e#7370#7392#0#HTML" expanded="true" />
+            <element signature="e#7472#7619#0#HTML" expanded="true" />
+            <element signature="e#7640#7704#0#HTML" expanded="true" />
+            <element signature="e#8176#8196#0#HTML" expanded="true" />
+            <element signature="e#9703#9723#0#HTML" expanded="true" />
+            <element signature="e#9833#9950#0#HTML" expanded="true" />
+            <element signature="e#9980#10004#0#HTML" expanded="true" />
+            <element signature="e#10098#10122#0#HTML" expanded="true" />
+            <element signature="e#10214#10238#0#HTML" expanded="true" />
+            <element signature="e#10473#10496#0#HTML" expanded="true" />
+            <element signature="e#10847#10887#0#HTML" expanded="true" />
+            <element signature="e#11235#11255#0#HTML" expanded="true" />
+            <element signature="e#11476#11593#0#HTML" expanded="true" />
+            <element signature="e#11623#11647#0#HTML" expanded="true" />
+            <element signature="e#11741#11765#0#HTML" expanded="true" />
+            <element signature="e#11857#11881#0#HTML" expanded="true" />
+            <element signature="e#12116#12139#0#HTML" expanded="true" />
+            <element signature="e#12202#12242#0#HTML" expanded="true" />
+            <element signature="e#12718#12738#0#HTML" expanded="true" />
+            <element signature="e#12959#13076#0#HTML" expanded="true" />
+            <element signature="e#13106#13130#0#HTML" expanded="true" />
+            <element signature="e#13224#13248#0#HTML" expanded="true" />
+            <element signature="e#13340#13364#0#HTML" expanded="true" />
+            <element signature="e#13599#13622#0#HTML" expanded="true" />
+            <element signature="e#13685#13725#0#HTML" expanded="true" />
+            <element signature="e#14022#14048#0#HTML" expanded="true" />
+            <element signature="e#15585#15632#0#HTML" expanded="true" />
+            <element signature="e#15753#15782#0#HTML" expanded="true" />
+            <element signature="e#16456#16498#0#HTML" expanded="true" />
+            <element signature="e#16912#16936#0#HTML" expanded="true" />
+            <element signature="e#17026#17050#0#HTML" expanded="true" />
+            <element signature="e#17138#17162#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
