@@ -20,4 +20,11 @@ class Objava extends Model{
     public static function getSlajder(){
         return Objava::where('prioritet',1)->take(Objava::$numSlides)->get(['naslov','slug','foto']);
     }
+
+    public static function dajObjavu($slug){
+        $objava=Objava::where('slug',$slug)->get()->first();
+        $objava->datum=date('d.m.Y. H:i', strtotime($objava->datum));
+        $objava->dodaci=json_decode($objava->dodaci);
+        return $objava;
+    }
 }

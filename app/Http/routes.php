@@ -22,3 +22,8 @@ Route::get('/', function () {
 
 Route::auth();
 Route::controller('/administracija','AdministracijaController');
+
+Route::get('/{slug}',function($slug){
+    return view('objava')
+        ->with('objava', Objava::dajObjavu($slug));
+});

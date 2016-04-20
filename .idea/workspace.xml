@@ -32,98 +32,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.994962" vertical-offset="5173" max-vertical-offset="5967">
-              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
-              <folding>
-                <element signature="e#2543#2701#0#HTML" expanded="true" />
-                <element signature="e#2765#2813#0#HTML" expanded="true" />
-                <element signature="e#2832#2964#0#HTML" expanded="true" />
-                <element signature="e#2989#3127#0#HTML" expanded="true" />
-                <element signature="e#3376#3398#0#HTML" expanded="true" />
-                <element signature="e#3491#3638#0#HTML" expanded="true" />
-                <element signature="e#3667#3731#0#HTML" expanded="true" />
-                <element signature="e#4226#4248#0#HTML" expanded="true" />
-                <element signature="e#4328#4475#0#HTML" expanded="true" />
-                <element signature="e#4497#4561#0#HTML" expanded="true" />
-                <element signature="e#5020#5042#0#HTML" expanded="true" />
-                <element signature="e#5122#5269#0#HTML" expanded="true" />
-                <element signature="e#5290#5354#0#HTML" expanded="true" />
-                <element signature="e#5805#5827#0#HTML" expanded="true" />
-                <element signature="e#5907#6054#0#HTML" expanded="true" />
-                <element signature="e#6075#6139#0#HTML" expanded="true" />
-                <element signature="e#6586#6608#0#HTML" expanded="true" />
-                <element signature="e#6688#6835#0#HTML" expanded="true" />
-                <element signature="e#6856#6920#0#HTML" expanded="true" />
-                <element signature="e#7370#7392#0#HTML" expanded="true" />
-                <element signature="e#7472#7619#0#HTML" expanded="true" />
-                <element signature="e#7640#7704#0#HTML" expanded="true" />
-                <element signature="e#8176#8196#0#HTML" expanded="true" />
-                <element signature="e#9703#9723#0#HTML" expanded="true" />
-                <element signature="e#9833#9950#0#HTML" expanded="true" />
-                <element signature="e#9980#10004#0#HTML" expanded="true" />
-                <element signature="e#10098#10122#0#HTML" expanded="true" />
-                <element signature="e#10214#10238#0#HTML" expanded="true" />
-                <element signature="e#10473#10496#0#HTML" expanded="true" />
-                <element signature="e#10847#10887#0#HTML" expanded="true" />
-                <element signature="e#11235#11255#0#HTML" expanded="true" />
-                <element signature="e#11476#11593#0#HTML" expanded="true" />
-                <element signature="e#11623#11647#0#HTML" expanded="true" />
-                <element signature="e#11741#11765#0#HTML" expanded="true" />
-                <element signature="e#11857#11881#0#HTML" expanded="true" />
-                <element signature="e#12116#12139#0#HTML" expanded="true" />
-                <element signature="e#12202#12242#0#HTML" expanded="true" />
-                <element signature="e#12718#12738#0#HTML" expanded="true" />
-                <element signature="e#12959#13076#0#HTML" expanded="true" />
-                <element signature="e#13106#13130#0#HTML" expanded="true" />
-                <element signature="e#13224#13248#0#HTML" expanded="true" />
-                <element signature="e#13340#13364#0#HTML" expanded="true" />
-                <element signature="e#13599#13622#0#HTML" expanded="true" />
-                <element signature="e#13685#13725#0#HTML" expanded="true" />
-                <element signature="e#14022#14048#0#HTML" expanded="true" />
-                <element signature="e#15585#15632#0#HTML" expanded="true" />
-                <element signature="e#15753#15782#0#HTML" expanded="true" />
-                <element signature="e#16456#16498#0#HTML" expanded="true" />
-                <element signature="e#16912#16936#0#HTML" expanded="true" />
-                <element signature="e#17026#17050#0#HTML" expanded="true" />
-                <element signature="e#17138#17162#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AdministracijaController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="510">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding>
-                <element signature="e#395#3439#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Objava.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Objava.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="476">
-              <caret line="20" column="101" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
+            <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1564">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <file leaf-file-name="Objava.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Objava.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="340">
-              <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-              <folding>
-                <element signature="e#393#408#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.59949625" vertical-offset="0" max-vertical-offset="794">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="objava.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/objava.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="442">
+              <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,9 +84,10 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_04_17_111708_kreiranje_baze.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Objava.php" />
-        <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/objava.blade.php" />
       </list>
     </option>
   </component>
@@ -248,50 +183,6 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plivacki-klub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plivacki-klub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plivacki-klub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plivacki-klub" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -321,7 +212,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="datepicker" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,10 +337,11 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistoryKey" value="Form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;FormBu&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="router.p&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/symfony/routing/Router.php&#10;Form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;FormBu&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJEKTI\plivacki-klub\resources\views" />
       <recent name="D:\PROJEKTI\plivacki-klub\resources\views\admin" />
       <recent name="D:\PROJEKTI\plivacki-klub\public\trumbowyg" />
       <recent name="D:\PROJEKTI\plivacki-klub\public\datepicker" />
@@ -517,7 +409,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1370" y="3" width="1276" height="980" extended-state="1" />
+    <frame x="1370" y="3" width="1276" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -562,7 +454,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -857,38 +749,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="510">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding>
-            <element signature="e#395#3439#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="340">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-          <folding>
-            <element signature="e#393#408#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Objava.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="476">
-          <caret line="20" column="101" selection-start-line="20" selection-start-column="101" selection-end-line="20" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.994962" vertical-offset="5173" max-vertical-offset="5967">
-          <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.021410579" vertical-offset="0" max-vertical-offset="5967">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="14" />
           <folding>
             <element signature="e#2543#2701#0#HTML" expanded="true" />
             <element signature="e#2765#2813#0#HTML" expanded="true" />
@@ -897,51 +761,93 @@
             <element signature="e#3376#3398#0#HTML" expanded="true" />
             <element signature="e#3491#3638#0#HTML" expanded="true" />
             <element signature="e#3667#3731#0#HTML" expanded="true" />
-            <element signature="e#4226#4248#0#HTML" expanded="true" />
-            <element signature="e#4328#4475#0#HTML" expanded="true" />
-            <element signature="e#4497#4561#0#HTML" expanded="true" />
-            <element signature="e#5020#5042#0#HTML" expanded="true" />
-            <element signature="e#5122#5269#0#HTML" expanded="true" />
-            <element signature="e#5290#5354#0#HTML" expanded="true" />
-            <element signature="e#5805#5827#0#HTML" expanded="true" />
-            <element signature="e#5907#6054#0#HTML" expanded="true" />
-            <element signature="e#6075#6139#0#HTML" expanded="true" />
-            <element signature="e#6586#6608#0#HTML" expanded="true" />
-            <element signature="e#6688#6835#0#HTML" expanded="true" />
-            <element signature="e#6856#6920#0#HTML" expanded="true" />
-            <element signature="e#7370#7392#0#HTML" expanded="true" />
-            <element signature="e#7472#7619#0#HTML" expanded="true" />
-            <element signature="e#7640#7704#0#HTML" expanded="true" />
-            <element signature="e#8176#8196#0#HTML" expanded="true" />
-            <element signature="e#9703#9723#0#HTML" expanded="true" />
-            <element signature="e#9833#9950#0#HTML" expanded="true" />
-            <element signature="e#9980#10004#0#HTML" expanded="true" />
-            <element signature="e#10098#10122#0#HTML" expanded="true" />
-            <element signature="e#10214#10238#0#HTML" expanded="true" />
-            <element signature="e#10473#10496#0#HTML" expanded="true" />
-            <element signature="e#10847#10887#0#HTML" expanded="true" />
-            <element signature="e#11235#11255#0#HTML" expanded="true" />
-            <element signature="e#11476#11593#0#HTML" expanded="true" />
-            <element signature="e#11623#11647#0#HTML" expanded="true" />
-            <element signature="e#11741#11765#0#HTML" expanded="true" />
-            <element signature="e#11857#11881#0#HTML" expanded="true" />
-            <element signature="e#12116#12139#0#HTML" expanded="true" />
-            <element signature="e#12202#12242#0#HTML" expanded="true" />
-            <element signature="e#12718#12738#0#HTML" expanded="true" />
-            <element signature="e#12959#13076#0#HTML" expanded="true" />
-            <element signature="e#13106#13130#0#HTML" expanded="true" />
-            <element signature="e#13224#13248#0#HTML" expanded="true" />
-            <element signature="e#13340#13364#0#HTML" expanded="true" />
-            <element signature="e#13599#13622#0#HTML" expanded="true" />
-            <element signature="e#13685#13725#0#HTML" expanded="true" />
-            <element signature="e#14022#14048#0#HTML" expanded="true" />
-            <element signature="e#15585#15632#0#HTML" expanded="true" />
-            <element signature="e#15753#15782#0#HTML" expanded="true" />
-            <element signature="e#16456#16498#0#HTML" expanded="true" />
-            <element signature="e#16912#16936#0#HTML" expanded="true" />
-            <element signature="e#17026#17050#0#HTML" expanded="true" />
-            <element signature="e#17138#17162#0#HTML" expanded="true" />
+            <element signature="e#4214#4236#0#HTML" expanded="true" />
+            <element signature="e#4316#4463#0#HTML" expanded="true" />
+            <element signature="e#4485#4549#0#HTML" expanded="true" />
+            <element signature="e#5008#5030#0#HTML" expanded="true" />
+            <element signature="e#5110#5257#0#HTML" expanded="true" />
+            <element signature="e#5278#5342#0#HTML" expanded="true" />
+            <element signature="e#5793#5815#0#HTML" expanded="true" />
+            <element signature="e#5895#6042#0#HTML" expanded="true" />
+            <element signature="e#6063#6127#0#HTML" expanded="true" />
+            <element signature="e#6574#6596#0#HTML" expanded="true" />
+            <element signature="e#6676#6823#0#HTML" expanded="true" />
+            <element signature="e#6844#6908#0#HTML" expanded="true" />
+            <element signature="e#7358#7380#0#HTML" expanded="true" />
+            <element signature="e#7460#7607#0#HTML" expanded="true" />
+            <element signature="e#7628#7692#0#HTML" expanded="true" />
+            <element signature="e#8164#8184#0#HTML" expanded="true" />
+            <element signature="e#9691#9711#0#HTML" expanded="true" />
+            <element signature="e#9821#9938#0#HTML" expanded="true" />
+            <element signature="e#9968#9992#0#HTML" expanded="true" />
+            <element signature="e#10086#10110#0#HTML" expanded="true" />
+            <element signature="e#10202#10226#0#HTML" expanded="true" />
+            <element signature="e#10461#10484#0#HTML" expanded="true" />
+            <element signature="e#10835#10875#0#HTML" expanded="true" />
+            <element signature="e#11223#11243#0#HTML" expanded="true" />
+            <element signature="e#11464#11581#0#HTML" expanded="true" />
+            <element signature="e#11611#11635#0#HTML" expanded="true" />
+            <element signature="e#11729#11753#0#HTML" expanded="true" />
+            <element signature="e#11845#11869#0#HTML" expanded="true" />
+            <element signature="e#12104#12127#0#HTML" expanded="true" />
+            <element signature="e#12190#12230#0#HTML" expanded="true" />
+            <element signature="e#12706#12726#0#HTML" expanded="true" />
+            <element signature="e#12947#13064#0#HTML" expanded="true" />
+            <element signature="e#13094#13118#0#HTML" expanded="true" />
+            <element signature="e#13212#13236#0#HTML" expanded="true" />
+            <element signature="e#13328#13352#0#HTML" expanded="true" />
+            <element signature="e#13587#13610#0#HTML" expanded="true" />
+            <element signature="e#13673#13713#0#HTML" expanded="true" />
+            <element signature="e#14010#14036#0#HTML" expanded="true" />
+            <element signature="e#15573#15620#0#HTML" expanded="true" />
+            <element signature="e#15741#15770#0#HTML" expanded="true" />
+            <element signature="e#16444#16486#0#HTML" expanded="true" />
+            <element signature="e#16900#16924#0#HTML" expanded="true" />
+            <element signature="e#17014#17038#0#HTML" expanded="true" />
+            <element signature="e#17126#17150#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40680102" vertical-offset="0" max-vertical-offset="794">
+          <caret line="28" column="3" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+          <folding>
+            <element signature="e#393#408#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/routing/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.9219146" vertical-offset="5496" max-vertical-offset="6290">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/objava.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="442">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="1564">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Objava.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59949625" vertical-offset="0" max-vertical-offset="794">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
