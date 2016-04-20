@@ -10,9 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Objava;
 
 Route::get('/', function () {
-    return view('index');
+    return view('index')->with('objave',Objava::getObjaveSkraceno());
 });
 
 Route::auth();

@@ -33,7 +33,7 @@
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1200px; height: 400px; overflow: hidden;">
             <div data-p="112.50" style="display: none;">
                 <img data-u="image" src="img/002.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; "">
+                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
                     <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
                     asdfasdf asdf asdf asdf asdf asdf asdf</a>
                 </div>
@@ -57,7 +57,7 @@
             </div>
             <div data-p="112.50" style="display: none;">
                 <img data-u="image" src="img/004.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; "">
+                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
                 <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
                     asdfasdf asdf asdf asdf asdf asdf asdf</a>
             </div>
@@ -69,7 +69,7 @@
             </div>
             <div data-p="112.50" style="display: none;">
                 <img data-u="image" src="img/005.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; "">
+                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
                 <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
                     asdfasdf asdf asdf asdf asdf asdf asdf</a>
             </div>
@@ -81,7 +81,7 @@
             </div>
             <div data-p="112.50" style="display: none;">
                 <img data-u="image" src="img/006.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; "">
+                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
                 <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
                     asdfasdf asdf asdf asdf asdf asdf asdf</a>
             </div>
@@ -93,7 +93,7 @@
             </div>
             <div data-p="112.50" style="display: none;">
                 <img data-u="image" src="img/006.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; "">
+                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
                 <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
                     asdfasdf asdf asdf asdf asdf asdf asdf</a>
             </div>
@@ -126,11 +126,16 @@
 <div class="container-fluid" >
     {{-- OBAVEŠTENJE START--}}
     <div style="background-color:#e8e8e8; padding: 5px;" class="col-sm-10">
+
+
+
+
+        @foreach($objave as $objava)
         <div class="row">
             <div class="col-sm-2">
                 <div class="row">
-                    <a class="pull-left" href="#" target="_parent">
-                        <img style="width: 100%;" alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg">
+                    <a class="pull-left" href="/{{$objava->slug}}" target="_parent">
+                        <img style="width: 100%;" alt="image" class="img-responsive" src="{{$objava->foto}}">
                     </a>
                     <ul style="position: absolute; margin-right: 0px; width: 100%; background-color: #080808;top:0; right: 0; opacity: 0.6; ">
                         <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
@@ -141,14 +146,18 @@
             </div>
             <div class="col-sm-10">
                 <h2  class="media-heading">
-                    <a style="color: #E9C126;" href="#">Naslov1</a>
+                    <a style="color: #E9C126;" href="/{{$objava->slug}}">{{$objava->naslov}}</a>
                 </h2>
                 <p style="color: #00A3D8; font-size: 16px;" >
-                    alsdfj aasdl ačsdflka ačsdlk asdl ačld ačsdf časdlf časd fčasldfk ačsdf časdf časd fčasldf časd fčalsdf č
-                    ačsdlfk asčd asldkf ačsdfk a sdčalsd fč ačsldkf pčpasldfk čas dčflaskdf l ... >
+                    {!!$objava->sadrzaj!!}
                 </p>
             </div>
         </div>
+        @endforeach
+
+
+
+
         <div class="row">
             <div class="col-sm-2">
                 <div class="row">

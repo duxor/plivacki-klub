@@ -5,6 +5,11 @@
     {!!Html::script('/datepicker/datetimepicker.js')!!}
     {!!Html::style('/trumbowyg/ui/trumbowyg.min.css')!!}
     {!!Html::script('/trumbowyg/trumbowyg.min.js')!!}
+    @if(isset($uspesnoDodavanje))
+        <div class="alert alert-success">
+            <h2>{{$uspesnoDodavanje}}</h2>
+        </div>
+    @endif
     @if(count($errors)>0)
         <div class="alert alert-danger">
             <ul>
@@ -34,6 +39,11 @@
             cursor: inherit;
             display: block;
         }
+        .trumbowyg-box, .trumbowyg-editor{
+            width: 100%;
+        }
+        img{width: 100%;}
+        .mt20{margin-top: 20px}
     </style>
     <script>
         function prikaziDodatke(dodaciElement){
@@ -50,40 +60,39 @@
         function unesiFoto(){$('[name=foto]').click()}
         function prikaziFoto(fotoFajl){
             if (fotoFajl.files && fotoFajl.files[0]) {
-                                var reader = new FileReader();
-                                reader.onload = function (e) {
-                                    $('#naslovnaFoto').attr('src',e.target.result);
-                                }
-                                reader.readAsDataURL(fotoFajl.files[0]);
-                        }
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#naslovnaFoto').attr('src',e.target.result);
+                }
+                reader.readAsDataURL(fotoFajl.files[0]);
+            }
         }
-        $(function(){$('textarea').trumbowyg();})
+        $(function () {
+            $('textarea').trumbowyg();
+            $('#datetimepicker').datetimepicker();
+            $('#datetimepicker').data('DateTimePicker').locale('sr').format('DD.MM.Y. HH:mm');
+            $('[data-toggle=tooltip]').tooltip();
+        });
     </script>
-    {!!Form::open(['files'=>true])!!}
-        <h1>Dodaj objavu</h1>
-        {!!Form::text('naslov',null,['class'=>'form-control','placeholder'=>'Naslov'])!!}
-        <img id="naslovnaFoto" alt="Naslovna fotografija" src="#" onclick="unesiFoto()">
-        {!!Form::file('foto',['onchange'=>'prikaziFoto(this)','style'=>'display:none'])!!}
-
-        {!!Form::textarea('sadrzaj',null,['class'=>'form-control','placeholder'=>'Sadržaj'])!!}
-        <span class="btn btn-c btn-file">
-            <i class="glyphicon glyphicon-cloud-upload"></i> Приложи додатке
-            {!!Form::file('dodaci[]',['class'=>'','multiple','onchange'=>'prikaziDodatke(this);'])!!}
-        </span>
-        <p><ul id="izabraniDodaci"></ul></p>
-
-        <div class="row">
-            <div class='col-sm-6'>
-                {!!Form::text('datum',null,['class'=>'form-control','id'=>'datetimepicker'])!!}
-            </div>
-            <script type="text/javascript">
-                $(function () {
-                    $('#datetimepicker').datetimepicker();
-                    $('#datetimepicker').data('DateTimePicker').locale('sr').format('DD.MM.Y. HH:mm');
-                });
-            </script>
+    {!!Form::open(['files'=>true, 'class'=>'form-horizontal'])!!}
+        <h1 class="col-sm-12">Dodaj objavu</h1>
+        <div class="col-sm-4">
+            <img id="naslovnaFoto" alt="Naslovna fotografija" src="/img/default/foto-objave.jpg" onclick="unesiFoto()">
+            {!!Form::file('foto',['onchange'=>'prikaziFoto(this)','style'=>'display:none'])!!}
         </div>
-        <div id="test"></div>
-        {!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['type'=>'submit','class'=>'btn btn-primary'])!!}
+        <div class="col-sm-8">{!!Form::text('naslov',null,['class'=>'form-control col-sm-6','placeholder'=>'Naslov'])!!}</div>
+        <div class="col-sm-8 mt20">{!!Form::text('datum',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Datum događaja'])!!}</div>
+        <div class="col-sm-8 mt20">{!!Form::checkbox('prioritet',1,null,['class'=>''])!!} Prikaži na slajderu</div>
+
+        <div class="col-sm-8 mt20">
+            <span class="btn btn-c btn-file">
+                <i class="glyphicon glyphicon-cloud-upload"></i> Приложи додатке
+                {!!Form::file('dodaci[]',['class'=>'','multiple','onchange'=>'prikaziDodatke(this);'])!!}
+            </span>
+            <p><ul id="izabraniDodaci"></ul></p>
+        </div>
+        <div class="col-sm-8 mt20">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
+        <div class="col-sm-12 mt20">{!!Form::textarea('sadrzaj',null,['class'=>'','placeholder'=>'Sadržaj'])!!}</div>
+
     {!!Form::close()!!}
 @endsection
