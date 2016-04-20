@@ -28,7 +28,7 @@ class KreiranjeBaze extends Migration
             $table->string('slug',250);
             $table->string('foto',250)->nullable();
             $table->text('sadrzaj')->nullable();
-            $table->string('dodaci',250);
+            $table->text('dodaci');
             $table->timestamp('datum')->nullable();
             $table->tinyInteger('prioritet')->default(0);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

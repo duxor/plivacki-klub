@@ -77,7 +77,7 @@ class AdministracijaController extends Controller{
         return view('admin.dodaj-objavu')
             ->with('objava',$editMsg?$konacniPodaci:null)
             ->with('uspesnoDodavanje',$editMsg?$editMsg:'Uspešno ste izvršili dodavanje nove objave.')
-            ->with('slugEdit',$konacniPodaci['slug']==$_slug?0:1);
+            ->with('slugEdit',$_slug?($konacniPodaci['slug']==$_slug?0:1):0);
     }
     public function getObjava($slug){
         return view('admin.dodaj-objavu')->with('objava',Objava::where('slug',$slug)->get()->first());
