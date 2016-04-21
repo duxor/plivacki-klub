@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul id="linkovi"  class="nav navbar-nav">
                     <li class="active1"><a href="#">Početna </a></li>
-                    <li ><a href="#">O nama</a></li>
+                    <li ><a href="o-nama">O nama</a></li>
                     <li><a href="vizija-kluba">Vizija</a></li>
                     <li  class=" dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Takmičenja <span class="caret"></span></a>

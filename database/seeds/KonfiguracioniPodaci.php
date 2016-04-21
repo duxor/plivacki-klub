@@ -14,6 +14,6 @@ class KonfiguracioniPodaci extends Seeder
     public function run()
     {
         Korisnici::insert(['ime'=>'admin','username'=>'admin','password'=>bcrypt('admin'),'email'=>'admin@gmail.com']);
-        Objava::insert(['naslov'=>'o nama','slug'=>'o-nama']);
+        Objava::insert(['naslov'=>'O nama','slug'=>'o-nama']);
     }
 }
