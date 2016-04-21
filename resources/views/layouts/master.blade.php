@@ -63,5 +63,43 @@
     </nav>
 
     @yield('body')
+
+    <footer  style="background-image: url('img/footer.png')" >
+        <br/><br/>
+        <div class="row">
+            <div class="col-md-2">
+                <ul class="footer_link" style="list-style-type: none">
+                    <li class="active1"><a href="#">Početna </a></li>
+                    <li ><a href="#">O nama</a></li>
+                    <li><a href="#">Vizija</a></li>
+                    <li><a href="#">Takmičari</a></li>
+                    <li><a href="#">Rekordi</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <ul class="footer_link">
+                    <li><a href="#">Kalendar</a></li>
+                    <li><a href="#">Rezultati</a></li>
+                    <li><a href="#">Galerija</a></li>
+                    <li><a href="#">Norme</a></li>
+                </ul>
+            </div>
+            <div style="color: #ffffff; margin-left: 40px;" class="col-md-2">
+                <div>Klub dubočica</div>
+                <div>Stojana LJuvića 23</div>
+                <div>Leskovac</div><br/>
+                <div>Pera Kojot</div>
+                <div>066/555/666/</div>
+                <div>email: asdf@gmail.com</div>
+            </div>
+            <div class="col-md-2">
+                <ul class="nav navbar-nav navbar-right" >
+                    <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
+                    <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
+                    <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>
+                </ul>
+            </div>
+        </div><br/><br/>
+    </footer>
 </body>
 </html>
