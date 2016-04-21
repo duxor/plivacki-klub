@@ -29,6 +29,7 @@ Route::get('/vizija-kluba',function(){
 
 Route::get('/{slug}',function($slug){
     return view('objava')
-        ->with('objava', Objava::dajObjavu($slug));
+        ->with('objava', Objava::dajObjavu($slug))
+        ->with('admin',Auth::check());
 });
 
