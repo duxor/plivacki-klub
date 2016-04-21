@@ -64,10 +64,10 @@
 
     @yield('body')
 
-    <footer  style="background-image: url('img/footer.png')" >
+    <footer  style="background-image: url('img/footer.png'); background-color: #003748;" >
         <br/><br/>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-sm-3 col-xs-3">
                 <ul class="footer_link" style="list-style-type: none">
                     <li class="active1"><a href="#">Početna </a></li>
                     <li ><a href="#">O nama</a></li>
@@ -76,7 +76,7 @@
                     <li><a href="#">Rekordi</a></li>
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-sm-3 col-xs-3">
                 <ul class="footer_link">
                     <li><a href="#">Kalendar</a></li>
                     <li><a href="#">Rezultati</a></li>
@@ -84,16 +84,18 @@
                     <li><a href="#">Norme</a></li>
                 </ul>
             </div>
-            <div style="color: #ffffff; margin-left: 40px;" class="col-md-2">
-                <div>Klub dubočica</div>
-                <div>Stojana LJuvića 23</div>
-                <div>Leskovac</div><br/>
-                <div>Pera Kojot</div>
-                <div>066/555/666/</div>
-                <div>email: asdf@gmail.com</div>
+            <div  class="col-sm-2 col-xs-3">
+                <ul class="footer_link">
+                    <li>Klub dubočica</li>
+                    <li>Stojana LJuvića 23</li>
+                    <li>Leskovac</li><br/>
+                    <li>Pera Kojot</li>
+                    <li>066/555/666/</li>
+                    <li>email: asdf@gmail.com</li>
+                </ul>
             </div>
-            <div class="col-md-2">
-                <ul class="nav navbar-nav navbar-right" >
+            <div class="col-sm-4 col-xs-3">
+                <ul style="margin-left: 40px;" class="nav navbar-nav navbar-right footer_links" >
                     <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
                     <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
                     <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>

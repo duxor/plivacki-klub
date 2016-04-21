@@ -6,7 +6,7 @@
      max-height: 33px;
 }
 .twiter{
-    background: url('/img/twiter-hover.png') 0 0 no-repeat;
+    background: url('/img/twitter-hover.png') 0 0 no-repeat;
 }
 .twiter:hover{
     content:url("/img/twitter-hover.png");
@@ -55,6 +55,11 @@
 .footer_link{
     list-style-type: none;
 }
+.footer_link li{
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
 .footer_link a{
     color: white;
     font-size: 18px;
@@ -62,5 +67,9 @@
 }
 .footer_link a:hover{
     color:#E9C126;
-    text-decoration: none;
+    font-size: 18px;
+}
+.footer_links li a:hover{
+    color:#E9C126;
+    background-color: rgba(1, 17, 19, 0);
 }
