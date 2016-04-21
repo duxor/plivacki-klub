@@ -6,7 +6,7 @@
 </style>
 <div class="container">
     <h1 class="col-xs-10">{{$objava->naslov}}</h1>
-    @if(isset($admin))
+    @if($admin)
         <div class="col-xs-1">
             <a href="/administracija/objava/{{$objava->slug}}" class="btn btn-lg btn-default atr">
                 <i class="glyphicon glyphicon-pencil"></i>

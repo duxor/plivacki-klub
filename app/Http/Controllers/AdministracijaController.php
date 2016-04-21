@@ -8,7 +8,7 @@ use App\Objava;
 class AdministracijaController extends Controller{
     private $imgFolder='img/objava';
     public function __construct(){
-        
+        $this->middleware('auth');
     }
     public function getIndex(){
         return view('admin.index');
