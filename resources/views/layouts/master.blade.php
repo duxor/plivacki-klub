@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <a class="navbar-brand" href="/"><img  id="logo" src="img/logo.png"/></a>
                 <ul id="linkovi"  class="nav navbar-nav">
-                    <li class="active1"><a href="#">Početna </a></li>
+                    <li class="active1"><a href="/">Početna </a></li>
                     <li ><a href="/o-nama">O nama</a></li>
                     <li><a href="vizija-kluba">Vizija</a></li>
                     <li  class=" dropdown">

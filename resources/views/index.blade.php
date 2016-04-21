@@ -171,52 +171,6 @@
         </div>
         @endforeach
 {{-- PRIKAZ-OBJAVA START::--}}
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="row">
-                    <a class="pull-left" href="#" target="_parent">
-                        <img style="width: 100%;" alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg">
-                    </a>
-                    <ul style="position: absolute; margin-right: 0px; width: 100%; background-color: #080808;top:0; right: 0; opacity: 0.6; ">
-                        <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
-                        <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
-                        <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-10">
-                <h2  class="media-heading">
-                    <a style="color: #E9C126;" href="#">Naslov2</a>
-                </h2>
-                <p style="color: #00A3D8; font-size: 16px;" >
-                    alsdfj aasdl ačsdflka ačsdlk asdl ačld ačsdf časdlf časd fčasldfk ačsdf časdf časd fčasldf časd fčalsdf č
-                    ačsdlfk asčd asldkf ačsdfk a sdčalsd fč ačsldkf pčpasldfk čas dčflaskdf l ... >
-                </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="row">
-                    <a class="pull-left" href="#" target="_parent">
-                        <img style="width: 100%;" alt="image" class="img-responsive" src="http://images.prd.mris.com/image/V2/1/Yu59d899Ocpyr_RnF0-8qNJX1oYibjwp9TiLy-bZvU9vRJ2iC1zSQgFwW-fTCs6tVkKrj99s7FFm5Ygwl88xIA.jpg">
-                    </a>
-                    <ul style="position: absolute; margin-right: 0px; width: 100%; background-color: #080808;top:0; right: 0; opacity: 0.6; ">
-                        <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
-                        <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
-                        <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-10">
-                <h2  class="media-heading">
-                    <a style="color: #E9C126;" href="#">Naslov3</a>
-                </h2>
-                <p style="color: #00A3D8; font-size: 16px;" >
-                    alsdfj aasdl ačsdflka ačsdlk asdl ačld ačsdf časdlf časd fčasldfk ačsdf časdf časd fčasldf časd fčalsdf č
-                    ačsdlfk asčd asldkf ačsdfk a sdčalsd fč ačsldkf pčpasldfk čas dčflaskdf l ... >
-                </p>
-            </div>
-        </div>
         <div style="text-align: center" class="row">
             <nav >
                 <ul class="pagination">
@@ -239,7 +193,6 @@
             </nav>
         </div>
     </div>
-
     {{-- OBAVEŠTENJE END--}}
     <div class="col-sm-2">{{-- SPONZORI START--}}
         <div class="panel panel-default">
