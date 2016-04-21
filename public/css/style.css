@@ -3,7 +3,8 @@
     border: none;
 }
  #logo{
-     max-height: 33px;
+     max-height: 50px;
+     margin-top: 5px;
 }
 .twiter{
     background: url('/img/twitter-hover.png') 0 0 no-repeat;
