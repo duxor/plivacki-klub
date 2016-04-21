@@ -27,7 +27,7 @@
                 <ul id="linkovi" class="nav navbar-nav">
                     <li><a href="/administracija">Administracija</a></li>
                     <li><a href="/administracija/dodaj-objavu">Dodaj objavu</a></li>
-                    <li><a href="#"></a></li>
+                    <li><a href="/administracija/objava/o-nama">Izmeni o nama</a></li>
                     <li><a href="/odjava">Odjava</a></li>
                 </ul>
             </div>

@@ -92,7 +92,17 @@
                 @else src="/img/default/foto-objave.jpg" @endif onclick="unesiFoto()">
                 {!!Form::file('foto',['onchange'=>'prikaziFoto(this)','style'=>'display:none'])!!}
             </div>
-            <div class="col-sm-8">{!!Form::text('naslov',null,['class'=>'form-control col-sm-6','placeholder'=>'Naslov'])!!}</div>
+            <div class="col-sm-8">
+                @if(isset($objava['slug']))
+                    @if($objava['slug'])
+                        {{$objava['naslov']}}
+                    @else
+                        {!!Form::text('naslov',null,['class'=>'form-control col-sm-6','placeholder'=>'Naslov'])!!}
+                    @endif
+                @else
+                    {!!Form::text('naslov',null,['class'=>'form-control col-sm-6','placeholder'=>'Naslov'])!!}
+                @endif
+            </div>
             <div class="col-sm-8 mt20">{!!Form::text('datum',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Datum događaja'])!!}</div>
             <div class="col-sm-8 mt20">{!!Form::checkbox('prioritet',1,null,['class'=>''])!!} Prikaži na slajderu</div>
 

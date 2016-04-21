@@ -29,7 +29,6 @@ class AdministracijaController extends Controller{
                 $foto='/'.$this->imgFolder.'/'.$foto;
             }else $foto=null;
         else $foto=null;
-
         // NASLOVNA-FOTOGRAFIJA END::
         // DODACI START::
         $dodaci=[];
@@ -44,16 +43,18 @@ class AdministracijaController extends Controller{
                     );
                 }
         // DODACI END::
-        // SLUG-KREATOR START::
-        $slug=null;
-        $tmp=strtolower(preg_replace("/[^a-zA-Z0-9]+/", "-", $podaci['naslov']));
-        if($tmp[strlen($tmp)-1]=='-') $tmp=substr($tmp,0,strlen($tmp)-1);
-        $i=0;
-        while(!$slug){
-            if(!Objava::where('slug',$tmp.($i==0?'':'-'.$i))->exists()) $slug=$tmp.($i==0?'':'-'.$i);
-            $i++;
+        if($podaci->exists('naslov')) {
+            // SLUG-KREATOR START::
+            $slug = null;
+            $tmp = strtolower(preg_replace("/[^a-zA-Z0-9]+/", "-", $podaci['naslov']));
+            if ($tmp[strlen($tmp) - 1] == '-') $tmp = substr($tmp, 0, strlen($tmp) - 1);
+            $i = 0;
+            while (!$slug) {
+                if (!Objava::where('slug', $tmp . ($i == 0 ? '' : '-' . $i))->exists()) $slug = $tmp . ($i == 0 ? '' : '-' . $i);
+                $i++;
+            }
+            // SLUG-KREATOR END::
         }
-        // SLUG-KREATOR END::
         $konacniPodaci=$podaci->except(['_token','dodaci','foto','datum']);
         if($editMsg){
             $stariPodaci=Objava::where('slug',$_slug)->get(['foto','dodaci','datum','slug','naslov'])->first();
