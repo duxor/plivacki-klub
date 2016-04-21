@@ -10,7 +10,7 @@ class Objava extends Model{
     public static $readMore='<p><hr></p>';
     public static $numSlides=5;
     public static function getObjaveSkraceno(){
-        $objave=Objava::orderBy('id','desc')->get(['naslov','slug','foto','sadrzaj']);
+        $objave=Objava::where('slug','<>','o-nama')->orderBy('id','desc')->get(['naslov','slug','foto','sadrzaj']);
         foreach($objave as $i=>$objava){
             $pozicija=strpos($objava->sadrzaj,Objava::$readMore);
             if($pozicija>0) $objave[$i]['sadrzaj']=substr($objava->sadrzaj,0,$pozicija);
@@ -23,7 +23,7 @@ class Objava extends Model{
 
     public static function dajObjavu($slug){
         $objava=Objava::where('slug',$slug)->get()->first();
-        $objava->datum=date('d.m.Y. H:i', strtotime($objava->datum));
+        $objava->datum=$objava->datum?date('d.m.Y. H:i', strtotime($objava->datum)):null;
         $objava->dodaci=json_decode($objava->dodaci);
         return $objava;
     }

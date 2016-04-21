@@ -96,6 +96,7 @@
                 @if(isset($objava['slug']))
                     @if($objava['slug'])
                         {{$objava['naslov']}}
+                        {!!Form::hidden('naslov',$objava['naslov'])!!}
                     @else
                         {!!Form::text('naslov',null,['class'=>'form-control col-sm-6','placeholder'=>'Naslov'])!!}
                     @endif
