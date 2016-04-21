@@ -12,6 +12,7 @@
                 <i class="glyphicon glyphicon-pencil"></i>
             </a>
         </div>
+        <br clear="all">
     @endif
     <p>{{$objava->datum}}</p>
     <div class="col-xs-4 pl0"><img class="img" src="{{$objava->foto}}" alt="{{$objava->naslov}}"></div>
