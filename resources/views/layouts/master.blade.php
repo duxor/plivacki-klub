@@ -26,14 +26,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img  id="logo" src="img/logo.png"/></a>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand" href="/"><img  id="logo" src="img/logo.png"/></a>
                 <ul id="linkovi"  class="nav navbar-nav">
                     <li class="active1"><a href="#">Početna </a></li>
-                    <li ><a href="o-nama">O nama</a></li>
+                    <li ><a href="/o-nama">O nama</a></li>
                     <li><a href="vizija-kluba">Vizija</a></li>
                     <li  class=" dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Takmičenja <span class="caret"></span></a>
@@ -43,20 +44,18 @@
                             <li><a href="#">Rezultati</a></li>
                         </ul>
                     </li>
-
                     <li><a href="#">Kalendar</a></li>
-
                     <li><a href="#">Galerija</a></li>
                     <li><a href="#">Norme</a></li>
-                    <li><a href="/prijava">Prijava</a></li>
-                    {{--<li><a href="/odjava">Odjava</a></li>--}}
+                    @if (!Auth::check())
+                        <li><a href="/prijava">Prijava</a></li>
+                        @else<li><a href="/odjava">Odjava</a></li>
+                    @endif
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right" >
-                    <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
-                    <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
-                    <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>
-                </ul>
+
+
+
 
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
