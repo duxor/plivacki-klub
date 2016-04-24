@@ -79,7 +79,7 @@
             $(function () {
                 $('textarea').trumbowyg();
                 $('#datetimepicker').datetimepicker();
-                $('#datetimepicker').data('DateTimePicker').locale('sr').format('DD.MM.Y. HH:mm');
+                $('#datetimepicker').data('DateTimePicker').locale('sr').format('DD.MM.Y. HH:mm:ss');
                 $('[data-toggle=tooltip]').tooltip();
                 @if(isset($objava['datum'])) $('#datetimepicker').val('{{$objava['datum']}}'); @endif
             });

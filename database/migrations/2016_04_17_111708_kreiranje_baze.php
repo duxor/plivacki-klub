@@ -34,6 +34,15 @@ class KreiranjeBaze extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();;
         });
+        Schema::create('rezultati',function(Blueprint $table){
+            $table->increments('id');
+            $table->string('takmicenje_naziv', 128);
+            $table->string('mesto',45);
+            $table->dateTime('datum')->nullable();
+            $table->string('klupski_rezultati',128);
+            $table->string('sumarni_rezultati',128);
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+        });
     }
 
  
@@ -42,5 +51,6 @@ class KreiranjeBaze extends Migration
         Schema::drop('korisnici');
         Schema::drop('password_resets');
         Schema::drop('objava');
+        Schema::drop('rezultati');
     }
 }
