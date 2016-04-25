@@ -90,6 +90,8 @@ if(!isset($slugEdit)) $slugEdit=null;
         </script>
 
         {!!Form::model($rezultati,['files'=>true, 'class'=>'form-horizontal'])!!}
+        {!!Form::hidden("update_rezultati",false)!!}
+        {!!Form::hidden("rezultati_id",false)!!}
         <h1 class="col-sm-12">Dodaj rezultate</h1>
         <div class="col-sm-8">
             @if(isset($rezultati['slug']))
@@ -194,8 +196,8 @@ if(!isset($slugEdit)) $slugEdit=null;
             $('#sum_rez').append('<li>'+encodeURIComponent(sumarni_rezultati)+'</li>')
             $("#btn_sacuvaj").html("<span class='glyphicon glyphicon-pencil'></span> Ažuriraj podatke");
 
-            $('input[name=update_nastavnik]').val(1);
-            $('input[name=nastavnik_id]').val(id);
+            $('input[name=update_rezultati]').val(1);
+            $('input[name=rezultati_id]').val(id);
             $('[data-toggle=tooltip]').tooltip();
         }
         function emptyfunction(){
@@ -203,7 +205,6 @@ if(!isset($slugEdit)) $slugEdit=null;
             $('#mesto').empty();
             $('datetimepicker').empty();
             $('#klupski_rez').empty();
-
             $('#sum_rez').empty();
 
         }
