@@ -19,7 +19,7 @@ class KonfiguracioniPodaci extends Seeder
         Korisnici::insert(['ime'=>'admin','username'=>'admin','password'=>bcrypt('admin'),'email'=>'admin@gmail.com']);
         Objava::insert(['naslov'=>'O nama','slug'=>'o-nama']);
         Stil::insert(['naziv'=>'50m Kraul','naziv'=>'100m Kraul']);
-        Takmicar::insert(['ime'=>'Aleksandar','prezime'=>'Jovic', 'datum_rodjenja'=>'2016-04-23','registracioni_broj'=>'21651as6das5d16as']);
+        Takmicar::insert(['ime'=>'Aleksandar','prezime'=>'Jovic','slug'=>'jovic-aleksandar-0', 'datum_rodjenja'=>'2016-04-23','registracioni_broj'=>'21651as6das5d16as']);
         Rekord::insert(['takmicar_id'=>1,'stil_id'=>1, 'najbolje_vreme' => '15:30:12' ]);
     }
 }

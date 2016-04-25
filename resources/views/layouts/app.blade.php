@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    {!!Html::style('/datepicker/datetimepicker.css')!!}
+    {!!Html::script('/datepicker/moment.js')!!}
+    {!!Html::script('/datepicker/datetimepicker.js')!!}
     <title>Laravel</title>
 
     <!-- Fonts -->

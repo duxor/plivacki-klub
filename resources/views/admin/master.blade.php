@@ -30,6 +30,7 @@
                     <li><a href="/administracija/objava/o-nama">Izmeni o nama</a></li>
                     <li><a href="/administracija/dodaj-rezultate">Dodaj rezultate</a></li>
                     <li><a href="/odjava">Odjava</a></li>
+                    <li><a href="/takmicari/dodaj-takmicara">Dodaj takmičara</a></li>
                 </ul>
             </div>
         </div>
@@ -37,6 +38,5 @@
     
     <div class="container">@yield('container')</div>
     @yield('body')
-
 </body>
 </html>

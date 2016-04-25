@@ -48,6 +48,7 @@ class KreiranjeBaze extends Migration
             $table->bigIncrements('id');
             $table->string('ime',45);
             $table->string('prezime',45);
+            $table->string('slug',250);
             $table->timestamp('datum_rodjenja');
             $table->string('foto',250)->nullable();
             $table->string('registracioni_broj',45);
