@@ -79,7 +79,8 @@ class TakmicariController extends Controller
     //Pikaz forme za azuriranje takmicara
     public function getTakmicar($slug){
        $takmicar = Takmicar::where('slug',$slug)->first();
-      return view('takmicari.dodaj-takmicara')->with('takmicar',$takmicar);
+        $stilovi = Stil::lists('naziv','id');
+      return view('takmicari.dodaj-takmicara')->with('takmicar',$takmicar)->with('stilovi',$stilovi);
     }
     public function postTakmicar(DodajTakmicara $request, $slug){
        return $this->postDodajTakmicara($request, $slug);

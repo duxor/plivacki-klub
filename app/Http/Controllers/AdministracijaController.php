@@ -97,42 +97,44 @@ class AdministracijaController extends Controller{
     public function postDodajRezultate(DodajRezultat $podaci, $editMsg=null,$id=null){
         if(!is_dir($this->rezultatiFolder)) mkdir($this->rezultatiFolder);
 
-            if($podaci->exists('klupski_rezultati'))
-                if($podaci['klupski_rezultati']->isValid()){
-                    $klupski_rezultati=round(microtime(true)*1000).'_'.explode('.',$podaci['klupski_rezultati']->getClientOriginalName())[0].'.'.$podaci['klupski_rezultati']->getClientOriginalExtension();
-                    $podaci['klupski_rezultati']->move(
-                        $this->rezultatiFolder,
-                        $klupski_rezultati
-                    );
-                    $klupski_rezultati='/'.$this->rezultatiFolder.'/'.$klupski_rezultati;
-                }else $klupski_rezultati=null;
-            else $klupski_rezultati=null;
-            /*---------------------------------------*/
-            if($podaci->exists('sumarni_rezultati'))
-                if($podaci['sumarni_rezultati']->isValid()){
-                    $sumarni_rezultati=round(microtime(true)*1000).'_'.explode('.',$podaci['sumarni_rezultati']->getClientOriginalName())[0].'.'.$podaci['sumarni_rezultati']->getClientOriginalExtension();
-                    $podaci['sumarni_rezultati']->move(
-                        $this->rezultatiFolder,
-                        $sumarni_rezultati
-                    );
-                    $sumarni_rezultati='/'.$this->rezultatiFolder.'/'.$sumarni_rezultati;
-                }else $sumarni_rezultati=null;
-            else $sumarni_rezultati=null;
+        if($podaci->exists('klupski_rezultati'))
+            if($podaci['klupski_rezultati']->isValid()){
+                $klupski_rezultati=round(microtime(true)*1000).'_'.explode('.',$podaci['klupski_rezultati']->getClientOriginalName())[0].'.'.$podaci['klupski_rezultati']->getClientOriginalExtension();
+                $podaci['klupski_rezultati']->move(
+                    $this->rezultatiFolder,
+                    $klupski_rezultati
+                );
+                $klupski_rezultati='/'.$this->rezultatiFolder.'/'.$klupski_rezultati;
+            }else $klupski_rezultati=null;
+        else $klupski_rezultati=null;
+        /*---------------------------------------*/
+        if($podaci->exists('sumarni_rezultati'))
+            if($podaci['sumarni_rezultati']->isValid()){
+                $sumarni_rezultati=round(microtime(true)*1000).'_'.explode('.',$podaci['sumarni_rezultati']->getClientOriginalName())[0].'.'.$podaci['sumarni_rezultati']->getClientOriginalExtension();
+                $podaci['sumarni_rezultati']->move(
+                    $this->rezultatiFolder,
+                    $sumarni_rezultati
+                );
+                $sumarni_rezultati='/'.$this->rezultatiFolder.'/'.$sumarni_rezultati;
+            }else $sumarni_rezultati=null;
+        else $sumarni_rezultati=null;
 
-            $konacniPodaci=$podaci->except(['_token','update_rezultati','rezultati_id']);
-            $konacniPodaci['sumarni_rezultati']=$podaci->get('sumarni_rezultati');
-            $konacniPodaci['klupski_rezultati']=$klupski_rezultati;
-            $konacniPodaci['sumarni_rezultati']=$sumarni_rezultati;
-            $konacniPodaci['datum']=date('Y-m-d H:i',strtotime($podaci->get('datum')));
-            $konacniPodaci['mesto']=$podaci->get('mesto');
+        $konacniPodaci=$podaci->except(['_token']);
+        $konacniPodaci['sumarni_rezultati']=$podaci->get('sumarni_rezultati');
+        $konacniPodaci['klupski_rezultati']=$klupski_rezultati;
+        $konacniPodaci['sumarni_rezultati']=$sumarni_rezultati;
+        $konacniPodaci['datum']=date('Y-m-d H:i',strtotime($podaci->get('datum')));
+        $konacniPodaci['mesto']=$podaci->get('mesto');
 
-        if($podaci['update_rezultati']==1){
-            $id=$podaci->get('rezultati_id');
-            Rezultati::where('id',$id)->update($konacniPodaci);
-        }else  Rezultati::insert([$konacniPodaci]);
 
+
+        if($editMsg)
+           Rezultati::where('id',$id)->update($konacniPodaci);
+        else
+            Rezultati::insert([$konacniPodaci]);
         return view('admin.dodaj-rezultate')
-            ->with('uspesnoDodavanje',$podaci['update_rezultati']?'Uspešno ste izvršili azuriranje!':'Uspešno ste izvršili dodavanje novog rezultata!');
+            ->with('uspesnoDodavanje',$editMsg?$editMsg:'Uspešno ste izvršili dodavanje novog rezultata.')
+            ->with('rezultati',$editMsg?$konacniPodaci:null);
     }
     public function postUcitajRezultate(){
         return json_encode(Rezultati::orderBy('created_at','desc')->get()->toArray());
