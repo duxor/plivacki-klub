@@ -81,27 +81,16 @@ if(!isset($slugEdit)) $slugEdit=null;
             .mt20{margin-top: 20px}
         </style>
         <script>
-
             $(function () {
                 $('#datetimepicker').datetimepicker();
                 $('#datetimepicker').data('DateTimePicker').locale('sr').format('YYYY-MM-DD HH:mm:SS');
                 @if(isset($rezultati['datum'])) $('#datetimepicker').val('{{$rezultati['datum']}}'); @endif
             });
         </script>
-
         {!!Form::model($rezultati,['files'=>true, 'class'=>'form-horizontal'])!!}
         <h1 class="col-sm-12">Dodaj rezultate</h1>
         <div class="col-sm-8">
-            @if(isset($rezultati['slug']))
-                @if($rezultati['slug'])
-                    {{$rezultati['naslov']}}
-                    {!!Form::hidden('naslov',$rezultati['naslov'])!!}
-                @else
-                    {!!Form::text('takmicenje_naziv',null,['class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
-                @endif
-            @else
-                {!!Form::text('takmicenje_naziv',null,['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
-            @endif
+            {!!Form::text('takmicenje_naziv',null,['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
         </div>
         <div class="col-sm-8 mt20">
             {!!Form::text('mesto',null,['id'=>'mesto','class'=>'form-control col-sm-6','placeholder'=>'Mesto takmičenja'])!!}
