@@ -177,9 +177,7 @@ if(!isset($slugEdit)) $slugEdit=null;
             $('#takmicenje_naziv').val(takmicenje_naziv);
             $('#mesto').val(mesto);
             $('datetimepicker'). val(datum);
-            $('#klupski_rez').val(klupski_rezultati);
             $('#klupski_rez').append('<li>'+encodeURIComponent(klupski_rezultati)+'</li>');
-            $('#sum_rez').val(sumarni_rezultati);
             $('#sum_rez').append('<li>'+encodeURIComponent(sumarni_rezultati)+'</li>')
             $("#btn_sacuvaj").html("<span class='glyphicon glyphicon-pencil'></span> Ažuriraj podatke");
 

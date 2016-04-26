@@ -41,7 +41,7 @@
                         <ul id="linkovi_dropdown" style="background-color: #003748" class=" dropdown-menu">
                             <li><a href="#">Takmičari</a></li>
                             <li><a href="#">Rekordi</a></li>
-                            <li><a href="#">Rezultati</a></li>
+                            <li><a href="/rezultati">Rezultati</a></li>
                         </ul>
                     </li>
                     <li><a href="/kalendar">Kalendar</a></li>

@@ -22,8 +22,12 @@ Route::get('/', function () {
 
 Route::auth();
 
+
+
+Route::controller('/rezultati','RezultatiController');
 Route::controller('/takmicari','TakmicariController');
 Route::controller('/administracija','AdministracijaController');
+
 Route::get('/vizija-kluba',function(){
     return view('vizija-kluba');
 });
