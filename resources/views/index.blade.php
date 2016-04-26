@@ -37,7 +37,7 @@
 
             @foreach($slajder as $slajd)
                 <div data-p="112.50" style="display: none;">
-                    <img data-u="image" src="{{$slajd->foto}}" />
+                    <img data-u="image" src="{{$slajd->foto?$slajd->foto:'/img/default/foto-objave.jpg'}}" />
                     <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
                         <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="/{{$slajd->slug}}">
                             <h2>{{$slajd->naslov}}</h2>
@@ -146,7 +146,7 @@
             <div class="col-sm-2">
                 <div class="row">
                     <a class="pull-left" href="/{{$objava->slug}}" target="_parent">
-                        <img style="width: 100%;" alt="image" class="img-responsive" src="{{$objava->foto}}">
+                        <img style="width: 100%;" alt="image" class="img-responsive" src="{{$objava->foto?$objava->foto:'/img/default/foto-objave.jpg'}}">
                     </a>
                     <ul style="position: absolute; margin-right: 0px; width: 100%; background-color: #080808;top:0; right: 0; opacity: 0.6; ">
                         <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>

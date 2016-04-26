@@ -5,7 +5,7 @@
     .pl0{padding-left: 0px}
 </style>
 <div class="container">
-    <h1 class="col-xs-10">{{$objava->naslov}}</h1>
+    <h1 class="col-xs-10 pl0">{{$objava->naslov}}</h1>
     @if($admin)
         <div class="col-xs-1">
             <a href="/administracija/objava/{{$objava->slug}}" class="btn btn-lg btn-default atr">
@@ -15,7 +15,7 @@
         <br clear="all">
     @endif
     <p>{{$objava->datum}}</p>
-    <div class="col-xs-4 pl0"><img class="img" src="{{$objava->foto}}" alt="{{$objava->naslov}}"></div>
+    <div class="col-xs-4 pl0"><img class="img" src="{{$objava->foto?$objava->foto:'/img/default/foto-objave.jpg'}}" alt="{{$objava->naslov}}"></div>
     {!!$objava->sadrzaj!!}
     @if($objava->dodaci)
         <p>Dodaci:</p>

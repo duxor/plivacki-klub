@@ -28,13 +28,14 @@ class KreiranjeBaze extends Migration
             $table->string('slug',250);
             $table->string('foto',250)->nullable();
             $table->text('sadrzaj')->nullable();
-            $table->text('dodaci');
+            $table->text('dodaci')->nullable();
+            $table->string('mesto',250)->nullable();
+            $table->string('galerija',250)->nullable();
             $table->timestamp('datum')->nullable();
             $table->tinyInteger('prioritet')->default(0);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->nullable();;
+            $table->timestamp('updated_at')->nullable();
         });
-
         Schema::create('rezultati',function(Blueprint $table){
             $table->increments('id');
             $table->string('takmicenje_naziv', 128);
@@ -56,15 +57,12 @@ class KreiranjeBaze extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();;
         });
-
-
         Schema::create('stil', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('naziv', 45)->unique();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();;
         });
-
         Schema::create('rekord', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('takmicar_id');
@@ -83,8 +81,8 @@ class KreiranjeBaze extends Migration
         Schema::drop('password_resets');
         Schema::drop('objava');
         Schema::drop('rezultati');
+        Schema::drop('rekord');
         Schema::drop('takmicar');
         Schema::drop('stil');
-        Schema::drop('rekord');
     }
 }

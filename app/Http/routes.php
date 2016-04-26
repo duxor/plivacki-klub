@@ -27,6 +27,14 @@ Route::controller('/administracija','AdministracijaController');
 Route::get('/vizija-kluba',function(){
     return view('vizija-kluba');
 });
+Route::get('/kalendar',function(){
+    $rezultat=Objava::getKalendar();
+    return view('kalendar')->with('takmicenja',$rezultat['takmicenja'])->with('kalendar',$rezultat['kalendar'])
+        ->with('admin',Auth::check());
+});
+Route::get('/galerija',function(){
+    return view('galerije')->with('galerije',Objava::getGalerije());
+});
 
 Route::get('/{slug}',function($slug){
     return view('objava')

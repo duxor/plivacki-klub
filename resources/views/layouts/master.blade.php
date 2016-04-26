@@ -44,8 +44,8 @@
                             <li><a href="#">Rezultati</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Kalendar</a></li>
-                    <li><a href="#">Galerija</a></li>
+                    <li><a href="/kalendar">Kalendar</a></li>
+                    <li><a href="/galerija">Galerija</a></li>
                     <li><a href="#">Norme</a></li>
                     @if (!Auth::check())
                         <li><a href="/prijava">Prijava</a></li>
@@ -77,9 +77,9 @@
             </div>
             <div class="col-sm-3 col-xs-3">
                 <ul class="footer_link">
-                    <li><a href="#">Kalendar</a></li>
+                    <li><a href="/kalendar">Kalendar</a></li>
                     <li><a href="#">Rezultati</a></li>
-                    <li><a href="#">Galerija</a></li>
+                    <li><a href="/galerija">Galerija</a></li>
                     <li><a href="#">Norme</a></li>
                 </ul>
             </div>
