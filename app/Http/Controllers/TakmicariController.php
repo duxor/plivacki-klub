@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\DodajTakmicara;
+use App\Rekord;
 use App\Stil;
 use App\Takmicar;
 use Illuminate\Http\Request;
@@ -95,7 +96,7 @@ class TakmicariController extends Controller
     {
         if ($request->ajax()) {
             return response()->json([
-                "result" => $request->vreme
+                "result" => $request->id_takmicara,
             ]);
         }else{
            

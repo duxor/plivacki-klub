@@ -50,7 +50,10 @@
 
 
         $( document ).ready(function() {
-            @if($takmicar){
+
+
+
+          @if($takmicar){
                 $('#prikazi_formu').append(
                         '{!!Form::open([ "id"=>"forma_podaci"])!!}' +
                         '<div class="col-sm-4 mt20">{!! Form::label("stil","Stil*", ["data-toggle"=>"tooltip","title"=>"Polje je obavezno za unos"]) !!}</div>' +
@@ -58,21 +61,23 @@
                         '<div class="col-sm-4 mt20">{!! Form::label("vreme","Vreme*", ["data-toggle"=>"tooltip","title"=>"Polje je obavezno za unos"]) !!}</div>' +
                         '<div class="col-sm-8 mt20">{!!Form::text("vreme",null,["class"=>"form-control","id"=>"vreme_id"])!!}</div>' +
                         '{!! Form::close() !!}'+
-                        '<div class="col-sm-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sacuvaj',['class'=>'btn btn-lg btn-primary', 'id'=>'btn'])!!}</div>'
+                        '<div class="col-sm-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',["class"=>"btn btn-lg btn-primary", "id"=>"btn","data-toggle"=>"tooltip"])!!}</div>'
                 )
+
+                $("#btn").click(function() {
+                    var id_takmicara = "{{$takmicar->id}}";
+                    var stil = $('#stil_id').val();
+                    var vreme = $('#vreme_id').val();
+                    $.post('/takmicari/rekord', {stil: stil, vreme: vreme, id_takmicara: id_takmicara, _token: '{{csrf_token()}}'}, function (data) {
+                        console.log(data);
+                    });
+                });
             }@else{
                     $('#prikazi_poruku').append(
-                             '<div class="alert alert-danger">'+
                              '<strong><h2>Ukolko želite da dodate rekord, morate prvo dodati rakmičara</h2></strong>'+
                             '</div>')
             }@endif
-        });
-        $("#btn").click(function() {
-            var stilp = $('#stil_id').val();
-            var vremep = $('#vreme_id').val();
-            $.post('/takmicari/rekord', {stil: stilp, vreme: vremep, _token: '{{csrf_token()}}'}, function (data) {
-                console.log(data);
-            });
+
 
         });
 
