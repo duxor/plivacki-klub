@@ -29,7 +29,7 @@
                     <li><a href="/administracija/dodaj-objavu">Dodaj objavu</a></li>
                     <li><a href="/administracija/objava/o-nama">Izmeni o nama</a></li>
                     <li><a href="/rezultati/dodaj-rezultate">Dodaj rezultate</a></li>
-                    <li><a href="/administracija/dodaj-norme">Dodaj norme</a></li>
+                    <li><a href="/norme/dodaj-norme">Dodaj norme</a></li>
                     <li><a href="/odjava">Odjava</a></li>
                     <li><a href="/takmicari/dodaj-takmicara">Dodaj takmičara</a></li>
                 </ul>

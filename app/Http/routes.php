@@ -25,6 +25,7 @@ Route::auth();
 
 
 Route::controller('/rezultati','RezultatiController');
+Route::controller('/norme','NormeController');
 Route::controller('/takmicari','TakmicariController');
 Route::controller('/administracija','AdministracijaController');
 

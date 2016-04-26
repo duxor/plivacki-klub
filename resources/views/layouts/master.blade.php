@@ -46,7 +46,7 @@
                     </li>
                     <li><a href="/kalendar">Kalendar</a></li>
                     <li><a href="/galerija">Galerija</a></li>
-                    <li><a href="#">Norme</a></li>
+                    <li><a href="/norme">Norme</a></li>
                     @if (!Auth::check())
                         <li><a href="/prijava">Prijava</a></li>
                         @else<li><a href="/odjava">Odjava</a></li>

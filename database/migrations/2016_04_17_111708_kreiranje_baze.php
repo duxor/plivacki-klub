@@ -44,6 +44,7 @@ class KreiranjeBaze extends Migration
             $table->string('klupski_rezultati',128);
             $table->string('sumarni_rezultati',128);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->nullable();
         });
         Schema::create('takmicar', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -55,7 +56,7 @@ class KreiranjeBaze extends Migration
             $table->string('registracioni_broj',45);
             $table->text('opste_informacije')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->nullable();;
+            $table->timestamp('updated_at')->nullable();
         });
         Schema::create('stil', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -71,7 +72,17 @@ class KreiranjeBaze extends Migration
             $table->foreign('stil_id')->references('id')->on('stil');
             $table->time('najbolje_vreme');
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->nullable();;
+            $table->timestamp('updated_at')->nullable();
+        });
+         Schema::create('norme', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('godiste');
+            $table->tinyInteger('pol');
+            $table->string('disciplina',256);
+            $table->time('vreme');
+            $table->text('norme_informacije')->nullable();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -84,5 +95,6 @@ class KreiranjeBaze extends Migration
         Schema::drop('rekord');
         Schema::drop('takmicar');
         Schema::drop('stil');
+        Schema::drop('norme');
     }
 }
