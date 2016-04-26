@@ -88,6 +88,8 @@ if(!isset($slugEdit)) $slugEdit=null;
             });
         </script>
         {!!Form::model($rezultati,['files'=>true, 'class'=>'form-horizontal'])!!}
+        {!!Form::hidden("update_rezultati",false)!!}
+        {!!Form::hidden("rezultati_id",false)!!}
         <h1 class="col-sm-12">Dodaj rezultate</h1>
         <div class="col-sm-8">
             {!!Form::text('takmicenje_naziv',null,['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
@@ -135,7 +137,7 @@ if(!isset($slugEdit)) $slugEdit=null;
         function ucitajRezultate(){
             $('#lista_predmeta').hide();
             $('#lista_predmeta').html('<div style="text-align:center"><i class="icon-spin5 animate-spin" style="font-size: 100%;margin-top:80px"></i></div>');
-            $.post('/administracija/ucitaj-rezultate',
+            $.post('/rezultati/ucitaj-rezultate',
                     {
                         _token:'{{csrf_token()}}'
                     },
@@ -161,7 +163,7 @@ if(!isset($slugEdit)) $slugEdit=null;
                             '<td><a href="'+rezultati[i]['sumarni_rezultati']+'"><img style="width: 19px; height: 18px;" src="../img/html.png"></a></td>' +
                             '<td>' +
                             '<a href="#" class="btn3d btn btn-xs btn-info" data-toggle="tooltip" title="Ажурирај" onclick="editRezultata(\''+rezultati[i]['id']+'\',\''+rezultati[i]['takmicenje_naziv']+'\',\''+rezultati[i]['mesto']+'\',\''+rezultati[i]['datum']+'\',\''+rezultati[i]['klupski_rezultati']+'\',\''+rezultati[i]['sumarni_rezultati']+'\')"><span style="font-size: 14px;" class="glyphicon glyphicon-pencil"></span></a> &nbsp' +
-                            '<a data-href="/administracija/obrisi-rezultat/'+rezultati[i]['id']+'" class=" btn btn-xs btn-danger" data-toggle="confirmation" data-togglee="tooltip"><span style="" class="glyphicon glyphicon-trash"></span></a>' +
+                            '<a data-href="/rezultati/obrisi-rezultat/'+rezultati[i]['id']+'" class=" btn btn-xs btn-danger" data-toggle="confirmation" data-togglee="tooltip"><span style="" class="glyphicon glyphicon-trash"></span></a>' +
                             '</td>' +
                             '</tr>';
                         }
@@ -181,8 +183,8 @@ if(!isset($slugEdit)) $slugEdit=null;
             $('#sum_rez').append('<li>'+encodeURIComponent(sumarni_rezultati)+'</li>')
             $("#btn_sacuvaj").html("<span class='glyphicon glyphicon-pencil'></span> Ažuriraj podatke");
 
-            $('input[name=update_nastavnik]').val(1);
-            $('input[name=nastavnik_id]').val(id);
+            $('input[name=update_rezultati]').val(1);
+            $('input[name=rezultati_id]').val(id);
             $('[data-toggle=tooltip]').tooltip();
         }
         function emptyfunction(){
