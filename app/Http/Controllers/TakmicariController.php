@@ -9,6 +9,7 @@ use App\Takmicar;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 
 class TakmicariController extends Controller
@@ -91,16 +92,48 @@ class TakmicariController extends Controller
         return "izmeni takimcara";
     }
 
-
-    public function postRekord(Request $request)
+    //Funkcija za prikazivanje rekorda u tabeli
+    public function postRekordi(Request $request)
     {
         if ($request->ajax()) {
-            return response()->json([
-                "result" => $request->id_takmicara,
-            ]);
-        }else{
-           
+            $rekordi = DB::table('rekord')
+                ->join('takmicar', 'rekord.takmicar_id','=','takmicar.id')
+                ->join('stil', 'rekord.stil_id','=','stil.id')
+                ->where('rekord.takmicar_id','=',$request->takmicar_id)
+                ->select('rekord.id as id','stil.naziv as stil','rekord.najbolje_vreme as najbolje_vreme')
+                ->get();
+            return json_encode($rekordi);
+        }
+    }
+
+    //Funkcija za sminanje rekorda
+    public function postRekord(Request $request)
+    {
+         if ($request->ajax()) {
+
+            $rekord = new Rekord();
+            $rekord->takmicar_id = $request->takmicar_id;
+            $rekord->stil_id = $request->stil_id;
+            $rekord->najbolje_vreme = $request->vreme;
+            $rekord->save();
+
+             $rekordi = DB::table('rekord')
+                 ->join('takmicar', 'rekord.takmicar_id','=','takmicar.id')
+                 ->join('stil', 'rekord.stil_id','=','stil.id')
+                 ->where('rekord.takmicar_id','=',$request->takmicar_id)
+                 ->select('rekord.id as id','stil.naziv as stil','rekord.najbolje_vreme as najbolje_vreme')
+                 ->get();
+
+             return json_encode($rekordi);
         }
 
+    }
+
+    //Funkcija za prikazivanje rekorda u tabeli
+    public function postObrisiRekord(Request $request)
+    {
+        if ($request->ajax()) {
+            Rekord::destroy($request->rekord_id);
+        }
     }
 }
