@@ -60,7 +60,7 @@
                         <b>
                             <i class="glyphicon glyphicon-time"></i> {{$takmicenje->datum}}<br>
                             <span><i class="glyphicon glyphicon-map-marker"></i> {{$takmicenje->mesto}}</span>
-                        </b>
+                        </b><br>
                         {!!$takmicenje->sadrzaj!!}
                     </div>
                 </div>

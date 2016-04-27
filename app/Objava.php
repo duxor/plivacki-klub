@@ -37,10 +37,10 @@ class Objava extends Model{
         $test=true; $danasnji=date('Y-m-d');
         $kalendar='{';
         foreach($takmicenja as $k=>$takmicenje){
-            $kalendar .= '"' . date('Y-m-d', strtotime($takmicenje->datum)) . '":{"number": "' . substr($takmicenje->naslov, 0, 30) . '...","badgeClass":"badge-warning","id": "#' . $takmicenje->slug . '","class": "active scrol","aclass":"kalendar-a"},';
+            if(!strstr($kalendar,date('Y-m-d', strtotime($takmicenje->datum)))) $kalendar .= '"' . date('Y-m-d', strtotime($takmicenje->datum)) . '":{"number": "' . substr($takmicenje->naslov, 0, 20) . '...","badgeClass":"badge-warning","id": "#' . $takmicenje->slug . '","class": "active scrol","aclass":"kalendar-a"},';
             if($danasnji==date('Y-m-d', strtotime($takmicenje->datum))) $test=false;
         }
-        $kalendar .= ($test?'"'.date('Y-m-d').'":{"number":"","badgeClass":"badge-danger","class":"active-danger kalendar-dan "}':'').'}';
+        if(!strstr($kalendar,date('Y-m-d'))) $kalendar .= ($test?'"'.date('Y-m-d').'":{"number":"","badgeClass":"badge-danger","class":"active-danger kalendar-dan "}':'').'}';
         return ['takmicenja'=>$takmicenja, 'kalendar'=>$kalendar];
     }
     public static function getGalerije(){
