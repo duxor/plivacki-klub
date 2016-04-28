@@ -121,7 +121,7 @@ if(!isset($slugEdit)) $slugEdit=null;
                 @if($rezultati['dodaci'])
                     $dodatak=json_decode($rezultati['dodaci'])
                     <li>{{$dodatak}}</li>
-                @endif
+                @endif 
                 </ul>
             </p>
         </div>

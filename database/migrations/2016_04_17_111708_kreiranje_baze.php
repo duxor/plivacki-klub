@@ -62,7 +62,7 @@ class KreiranjeBaze extends Migration
             $table->bigIncrements('id');
             $table->string('naziv', 45)->unique();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->nullable();;
+            $table->timestamp('updated_at')->nullable();
         });
         Schema::create('rekord', function (Blueprint $table) {
             $table->increments('id');
@@ -74,13 +74,21 @@ class KreiranjeBaze extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();
         });
-         Schema::create('norme', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('godiste');
-            $table->tinyInteger('pol');
-            $table->string('disciplina',256);
-            $table->time('vreme');
+         Schema::create('takmicenja', function (Blueprint $table) {
+            $table->bigIncrements('id');
+             $table->text('takmicenje');
             $table->text('norme_informacije')->nullable();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->nullable();
+        });
+         Schema::create('norme', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('takmicenje_naziv');
+            $table->foreign('takmicenje_naziv')->references('id')->on('takmicenja');
+            $table->integer('godiste');
+           $table->time('norme_muski');
+           $table->time('norme_zenski');
+            $table->string('disciplina',256);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();
         });
@@ -96,5 +104,6 @@ class KreiranjeBaze extends Migration
         Schema::drop('takmicar');
         Schema::drop('stil');
         Schema::drop('norme');
+        Schema::drop('takmicenja');
     }
 }
