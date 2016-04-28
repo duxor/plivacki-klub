@@ -40,15 +40,16 @@ class NormeController extends Controller
             $konacniPodaci['godiste']=$podaci->get('godiste');
             $konacniPodaci['disciplina']=$podaci->get('disciplina');
             $konacniPodaci['norme_zenski']=date('Y-m-d H:i',strtotime($podaci->get('norme_zenski')));
-            $konacniPodaci['norme_muski']=date('Y-m-d H:i',strtotime($podaci->get('norme_zenski')));
+            $konacniPodaci['norme_muski']=date('Y-m-d H:i',strtotime($podaci->get('norme_muski')));
 
 
         if($podaci['update_norme']==1){
             $id=$podaci->get('rezultati_id');
             Norme::where('id',$id)->update($konacniPodaci);
         }else  Norme::insert([$konacniPodaci]);
-        $naziv_takmicenja=Takmicenja::get(['takmicenje','id']);
-        return view('admin.dodaj-norme',['stil' => $stil,'naziv_takmicenja'=>$naziv_takmicenja])->with('uspesnoDodavanje',$podaci['update_rezultati']?'Uspešno ste izvršili azuriranje!':'Uspešno ste izvršili dodavanje novog rezultata!');
+		$naziv_takmicenjalists=Takmicenja::lists('takmicenje','id');
+    	$naziv_takmicenja=Takmicenja::get(['takmicenje','id'])->toArray();
+        return view('admin.dodaj-norme',['stil' => $stil,'naziv_takmicenja'=>$naziv_takmicenja,'naziv_takmicenjalists'=>$naziv_takmicenjalists])->with('uspesnoDodavanje',$podaci['update_rezultati']?'Uspešno ste izvršili azuriranje!':'Uspešno ste izvršili dodavanje normi!');
 
     }
     public function postUcitajRezultate(Request $request){

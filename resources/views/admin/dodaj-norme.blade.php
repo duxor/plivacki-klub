@@ -91,7 +91,7 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
 	        {!!Form::hidden("update_norme",false)!!}
 	        {!!Form::hidden("norme_id",false)!!}
 	        <div class="col-sm-12  mt20">
-	            {!!Form::select('takmicenje_naziv',$naziv_takmicenjalists, null,['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
+	            {!!Form::select('takmicenje_naziv',$naziv_takmicenjalists, null, ['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
 	        </div>    
 	        <div class="col-sm-6  mt20">
 	        {!!Form::text('norme_muski',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Norme muškarci'])!!}
@@ -181,9 +181,9 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                             '<td >'+norme[i]['norme_muski']+'</td>' +
                             '<td >'+norme[i]['disciplina']+'</td>' +
                             '<td >'+norme[i]['norme_zenski']+'</td>' +
-                            '</tr>'+
-                            '<tr>'+norme[i]['norme_informacije']+' </tr>';
+                            '</tr>';
                         }
+                        ispis+='<tr>'+norme[0]['norme_informacije']+' </tr>';
                         $('#lista_normi').html(ispis+'</tbody></table>');
                         $('#lista_normi').fadeIn();
                         $('[data-togglee=tooltip]').tooltip();
