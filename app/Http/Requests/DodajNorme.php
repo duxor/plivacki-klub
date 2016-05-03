@@ -28,7 +28,6 @@ class DodajNorme extends Request
             'norme_muski'=>'required',
             'norme_zenski'=>'required',
             'godiste'=>'required|size:4',
-            'norme_informacije'=>'alpha_num',
         ];
     }
      public function messages()
@@ -39,7 +38,6 @@ class DodajNorme extends Request
             'norme_zenski.required' => 'Obavezan unos normi.',
             'godiste.required' => 'Godište je obavezan unos.',
             'godiste.size'    => 'Godište :mora biti u formi: 1981.',
-            'norme_informacije.alpha_num' => 'Informacije mogu sadržati slova i brojeve.',
         ];
     }
 }

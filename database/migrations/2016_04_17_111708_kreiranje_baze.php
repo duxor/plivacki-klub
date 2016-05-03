@@ -74,23 +74,26 @@ class KreiranjeBaze extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();
         });
-         Schema::create('takmicenja', function (Blueprint $table) {
-            $table->bigIncrements('id');
-             $table->text('takmicenje');
+         Schema::create('norme_info', function (Blueprint $table) {
+            $table->increments('id');
             $table->text('norme_informacije')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();
         });
          Schema::create('norme', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('takmicenje_naziv');
-            $table->foreign('takmicenje_naziv')->references('id')->on('takmicenja');
-            $table->integer('godiste');
-           $table->time('norme_muski');
-           $table->time('norme_zenski');
-            $table->string('disciplina',256);
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->nullable();
+             $table->increments('id');
+
+             $table->unsignedInteger('takmicenje_naziv');
+             $table->foreign('takmicenje_naziv')->references('id')->on('objava');
+             $table->unsignedInteger('norme_info_id')->nullable();
+             $table->foreign('norme_info_id')->references('id')->on('norme_info');
+             $table->unsignedBigInteger('stil_id');
+             $table->foreign('stil_id')->references('id')->on('stil');
+             $table->integer('godiste');
+             $table->time('norme_muski');
+             $table->time('norme_zenski');
+             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+             $table->timestamp('updated_at')->nullable();
         });
     }
 
@@ -104,6 +107,6 @@ class KreiranjeBaze extends Migration
         Schema::drop('takmicar');
         Schema::drop('stil');
         Schema::drop('norme');
-        Schema::drop('takmicenja');
+        Schema::drop('norme_info');
     }
 }

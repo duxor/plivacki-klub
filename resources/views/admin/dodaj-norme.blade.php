@@ -71,21 +71,7 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
         </script>
         
         <div class="col-sm-6">
-        {{--forma za unos takmičenja--}}
-        	<h1 class="col-sm-12">Dodaj takmicenje</h1>
-        	{!!Form::open(array('url' => 'norme/dodaj-takmicenje', 'method' => 'post'))!!}
-        	{!!Form::token()!!}
-        	<div class="col-sm-12 mt20">
-        		{!!Form::text('takmicenje',null,['id'=>'takmicenje','class'=>'form-control col-sm-6','placeholder'=>'Takmicenje'])!!}
-        	</div>
-        	<div class="col-sm-12 mt20">
-        		{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Unesi Takmicenje',['id'=>'btn_sacuvaj_tkmicenje','type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>''])!!}
-        	</div>
-	        <div class="col-sm-12 mt20">{!!Form::textarea('norme_informacije',null,['class'=>'form-control','placeholder'=>'Opšte informacije'])!!}</div>
-        	{!!Form::close()!!}
-        {{--Kraj forme za unos takmičenja--}}
-
-        {{--Forma za unos normi za unos takmičenja--}}
+        {{--Forma za unos normi --}}
         	<h1 class="col-sm-12">Dodaj norme</h1>
 	        {!!Form::model($norme,['files'=>true, 'class'=>'form-horizontal'])!!}
 	        {!!Form::hidden("update_norme",false)!!}
@@ -103,12 +89,12 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
 	            {!!Form::text('godiste',null,['id'=>'godiste','class'=>'form-control col-sm-6','placeholder'=>'Godište'])!!}
 	        </div>
 	         <div class="col-sm-12 mt20">
-	            {!!Form::select('disciplina',$stil,null,['id'=>'disciplina','class'=>'form-control col-sm-6','placeholder'=>'Disciplina'])!!}
+	            {!!Form::select('stil',$stil,null,['id'=>'disciplina','class'=>'form-control col-sm-6','placeholder'=>'Disciplina'])!!}
 	        </div>
-
-	        <div class="col-sm-12 mt20"></div>
-	        
-	        
+            <div class="col-sm-12 mt20">
+                {!!Form::textarea('norme_informacije',null,['class'=>'form-control','placeholder'=>'Opšte informacije'])!!}
+            </div>
+            <div class="col-sm-12 mt20"></div>
 	        <div class="col-sm-12 mt20">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['id'=>'btn_sacuvaj','type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
 	        {!!Form::close()!!}
         </div>
@@ -121,16 +107,14 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
 			  <tbody>
 				  @foreach($naziv_takmicenja as $n)
 				  	<tr >
-				  		<td ><a href="#" class="btn3d btn btn-xs btn-info"  onclick="ucitajRezultate({{$n['id']}})">{{$n['takmicenje']}}</a></td>
-				  	</tr>
+				  		<td ><a href="#" class="btn3d btn btn-xs btn-info"  onclick="ucitajRezultate({{$n['id']}})">{{$n['naslov']}}</a>&nbsp &nbsp<a href="#" class="btn3d btn btn-xs btn-info"  onclick="editNorme({{$n['id']}})"><span class="glyphicon glyphicon-edit"></span></a>&nbsp &nbsp<a data-href="/norme/obrisi-normu/{{$n['id']}}" class="btn3d btn btn-xs btn-danger"  data-toggle="confirmation" data-togglee="tooltip"><span class="glyphicon glyphicon-minus"></span></a></td>
+                        </tr>
 				  @endforeach
 
 				  </tbody>
 				</table>
-			   
 			  </div>
 			</div>
-
 	        <div class="panel panel-default">
 				  <div class="panel-body">
 					<table class="table table-condensed ">
@@ -143,12 +127,11 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
 				</div>
 	        </div>
 	    </div>
-
-
-        <div class="col-sm-6">
-        
-        </div>
-
+        <script> $(function() {
+                $('[data-togglee=tooltip]').tooltip();
+                $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši',});
+            });
+        </script>
     @endif
  	
     <br>
@@ -171,7 +154,7 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                         var ispis='' +
                                 '<table class="table table-condensed ">' +
                                 '<thead>' +
-                                '<tr>'+ norme[0]['takmicenje'] +' </tr>'+
+                                '<tr>'+ norme[0]['naslov'] +' </tr>'+
                                 '<tr><th>Godište</th><th>Muškarci</th><th>Disciplina</th><th>Žene</th></tr>' +
                                 '</thead>' +
                                 '<tbody>';
@@ -179,11 +162,13 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                             ispis+='<tr >' +
                             '<td >'+norme[i]['godiste']+'</td>' +
                             '<td >'+norme[i]['norme_muski']+'</td>' +
-                            '<td >'+norme[i]['disciplina']+'</td>' +
+                            '<td >'+norme[i]['naziv']+'</td>' +
                             '<td >'+norme[i]['norme_zenski']+'</td>' +
                             '</tr>';
+                                if(norme[i]['norme_informacije']){
+                                    ispis+='<tr>'+norme[i]['norme_informacije']+' </tr>';
+                                }
                         }
-                        ispis+='<tr>'+norme[0]['norme_informacije']+' </tr>';
                         $('#lista_normi').html(ispis+'</tbody></table>');
                         $('#lista_normi').fadeIn();
                         $('[data-togglee=tooltip]').tooltip();
@@ -191,26 +176,19 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                         //$('[data-toggle=tooltip]').tooltip();
                     })};
 
-        function editRezultata(id,takmicenje_naziv, mesto,datum, klupski_rezultati, sumarni_rezultati){
+        function editNorme(id){
             emptyfunction();
-            $('#takmicenje_naziv').val(takmicenje_naziv);
-            $('#mesto').val(mesto);
-            $('datetimepicker'). val(datum);
-            $('#klupski_rez').append('<li>'+encodeURIComponent(klupski_rezultati)+'</li>');
-            $('#sum_rez').append('<li>'+encodeURIComponent(sumarni_rezultati)+'</li>')
+           
             $("#btn_sacuvaj").html("<span class='glyphicon glyphicon-pencil'></span> Ažuriraj podatke");
 
-            $('input[name=update_rezultati]').val(1);
-            $('input[name=rezultati_id]').val(id);
+            $('input[name=update_norme]').val(1);
+            $('input[name=norme_id]').val(id);
             $('[data-toggle=tooltip]').tooltip();
         }
         function emptyfunction(){
-            $('#takmicenje_naziv').empty();
-            $('#mesto').empty();
-            $('datetimepicker').empty();
-            $('#klupski_rez').empty();
 
-            $('#sum_rez').empty();
+            $('godiste').empty();
+
 
         }
           $(function () {
