@@ -9,19 +9,26 @@ class Objava extends Model{
     protected $fillable=['naslov','slug','foto','sadrzaj','dodaci','datum','prioritet','mesto','galerija'];
     public static $readMore='<p><hr></p>';
     public static $numSlides=5;
-    public static function getObjaveSkraceno($takmicenja=null){
+    public static $brojObjavaNaPocetnoj=5;
+    public static function getObjaveSkraceno($takmicenja=null,$brojObjava=null){
         $objave=$takmicenja?
             Objava::where('slug','<>','o-nama')
-                ->whereNotNull('mesto')->orderBy('datum')->get(['naslov','slug','foto','sadrzaj','datum','mesto'])
+                ->whereNotNull('mesto')->orderBy('datum')->uzmi_prvih($brojObjava)->get(['naslov','slug','foto','sadrzaj','datum','mesto'])
             :
             Objava::where('slug','<>','o-nama')
-                ->orderBy('id','desc')->get(['naslov','slug','foto','sadrzaj']);
+                ->orderBy('id','desc')->uzmi_prvih($brojObjava)->get(['naslov','slug','foto','sadrzaj']);
         foreach($objave as $i=>$objava){
             $pozicija=strpos($objava->sadrzaj,Objava::$readMore);
             if($pozicija>0) $objave[$i]['sadrzaj']=substr($objava->sadrzaj,0,$pozicija);
             if($takmicenja) $objave[$i]['datum']=date('d.m.Y H:i',strtotime($objava['datum']));
         }
         return $objave;
+    }
+    public function scopeUzmi_prvih($query,$broj){
+        return $broj?$query->take($broj):$query;
+    }
+    public static function getObjaveZaPocetnu(){
+        return Objava::getObjaveSkraceno(null,Objava::$brojObjavaNaPocetnoj);
     }
     public static function getSlajder(){
         return Objava::where('prioritet',1)->orderBy('id','desc')->take(Objava::$numSlides)->get(['naslov','slug','foto']);

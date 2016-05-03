@@ -1,217 +1,318 @@
-@extends('layouts.master')
+@extends('layouts.master-d')
 @section('body')
-    <script type="text/javascript" src="js/slider/jssor.slider.mini.js"></script>
-    <script type="text/javascript" src="js/slider/custom.js"></script>
-    <link rel="stylesheet" href="css/slider.css">
-    <style>
-        .jssora02l, .jssora02r {
-            display: block;
-            position: absolute;
-            width: 55px;
-            height: 55px;
-            cursor: pointer;
-            background: url('img/a02.png') no-repeat;
-            overflow: hidden;
-        }
-        .jssora02l { background-position: -3px -33px; }
-        .jssora02r { background-position: -63px -33px; }
-        .jssora02l:hover { background-position: -123px -33px; }
-        .jssora02r:hover { background-position: -183px -33px; }
-        .jssora02l.jssora02ldn { background-position: -3px -33px; }
-        .jssora02r.jssora02rdn { background-position: -63px -33px; }
-        .jssort11 .p {    position: absolute;    top: 0;    left: 0;    width: 300px;    height: 100px;    background: #003748;}.jssort11 .tp {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort11 .i, .jssort11 .pav:hover .i {    position: absolute;    top: 3px;    left: 3px;    width: 80px;    height: 50px;    border: white 1px dashed;}* html .jssort11 .i {    width /**/: 62px;    height /**/: 32px;}.jssort11 .pav .i {    border: white 1px solid;}.jssort11 .t, .jssort11 .pav:hover .t {    position: absolute;    top: 3px;    left: 68px;    width: 129px;    height: 32px;    line-height: 32px;    text-align: center;    color: #fc9835;    font-size: 13px;    font-weight: 700;}.jssort11 .pav .t, .jssort11 .p:hover .t {    color: #fff;}.jssort11 .c, .jssort11 .pav:hover .c {    position: absolute;    top: 48px;    left: 3px;    width: 197px;    height: 31px;    line-height: 31px;    color: #fff;    font-size: 14px;    font-weight: 400;    overflow: hidden;}.jssort11 .pav .c, .jssort11 .p:hover .c {    color: white;}.jssort11 .t, .jssort11 .c {    transition: color 2s;    -moz-transition: color 2s;    -webkit-transition: color 2s;    -o-transition: color 2s;}.jssort11 .p:hover .t, .jssort11 .pav:hover .t, .jssort11 .p:hover .c, .jssort11 .pav:hover .c {    transition: none;    -moz-transition: none;    -webkit-transition: none;    -o-transition: none;}.jssort11 .p:hover, .jssort11 .pav:hover {    background: #333;}.jssort11 .pav, .jssort11 .p.pdn {    background: #462300;}
+    {!!Html::style('/responsive-calendar/responsive-calendar.css')!!}
+    {!!Html::script('/responsive-calendar/responsive-calendar.js')!!}
+    {!!Html::script('js/slider/jssor.slider.mini.js')!!}
+    {!!Html::script('/js/slider/custom.js')!!}
+    {!!Html::script('http://maps.google.com/maps/api/js')!!}
 
-    </style>
- {{-- SLIDER START--}}
-    <div class="container-fluid" >
-    <div id="jssor_1" style="position: relative; margin:0 auto; top: 0px; left: 0px; width: 1510px; height: 400px; overflow: hidden; visibility: hidden; background-color: #000000;">
-        <!-- Loading Screen -->
-        <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-            <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
-        </div>
-        <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1200px; height: 400px; overflow: hidden;">
+<div id="container-scroll" class="intro-effect-grid">
 
-
-
-
-            @foreach($slajder as $slajd)
-                <div data-p="112.50" style="display: none;">
-                    <img data-u="image" src="{{$slajd->foto?$slajd->foto:'/img/default/foto-objave.jpg'}}" />
-                    <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
-                        <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="/{{$slajd->slug}}">
-                            <h2>{{$slajd->naslov}}</h2>
-                        </a>
-                    </div>
-                    <div data-u="thumb">
-                        <img class="i" src="{{$slajd->foto}}" />
-                        <div class="t">{{$slajd->naslov}}</div>
-                        <div class="c">{{$slajd->naslov}}</div>
+<div class="first-look-hide container">
+    <div class="prioriteti col-sm-12 text-center">
+        <h1>Plivački klub Dubočica</h1>
+    </div>
+    <div class="prioriteti col-sm-5">
+        @foreach($slajder as $slajd)
+            <div class="row">
+                <div class="col-xs-2">
+                    <img class="img-rounded" src="{{$slajd->foto?$slajd->foto:'/img/default/foto-objave.jpg'}}" alt="{{strtoupper($slajd->naslov)}}">
+                </div>
+                <div class="col-xs-10">
+                    <div class="popover fade right in" style="position:relative;display: block">
+                        <div class="arrow"></div>
+                        <div class="popover-content">{{ucfirst($slajd->naslov)}}</div>
                     </div>
                 </div>
-            @endforeach
-
-
-
-            <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="img/003.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; "">
-                <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
-                    asdfasdf asdf asdf asdf asdf asdf asdf</a>
             </div>
-                <div data-u="thumb">
-                    <img class="i" src="img/thumb-003.jpg" />
-                    <div class="t">Image Gallery</div>
-                    <div class="c">Image gallery with thumbnail navigation</div>
-                </div>
-            </div>
-            <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="img/004.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
-                <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
-                    asdfasdf asdf asdf asdf asdf asdf asdf</a>
-            </div>
-                <div data-u="thumb">
-                    <img class="i" src="img/thumb-004.jpg" />
-                    <div class="t">Carousel</div>
-                    <div class="c">Touch swipe, mobile device optimized</div>
-                </div>
-            </div>
-            <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="img/005.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
-                <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
-                    asdfasdf asdf asdf asdf asdf asdf asdf</a>
-            </div>
-                <div data-u="thumb">
-                    <img class="i" src="img/thumb-005.jpg" />
-                    <div class="t">Themes</div>
-                    <div class="c">30+ professional themems + growing</div>
-                </div>
-            </div>
-            <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="img/006.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
-                <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
-                    asdfasdf asdf asdf asdf asdf asdf asdf</a>
-            </div>
-                <div data-u="thumb">
-                    <img class="i" src="img/thumb-006.jpg" />
-                    <div class="t">Tab Slider</div>
-                    <div class="c">Tab slider with auto play options</div>
-                </div>
-            </div>
-            <div data-p="112.50" style="display: none;">
-                <img data-u="image" src="img/006.jpg" />
-                <div style="position: absolute; margin-right: 0px;color: #ffffff; width: 100%; height: 20%; background-color: #080808;bottom:0; left: 0; opacity: 0.6; ">
-                <a style="color: #ffffff;  font-size: 18px; text-decoration: none;" href="#">vesti vesti asdfasdf asdf asdf asd fasdfasdfasdfasdfasdd
-                    asdfasdf asdf asdf asdf asdf asdf asdf</a>
-            </div>
-                <div data-u="thumb">
-                    <img class="i" src="img/thumb-006.jpg" />
-                    <div class="t">Tab Slider</div>
-                    <div class="c">Tab slider with auto play options</div>
-                </div>
-            </div>
-            <a data-u="ad" href="http://www.jssor.com" style="display:none">jQuery Slider</a>
-
-        </div>
-        <!-- Thumbnail Navigator -->
-        <div data-u="thumbnavigator" class="jssort11" style="position:absolute;right:5px;top:0px;font-family:Arial, Helvetica, sans-serif;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;width:300px;height:300px;" data-autocenter="2">
-            <!-- Thumbnail Item Skin Begin -->
-            <div data-u="slides" style="cursor: default;">
-                <div data-u="prototype" class="p">
-                    <div data-u="thumbnailtemplate" class="tp"></div>
-                </div>
-            </div>
-            <!-- Thumbnail Item Skin End -->
-        </div>
-        <!-- Arrow Navigator -->
-        <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
-        <span data-u="arrowright" class="jssora02r" style="top:0px;right:418px;width:55px;height:55px;" data-autocenter="2"></span>
+        @endforeach
     </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-3 prioriteti">
+        <div class="responsive-calendar">
+            <div class="controls">
+                <h4>
+                    <b><span data-head-month></span> <span data-head-year></span></b>
+                </h4>
+            </div>
+            <div class="day-headers">
+                <div class="day header">Pon</div>
+                <div class="day header">Uto</div>
+                <div class="day header">Sre</div>
+                <div class="day header">Čet</div>
+                <div class="day header">Pet</div>
+                <div class="day header">Sub</div>
+                <div class="day header">Ned</div>
+            </div>
+            <div class="days" data-group="days"></div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var datum=new Date();
+                $(".responsive-calendar").responsiveCalendar({
+                    time: datum.getFullYear()+'-'+(datum.getMonth()+1),
+                    events: ''
+                })
+            })
+        </script>
     </div>
-    {{-- SLIDER END--}}
-    <br/>
-<div class="container-fluid" >
-    {{-- OBAVEŠTENJE START--}}
-    <div style="background-color:#e8e8e8; padding: 5px;" class="col-sm-10">
-
-
-
-{{-- PRIKAZ-OBJAVA START::--}}
-        <style>.atr{position: absolute;top: 5px;right: 5px}</style>
-        @foreach($objave as $objava)
-        <div class="row">
-            <div class="col-sm-2">
-                <div class="row">
-                    <a class="pull-left" href="/{{$objava->slug}}" target="_parent">
-                        <img style="width: 100%;" alt="image" class="img-responsive" src="{{$objava->foto?$objava->foto:'/img/default/foto-objave.jpg'}}">
-                    </a>
-                    <ul style="position: absolute; margin-right: 0px; width: 100%; background-color: #080808;top:0; right: 0; opacity: 0.6; ">
-                        <li style="display: inline;" ><a href="#"><img class="twiter" src="img/twitter.png"></a></li>
-                        <li style="display: inline;"><a href="#"><img class="face" src="img/facebook.png"></a></li>
-                        <li style="display: inline;"><a href="#"><img class="link" src="img/linkedin.png"></a></li>
+</div>
+    <header class="header">
+        <div class="img-menu">
+            <a href="#poslednje-objave" class="col-sm-3 scrol">
+                <p>Vesti</p>
+            </a>
+            <a href="#takmicari" class="col-sm-3 scrol">
+                <p>Takmičari</p>
+            </a>
+            <a href="#sponzori" class="col-sm-6 scrol">
+                <p>Sponzori</p>
+            </a>
+            <a href="/kalendar" class="col-sm-3">
+                <p>Kalendar</p>
+            </a>
+            <a href="/galerija" class="col-sm-3">
+                <p>Galerija</p>
+            </a>
+            <a href="#kontakt" class="col-sm-3 scrol">
+                <p>Kontakt</p>
+            </a>
+        </div>
+        <br clear="all">
+    </header>
+    {{--UDARNA START::--}}
+    <div class="prioriteti">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#moj-meni" aria-expanded="false">
+                        <span class="sr-only">Prikaži navigaciju</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand logo" href="/"><img id="logo" src="img/logo.png"></a>
+                    <a id="spin-dalje" class="navbar-brand"><i class="glyphicon glyphicon-arrow-down"></i></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="moj-meni">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/"><i class="glyphicon glyphicon-home"></i> Početna </a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i> O nama <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/o-nama"><i class="glyphicon glyphicon-user"></i> O nama</a></li>
+                                <li><a href="/vizija-kluba"><i class="glyphicon glyphicon-road"></i> Vizija</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-transfer"></i> Takmičenja <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/kalendar"><i class="glyphicon glyphicon-calendar"></i> Kalendar</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-user"></i> Takmičari</a></li>
+                                <li><a href="#"><i class="glyphicon glyphicon-flag"></i> Rekordi</a></li>
+                                <li><a href="/rezultati"><i class="glyphicon glyphicon-indent-right"></i> Rezultati</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/galerija"><i class="glyphicon glyphicon-picture"></i> Galerija</a></li>
+                        <li><a href="#"><i class="glyphicon glyphicon-time"></i> Norme</a></li>
+                        @if (!Auth::check())
+                            <li><a href="/prijava"><i class="glyphicon glyphicon-log-in"></i> Prijava</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="glyphicon glyphicon-exclamation-sign"></i> AdminPanel <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/administracija"><i class="glyphicon glyphicon-blackboard"></i> Administracija</a></li>
+                                    <li><a href="/administracija/dodaj-objavu"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-bell"></i>  Dodaj objavu</a></li>
+                                    <li><a href="/administracija/objava/o-nama"><i class="glyphicon glyphicon-pencil"></i>  Izmeni o nama</a></li>
+                                    <li><a href="/administracija/dodaj-rezultate"><i class="glyphicon glyphicon-plus"></i> <i class="glyphicon glyphicon-indent-right"></i> Dodaj rezultate</a></li>
+                                    <li><a href="/takmicari/dodaj-takmicara"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i> Dodaj takmičara</a></li>
+                                    <li><a href="/odjava"><i class="glyphicon glyphicon-log-out"></i> Odjava</a></li>
+                                </ul>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-10">
-                <h2  class="media-heading">
-                    <a style="color: #E9C126;" href="/{{$objava->slug}}">{{$objava->naslov}}</a>
-                    @if($admin)
-                        <a href="/administracija/objava/{{$objava->slug}}" class="btn btn-success">
-                            <i class="glyphicon glyphicon-pencil"></i>
-                        </a>
-                    @endif
-                </h2>
-                <p style="color: #00A3D8; font-size: 16px;" >
+        </nav>
+    </div>
+    <div class="container">
+        {{--SLAJDER START::--}}
+        <div id="jssor_1" style="position: relative; margin:0 auto; top: 0px; left: 0px; width: 1510px; height: 600px; overflow: hidden; visibility: hidden; background-color: #fff;">
+                <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
+                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                    <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+                </div>
+                <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1200px; height: 600px; overflow: hidden;">
+                    @foreach($slajder as $slajd)
+                        <div data-p="112.50" style="display: none;">
+                            <img data-u="image" src="{{$slajd->foto?$slajd->foto:'/img/default/foto-objave.jpg'}}" />
+                            <div style="position: absolute; margin-right: 0px; width: 100%; height: 20%; background-color: rgba(201, 201, 201, 0.9);bottom:0; left: 0; ">
+                                <a style="color: #131313; font-size: 18px; text-decoration: none;" href="/{{$slajd->slug}}">
+                                    <h2 style="padding: 20px 60px;font-weight: bold">{{strtoupper($slajd->naslov)}}</h2>
+                                </a>
+                            </div>
+                            <div data-u="thumb">
+                                <img src="{{$slajd->foto}}" alt="{{$slajd->naslov}}">
+                                <span>{{ucfirst($slajd->naslov)}}</span>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+                <div data-u="thumbnavigator" class="jssort11" style="position:absolute;right:5px;top:0px;font-family:Arial, Helvetica, sans-serif;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;width:300px;" data-autocenter="2">
+                    <div data-u="slides" style="cursor: pointer;" id="dsdasdasdas">
+                        <div data-u="prototype" class="p">
+                            <div data-u="thumbnailtemplate" class="tp"></div>
+                        </div>
+                    </div>
+                </div>
+                <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora02r" style="top:0px;right:418px;width:55px;height:55px;" data-autocenter="2"></span>
+            </div><br>
+        {{--slajder end::--}}
+    </div>
+    <div class="bg-img"><img src="/img/naslovna.jpg" alt="Naslovna fotografija"/></div>
+    <button class="trigger" data-info="Dalje"><span>Trigger</span></button>
+    {{--udarna/bez-slajdera/ end::--}}
+
+    {{--POSLEDJE-OBJAVE START::--}}
+    <div id="poslednje-objave">
+        <div class="container">
+        <h2 class="text-center">Poslednje vesti</h2>
+        <hr>
+        @foreach($objave as $objava)
+            <div class="row objava slideanim">
+                <div class="col-xs-3">
+                    <a href="/{{$objava->slug}}" target="_parent">
+                        <div class="img">
+                            <img alt="{{$objava->naslov}}" class="img-responsive" src="{{$objava->foto?$objava->foto:'/img/default/foto-objave.jpg'}}">
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-9">
+                    <h2>
+                        <a href="/{{$objava->slug}}">{{$objava->naslov}}</a>
+                        @if($admin)
+                            <a href="/administracija/objava/{{$objava->slug}}" class="btn btn-default">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </a>
+                        @endif
+                    </h2>
                     {!!$objava->sadrzaj!!}
-                </p>
+                </div>
             </div>
-        </div>
         @endforeach
-{{-- PRIKAZ-OBJAVA START::--}}
-        <div style="text-align: center" class="row">
-            <nav >
-                <ul class="pagination">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <hr>
+        <div class="text-center"><a href="" class="btn btn-default"><i class="glyphicon glyphicon-sort-by-alphabet"></i> Pogledaj sve</a></div>
+    </div>
+    </div>
+    {{--poslednje-objave end::--}}
+
+    {{--TAKMICARI START::--}}
+    <div id="takmicari">
+        <div class="container">
+            <h2 class="text-center">Naši takmičari</h2>
+            <br>
+            <div class="slideanim">
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-1.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-2.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-3.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-4.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-5.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="/takmicari" data-toggle="tooltip" title="Svi takmičari">
+                    <img src="/img/default/takmicari-svi.jpg" class="img-circle" alt="Svi takmičari">
+                </a>
+            </div></div>
         </div>
     </div>
-    {{-- OBAVEŠTENJE END--}}
-    <div class="col-sm-2">{{-- SPONZORI START--}}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Sponzori</h3>
+    {{--takmicari end::--}}
+
+    {{--SPONZORI START::--}}
+    <div id="sponzori">
+        <div class="container">
+            <h2>Sponzori, partneri i saradnici</h2>
+            <div class="col-sm-3 slideanim"><a href="#"><img src="/img/default/baner-sponzori.jpg"></a></div>
+            <div class="col-sm-3 slideanim"><a href="#"><img src="/img/default/baner-sponzori.jpg"></a></div>
+            <div class="col-sm-3 slideanim"><a href="#"><img src="/img/default/baner-sponzori.jpg"></a></div>
+            <div class="col-sm-3 slideanim"><a href="#"><img src="/img/default/baner-sponzori.jpg"></a></div>
+            <div class="col-sm-3 slideanim"><a href="#"><img src="/img/default/baner-sponzori.jpg"></a></div>
+            <div class="col-sm-3 slideanim"><a href="#"><img src="/img/default/baner-sponzori.jpg"></a></div>
+        </div>
+    </div>
+    {{--sponzori end::--}}
+
+    {{--KONTAKT START::--}}
+    <div id="kontakt">
+        <div class="container">
+            <div class="col-sm-6 mapa">
+                <div id="googleMap"></div>
             </div>
-            <div class="panel-body">
-               <a href="#"><p>Zdravlje Leskovac</p></a>
-            </div>
-            <div class="panel-body">
-                <a href="#"><p>Zdravlje Leskovac</p></a>
-            </div>
-            <div class="panel-body">
-                <a href="#"><p>Zdravlje Leskovac</p></a>
-            </div>
-            <div class="panel-body">
-                <a href="#"><p>Zdravlje Leskovac</p></a>
+            <div class="col-sm-6 form-horizontal">
+                <h3><i class="glyphicon glyphicon-earphone"></i> Kontaktirajte nas putem e-maila</h3>
+                <div class="form-group slideanim">
+                    {!! Form::label('lime','Ime',['class'=>'control-label col-sm-4']) !!}
+                    <div class="col-sm-8">
+                        {!! Form::text('ime',null,['class'=>'form-control form-control-c']) !!}
+                    </div>
+                </div>
+                <div class="form-group slideanim">
+                    {!! Form::label('lemail','E-mail',['class'=>'control-label col-sm-4']) !!}
+                    <div class="col-sm-8">
+                        {!! Form::email('email',null,['class'=>'form-control form-control-c']) !!}
+                    </div>
+                </div>
+                <div class="form-group slideanim">
+                    {!! Form::label('lporuka','Poruka',['class'=>'control-label col-sm-4']) !!}
+                    <div class="col-sm-8">
+                        {!! Form::textarea('poruka',null,['class'=>'form-control form-control-c']) !!}
+                    </div>
+                </div>
+                <div class="form-group slideanim">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8 slideanim">
+                        {!! Form::button('<i class="glyphicon glyphicon-envelope"></i> Pošalji',['class'=>'btn btn-lg btn-success btn-success-c']) !!}
+                    </div>
+                </div>
             </div>
         </div>
-    </div>{{-- SPONZORI END--}}
+    </div>
+    {{--kontakt end::--}}
 </div>
+
+    {!!Html::style('/scrolleffect/css/normalize.css')!!}
+    {!!Html::style('/scrolleffect/css/component.css')!!}
+    {!!Html::script('/scrolleffect/js/classie.js')!!}
+    {!!Html::style('/css/style-index.css')!!}
+    {!!Html::script('/js/index.js')!!}
 @endsection

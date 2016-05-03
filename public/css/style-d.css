@@ -1,0 +1,74 @@
+*{
+    font-size: 105%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
+}
+.row .col-xs-3 .img{
+    height: 140px;
+    overflow: hidden
+}
+.panel-c{ border-radius: 0 }
+.panel-c .panel-body{ padding: 0 }
+.panel-c .panel-body img,.tp img,.sponzori img,.row .col-xs-3 .img img,.row .col-xs-3 .img{ width: 100% }
+.tp img{ position:absolute }
+.tp span{
+    position: absolute;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 164, 201,0.8);
+    font-weight: bold;
+    padding: 5px;
+    color:#fff
+}
+.tp span:hover{
+    background-color: rgba(0,0,0,0);
+    color:rgba(0,0,0,0)
+}
+.slides h2{ padding: 20px }
+.mlr0{
+    padding-left: 0px;
+    padding-right: 0px
+}
+.center{ margin: 0 auto }
+body {
+/*background: #fff;
+//color: #69606b;*/
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.5;
+    font-family: 'Raleway', Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden
+}
+.navbar{
+    font-weight: 400;
+    font-size: 17px
+}
+.navbar-default{ background-color: rgba(255,255,255,0.5) }
+#moj-meni>ul>li:first-child{ display: none }
+.navbar-nav>li>a{ padding:70px 5px }
+.navbar-default .navbar-nav>li>a{ color:#464545 }
+.navbar-brand{ padding-top: 60px }
+.navbar-header .logo{ display: none }
+#spin-dalje{
+    font-size: 250%;
+    color: #494A4A;
+    cursor: pointer
+}
+footer{
+    padding:60px 0;
+    text-align: center;
+    font-size: 80%
+}
+footer h4,footer p{
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0
+}
+footer .link-tag{ padding: 20px 50px }
+footer .kontakt-osoba{
+    font-size: 65%;
+    font-style: italic
+}

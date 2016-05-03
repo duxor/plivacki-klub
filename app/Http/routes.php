@@ -15,7 +15,7 @@ use \Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index')
-        ->with('objave',Objava::getObjaveSkraceno())
+        ->with('objave',Objava::getObjaveZaPocetnu())
         ->with('slajder',Objava::getSlajder())
         ->with('admin',Auth::check());
 });

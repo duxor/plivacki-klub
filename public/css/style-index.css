@@ -1,0 +1,242 @@
+.jssora02l, .jssora02r {
+    display: block;
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.jssora02l { background-position: -3px -33px }
+.jssora02r { background-position: -63px -33px }
+.jssora02l:hover { background-position: -123px -33px }
+.jssora02r:hover { background-position: -183px -33px }
+.jssora02l.jssora02ldn { background-position: -3px -33px }
+.jssora02r.jssora02rdn { background-position: -63px -33px }
+.jssort11 .p{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 130px;
+    background: #fff
+}
+.jssort11 .tp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none
+}
+.jssort11 .i, .jssort11 .pav:hover .i{
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 80px;
+    height: 50px;
+    border: white 1px dashed
+}
+* html .jssort11 .i {
+    width: 62px;
+    height: 32px
+}
+.jssort11 .pav .i{ border: white 1px solid }
+.jssort11 .t, .jssort11 .pav:hover .t{
+    position: absolute;
+    top: 3px;
+    left: 68px;
+    width: 129px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #fc9835;
+    font-size: 13px;
+    font-weight: 700
+}
+.jssort11 .pav .t, .jssort11 .p:hover .t{ color: #fff }
+.jssort11 .c, .jssort11 .pav:hover .c{
+    position: absolute;
+    top: 48px;
+    left: 3px;
+    width: 197px;
+    height: 31px;
+    line-height: 31px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden
+}
+.jssort11 .pav .c, .jssort11 .p:hover .c{ color: white }
+.jssort11 .t, .jssort11 .c{
+    transition: color 2s;
+    -moz-transition: color 2s;
+    -webkit-transition: color 2s;
+    -o-transition: color 2s
+}
+.jssort11 .p:hover .t, .jssort11 .pav:hover .t, .jssort11 .p:hover .c, .jssort11 .pav:hover .c{
+    transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: none
+}
+.jssort11 .p:hover, .jssort11 .pav:hover{ background: #333 }
+.jssort11 .pav, .jssort11 .p.pdn{ background: #f4f4f4 }
+.img-menu p{
+    position: absolute;
+    bottom:0;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin:0;
+    padding-bottom: 10px
+}
+.img-menu .col-sm-3,.img-menu .col-sm-6{
+    padding: 0;
+    border-radius: 0;
+    background-size: cover;
+    text-decoration: none
+}
+.img-menu .col-sm-3:hover,.img-menu .col-sm-6:hover{ opacity: 0.7 }
+@media (max-width: 768px) {
+    .img-menu .col-sm-3,.img-menu .col-sm-6{ height:100px }
+}
+@media (min-width: 789px) {
+    .img-menu .col-sm-3,.img-menu .col-sm-6{ height:200px }
+    .img-menu .col-sm-3:nth-child(2){ height: 400px }
+    .img-menu .col-sm-3:nth-child(6){ margin-top:-200px }
+}
+.img-menu .col-sm-3:first-child{ background-image: url('/img/meni/vesti.jpg') }
+.img-menu .col-sm-3:nth-child(2){ background-image: url('/img/meni/takmicari.jpg') }
+.img-menu .col-sm-3:nth-child(2) p{ color: #333 }
+.img-menu .col-sm-6{ background-image: url('/img/meni/sponzori.jpg') }
+.img-menu .col-sm-6 p{ color: #fff;background: rgba(0,0,0,0.4) }
+.img-menu .col-sm-3:nth-child(4){ background-image: url('/img/meni/kalendar.jpg') }
+.img-menu .col-sm-3:nth-child(5){ background-image: url('/img/meni/galerija.jpg') }
+.img-menu .col-sm-3:nth-child(6){ background-image: url('/img/meni/kontakt.jpg') }
+.header{ display: none }
+.first-look-hide,.first-look-hide .prioriteti,.first-look-hide img,.prioriteti,nav{ z-index: 20000 }
+.prioriteti .col-xs-2 img{ width:100% }
+.prioriteti .col-xs-2{ font-size: 12px }
+.prioriteti .col-xs-2,.prioriteti .col-xs-10{
+    border-radius: 0;
+    padding: 0
+}
+.prioriteti .row{ margin-bottom: 5px }
+.prioriteti .popover{
+    background-color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    font-weight: 400
+}
+.prioriteti .arrow{ opacity: 0.4 }
+.prioriteti h1{ color:white }
+.prioriteti table{
+    background-color: rgba(255,255,255,0.5);
+    text-align:center
+}
+.prioriteti table tr,.prioriteti table tr td{
+    padding:3px;
+    font-size: 16px
+}
+.responsive-calendar{
+    background-color: rgba(255,255,255,0.5);
+    font-weight:bold;
+    -webkit-border-top-left-radius: 30px;
+    -webkit-border-bottom-right-radius: 30px;
+    -moz-border-radius-topleft: 30px;
+    -moz-border-radius-bottomright: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px
+}
+.responsive-calendar .day.not-current a{ color: #fff }
+
+@media (max-width: 500px) {
+    .prioriteti .popover{
+        background-color: rgba(255,255,255,0.7);
+        font-size: 12px
+    }
+    .prioriteti .arrow{ opacity: 0.6 }
+}
+#dsdasdasdas>div{ border:solid 1px #000 }
+.udarna,#poslednje-objave,#takmicari,#sponzori,#kontakt{ padding: 60px 0 }
+#poslednje-objave{ background-color: #28a4c9 }
+#poslednje-objave,#poslednje-objave h2 a,#takmicari,#takmicari a{ color: #eee }
+#poslednje-objave h2 a i{ color: #000 }
+#poslednje-objave .objava{ padding: 10px 0 }
+#poslednje-objave .objava h2{
+    padding-top: 0px;
+    margin-top:0px
+}
+#takmicari{
+    background-color: #D0226C;
+    text-align: center;
+    padding-bottom: 120px
+}
+#takmicari img{
+    width: 100px;
+    height: 100px
+}
+#sponzori{ background-color: #EFEFEF }
+#sponzori .container{ padding-bottom: 40px }
+#sponzori h2{
+    margin-bottom: 50px;
+    text-align: center
+}
+#sponzori .col-sm-3{ padding:0 1px 1px 0 }
+#sponzori img{ width: 100% }
+#kontakt{
+    background-color: #56AF9A;
+    color: #eee
+}
+#kontakt .control-label{
+    padding-top: 0px;
+    font-size: 80%
+}
+#kontakt h3{
+    text-align: right;
+    padding-bottom: 30px
+}
+.objava h2{ font-weight: bold }
+.form-control-c{
+    border-radius: 0;
+    background-color: rgba(255, 253, 253, 0.33);
+    border: none;
+    color:#fff
+}
+.btn-success-c{ background-color: rgba(92, 184, 92, 0.35) }
+.btn-success-c:hover{ background-color: rgba(92, 184, 92, 0.45) }
+.mapa{ padding:0 }
+#googleMap{
+    width: 100%;
+    height: 400px;
+    -webkit-filter: grayscale(55%);
+    filter: grayscale(55%)
+}
+.slideanim {visibility:hidden;}
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
