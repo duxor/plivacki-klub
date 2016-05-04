@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PK Dubočica</title>
     {!!Html::style('bootstrap-3.3.5-dist/css/bootstrap.min.css')!!}
-    {!!Html::style('/css/style-d.css')!!}
+    {!!Html::style('/css/basic.css')!!}
     {!!Html::script('bootstrap-3.3.5-dist/js/jquery-3.0.js')!!}
     {!!Html::script('bootstrap-3.3.5-dist/js/bootstrap.min.js')!!}
+    {!!Html::script('/js/funkcije.js')!!}
 </head>
 
 <body>

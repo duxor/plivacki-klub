@@ -10,13 +10,14 @@ class Objava extends Model{
     public static $readMore='<p><hr></p>';
     public static $numSlides=5;
     public static $brojObjavaNaPocetnoj=5;
-    public static function getObjaveSkraceno($takmicenja=null,$brojObjava=null){
+    public static $brObjavaNaStranici=9;
+    public static function getObjaveSkraceno($takmicenja=null,$brojObjava=null,$stranica=null){
         $objave=$takmicenja?
             Objava::where('slug','<>','o-nama')
-                ->whereNotNull('mesto')->orderBy('datum')->uzmi_prvih($brojObjava)->get(['naslov','slug','foto','sadrzaj','datum','mesto'])
+                ->whereNotNull('mesto')->orderBy('datum')->stranica($stranica)->uzmi_prvih($brojObjava)->get(['naslov','slug','foto','sadrzaj','datum','mesto'])
             :
             Objava::where('slug','<>','o-nama')
-                ->orderBy('id','desc')->uzmi_prvih($brojObjava)->get(['naslov','slug','foto','sadrzaj']);
+                ->orderBy('id','desc')->stranica($stranica)->uzmi_prvih($brojObjava)->get(['naslov','slug','foto','sadrzaj']);
         foreach($objave as $i=>$objava){
             $pozicija=strpos($objava->sadrzaj,Objava::$readMore);
             if($pozicija>0) $objave[$i]['sadrzaj']=substr($objava->sadrzaj,0,$pozicija);
@@ -26,6 +27,9 @@ class Objava extends Model{
     }
     public function scopeUzmi_prvih($query,$broj){
         return $broj?$query->take($broj):$query;
+    }
+    public function scopeStranica($query,$broj){
+        return $broj?$query->skip($broj*Objava::$brObjavaNaStranici):$query;
     }
     public static function getObjaveZaPocetnu(){
         return Objava::getObjaveSkraceno(null,Objava::$brojObjavaNaPocetnoj);
@@ -52,5 +56,11 @@ class Objava extends Model{
     }
     public static function getGalerije(){
         return Objava::whereNotNull('galerija')->get(['naslov','foto','galerija']);
+    }
+    public static function ucitajStranicu($stranica=null){
+        return [
+            'objave'=>Objava::getObjaveSkraceno(null,Objava::$brObjavaNaStranici,$stranica),
+            'brojStranica'=>ceil(Objava::where('slug','<>','o-nama')->count()/Objava::$brObjavaNaStranici)
+        ];
     }
 }

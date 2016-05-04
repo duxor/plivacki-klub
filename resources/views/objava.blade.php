@@ -1,10 +1,9 @@
-@extends('layouts.master')
-@section('body')
+@extends('layouts.master-advance')
+@section('container')
 <style>
     .img{width: 100%}
     .pl0{padding-left: 0px}
 </style>
-<div class="container">
     <h1 class="col-xs-10 pl0">{{$objava->naslov}}</h1>
         <div class="col-xs-1">
             @if($admin)
@@ -25,5 +24,4 @@
             @endforeach
         </ul>
     @endif
-</div>
 @endsection

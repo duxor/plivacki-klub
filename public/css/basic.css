@@ -31,9 +31,7 @@
     padding-right: 0px
 }
 .center{ margin: 0 auto }
-body {
-/*background: #fff;
-//color: #69606b;*/
+body{
     font-weight: 400;
     font-size: 22px;
     line-height: 1.5;
@@ -47,11 +45,11 @@ body {
     font-size: 17px
 }
 .navbar-default{ background-color: rgba(255,255,255,0.5) }
-#moj-meni>ul>li:first-child{ display: none }
-.navbar-nav>li>a{ padding:70px 5px }
 .navbar-default .navbar-nav>li>a{ color:#464545 }
 .navbar-brand{ padding-top: 60px }
-.navbar-header .logo{ display: none }
+@media (max-width: 767px){ .navbar-header .logo img{ margin-top: -45px } }
+@media (max-width: 980px){ #moj-meni>ul>li:first-child{ display: none } }
+@media (min-width: 768px){ .navbar-nav>li>a{ padding:70px 5px } }
 #spin-dalje{
     font-size: 250%;
     color: #494A4A;
@@ -71,4 +69,32 @@ footer .link-tag{ padding: 20px 50px }
 footer .kontakt-osoba{
     font-size: 65%;
     font-style: italic
+}
+.slideanim {visibility:hidden;}
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+@keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
 }

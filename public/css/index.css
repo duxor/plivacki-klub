@@ -1,3 +1,5 @@
+#moj-meni>ul>li:first-child{ display: none }
+.navbar-header .logo{ display: none }
 .jssora02l, .jssora02r {
     display: block;
     position: absolute;
@@ -212,31 +214,10 @@
     -webkit-filter: grayscale(55%);
     filter: grayscale(55%)
 }
-.slideanim {visibility:hidden;}
-.slide {
-    animation-name: slide;
-    -webkit-animation-name: slide;
-    animation-duration: 1s;
-    -webkit-animation-duration: 1s;
-    visibility: visible;
+#to-top{
+    display: none;
+    position: fixed;
+    bottom:20px;
+    right:20px
 }
-@keyframes slide {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(70%);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0%);
-    }
-}
-@-webkit-keyframes slide {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(70%);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0%);
-    }
-}
+#to-top img{ width:100% }

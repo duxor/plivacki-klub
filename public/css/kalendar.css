@@ -1,0 +1,12 @@
+.active-danger{ background-color: #FFD89D }
+.responsive-calendar .active-danger a{
+    color:#fff;
+    font-weight: bold
+}
+.responsive-calendar .active-danger a:hover{
+    color:#000;
+    font-weight: bold
+}
+.col-xs-3>a>img{ width: 100% }
+.col-sm-7 b span{ cursor: pointer }
+.col-sm-7 p{ text-align: justify }

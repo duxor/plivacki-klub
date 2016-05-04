@@ -40,6 +40,14 @@ Route::get('/kalendar',function(){
 Route::get('/galerija',function(){
     return view('galerije')->with('galerije',Objava::getGalerije());
 });
+Route::get('/vesti/{x?}',function($stranica=0){
+    $return=Objava::ucitajStranicu($stranica);
+    return view('objave')
+        ->with('objave',$return['objave'])
+        ->with('brojStranica',$return['brojStranica'])
+        ->with('aktivna',$stranica)
+        ->with('admin',Auth::check());
+});
 
 Route::get('/{slug}',function($slug){
     return view('objava')
