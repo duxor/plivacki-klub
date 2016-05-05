@@ -149,6 +149,8 @@
             $('textarea').trumbowyg();
             $('#datetimepicker').datetimepicker();
             $('#datetimepicker').data('DateTimePicker').locale('sr').format('DD.MM.Y. HH:mm:ss');
+            $('#vreme_id').datetimepicker();
+            $('#vreme_id').data('DateTimePicker').locale('sr').format('HH:mm:ss');
             $('[data-toggle=tooltip]').tooltip();
             @if(isset($takmicar['datum_rodjenja'])) $('#datetimepicker').val('{{$takmicar['datum_rodjenja']}}'); @endif
         });

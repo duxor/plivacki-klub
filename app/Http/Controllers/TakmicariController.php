@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Redirect;
 
 class TakmicariController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     //Prikaz svih takmicara
     public function getIndex(){
             $takmicari = Takmicar::all();
