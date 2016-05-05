@@ -142,7 +142,7 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
 	    </div>
         <script> $(function() {
                 $('[data-togglee=tooltip]').tooltip();
-                $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši',});
+                $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši'});
             });
         </script>
     @endif
@@ -159,7 +159,6 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                     },
                     function(data){
                         var norme=JSON.parse(data);
-                        console.log(norme);
                         if(norme.length<1){
                             $('#lista_normi').html('<h3>Ne postoji ni jedan rezultat.');
                             return;
@@ -181,11 +180,10 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                         $('#lista_normi').html(ispis+'</tbody></table>');
                         $('#lista_normi').fadeIn();
                         $('[data-togglee=tooltip]').tooltip();
-                        $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši',});
+                        $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši'});
                     })};
 
         function editNorme(id, takmicenjenaziv, normemuski, normezenski,disciplina, godiste){
-            console.log(id);
             $("#btn_sacuvaj").html("<span class='glyphicon glyphicon-pencil'></span> Ažuriraj podatke");
             $('input[name=update_norme]').val(1);
             $('input[name=norme_id]').val(id);
@@ -201,7 +199,6 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
             $('[data-toggle=tooltip]').tooltip();
             @if(isset($takmicar['datum_rodjenja'])) $('#datetimepicker').val('{{$takmicar['datum_rodjenja']}}'); @endif
         });
-
     </script>
     {!! HTML::script('js/bootstrap-confirmation.js') !!}
 @endsection

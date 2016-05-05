@@ -76,13 +76,10 @@ class KreiranjeBaze extends Migration
         });
          Schema::create('norme', function (Blueprint $table) {
              $table->increments('id');
-
              $table->unsignedInteger('takmicenje_naziv');
              $table->foreign('takmicenje_naziv')->references('id')->on('objava');
-
              $table->unsignedBigInteger('stil_id');
              $table->foreign('stil_id')->references('id')->on('stil');
-
              $table->integer('godiste');
              $table->time('norme_muski');
              $table->time('norme_zenski');

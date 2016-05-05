@@ -16,8 +16,10 @@ use DB;
 class NormeController extends Controller
 {
     public function getIndex(){
-        $norme=Norme::all();
-        return view('norme',compact('norme'));
+        $id_takmicenja= Norme::join('stil','stil.id','=','norme.stil_id')->pluck('norme.takmicenje_naziv')->first();
+        $norme=Norme::join('stil','stil.id','=','norme.stil_id')->join('objava','objava.id','=','norme.takmicenje_naziv')->where('norme.takmicenje_naziv','=',$id_takmicenja)->get(['norme.godiste','norme.norme_muski','norme_zenski','objava.naslov','stil.naziv'])->toArray();
+        $naziv_takmicenja=Norme::join('objava','objava.id','=','norme.takmicenje_naziv')->groupBy('norme.takmicenje_naziv')->get(['objava.naslov','objava.id'])->toArray();
+        return view('norme',compact(['naziv_takmicenja','norme']));
     }
     public function getDodajNorme(){
     	$stil=Stil::lists('naziv','id');
@@ -54,7 +56,7 @@ class NormeController extends Controller
     }
     public function postUcitajRezultate(Request $request){
     	if ($request->ajax()) {
-           $norme= Norme::join('stil','stil.id','=','norme.stil_id')->where('norme.takmicenje_naziv','=',$request->id)->get(['norme.id','norme.godiste','norme.norme_muski','norme_zenski','norme.takmicenje_naziv','stil.naziv','norme.stil_id']);
+           $norme= Norme::join('stil','stil.id','=','norme.stil_id')->join('objava','objava.id','=','norme.takmicenje_naziv')->where('norme.takmicenje_naziv','=',$request->id)->get(['norme.id','norme.godiste','norme.norme_muski','norme_zenski','norme.takmicenje_naziv','stil.naziv','norme.stil_id','objava.sadrzaj']);
             return json_encode($norme);
     	}
     }

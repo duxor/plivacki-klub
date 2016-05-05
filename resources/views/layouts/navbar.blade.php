@@ -34,7 +34,7 @@
                     </ul>
                 </li>
                 <li><a href="/galerija"><i class="glyphicon glyphicon-picture"></i> Galerija</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-time"></i> Norme</a></li>
+                <li><a href="/norme/"><i class="glyphicon glyphicon-time"></i> Norme</a></li>
                 @if (!Auth::check())
                     <li><a href="/prijava"><i class="glyphicon glyphicon-log-in"></i> Prijava</a></li>
                 @else
