@@ -1,7 +1,7 @@
 @extends('layouts.master-advance')
 @section('container')
     <div class="col-md-8">
-        <div id="lista_normi"></div>
+        <div class="pre-scrollable" id="lista_normi"></div>
         <div id="info"></div>
         <table id="prva_norma" class="table table-condensed table-hover ">
             <thead>
@@ -20,9 +20,9 @@
         </table>
     </div>
     <div class="col-md-4">
-        <div class="panel panel-default">
+        <div class="panel panel-default pre-scrollable">
             <div class="panel-body">
-                <table class="table table-condensed ">
+                <table class="table  table-condensed ">
                     <thead><tr><th><h3>Naziv takmičenja</h3></th></tr></thead>
                     <tbody>
                         @foreach($naziv_takmicenja as $n)
