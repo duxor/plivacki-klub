@@ -1,5 +1,5 @@
-@extends('layouts.master')
-@section('body')
+@extends('layouts.master-advance')
+@section('container')
     <table class="table table-condensed ">
         <thead>
         <tr><th>Naziv takmičenja</th><th>Mesto</th><th>Datum</th><th>Klupski rezultati</th><th>Sumarni rezultat</th><th></th></tr>

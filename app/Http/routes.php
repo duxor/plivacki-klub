@@ -11,6 +11,7 @@
 |
 */
 use App\Objava;
+use App\Takmicar;
 use \Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use App\Takmicar;
@@ -25,11 +26,13 @@ Route::get('/', function () {
 });
 
 Route::auth();
+Route::get('/takmicari/prikazi/{slug}', function ($slug) {
+    return view('takmicari.takmicar')->with('takmicar', Takmicar::where('slug',$slug)->get()->first());
+});
 Route::controller('/rezultati','RezultatiController');
 Route::controller('/norme','NormeController');
 Route::controller('/takmicari','TakmicariController');
 Route::controller('/administracija','AdministracijaController');
-
 Route::get('/vizija-kluba',function(){
     return view('vizija-kluba');
 });

@@ -35,6 +35,7 @@
         {!! Form::hidden('foto_pomocna',$takmicar ? $takmicar->foto : '') !!}
         <div class="col-sm-8 mt20">{!!Form::text('ime',null,['class'=>'form-control','placeholder'=>'Ime'])!!}</div>
         <div class="col-sm-8 mt20">{!!Form::text('prezime',null,['class'=>'form-control','placeholder'=>'Prezime'])!!}</div>
+        <div class="col-sm-8 mt20"><h4>Pol: Muški {!! Form::radio('pol_id','1',1)!!} Ženski {!! Form::radio('pol_id','2')!!}</h4></div>
         <div class="col-sm-8 mt20">{!!Form::text('datum_rodjenja',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Datum rodjenja'])!!}</div>
         <div class="col-sm-8 mt20">{!!Form::text('registracioni_broj',null,['class'=>'form-control','placeholder'=>'Registracioni broj'])!!}</div>
         <div class="col-sm-12 mt20">{!!Form::textarea('opste_informacije',null,['class'=>'','placeholder'=>'Opšte informacije'])!!}</div>
@@ -64,6 +65,8 @@
                         '<div class="col-sm-8 mt20">{!!Form::select("stil",$stilovi,1,["class"=>"form-control","id"=>"stil_id"])!!}</div>' +
                         '<div class="col-sm-4 mt20">{!! Form::label("vreme","Vreme*", ["data-toggle"=>"tooltip","title"=>"Polje je obavezno za unos"]) !!}</div>' +
                         '<div class="col-sm-8 mt20">{!!Form::text("vreme",null,["class"=>"form-control","id"=>"vreme_id"])!!}</div>' +
+                        '<div class="col-sm-4 mt20">{!! Form::label("stil","Dužina bazena*", ["data-toggle"=>"tooltip","title"=>"Polje je obavezno za unos"]) !!}</div>' +
+                        '<div class="col-sm-8 mt20">{!!Form::select("duzina_bazena",array(1 => 'Veliki (50m)', 2 => 'Mali (25m)'),1,["class"=>"form-control","id"=>"duzina_bazena_id"])!!}</div>' +
                         '{!! Form::close() !!}'+
                         '<div class="col-sm-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',["class"=>"btn btn-lg btn-primary", "id"=>"btn","data-toggle"=>"tooltip"])!!}</div>'
                      )
@@ -73,7 +76,8 @@
                          var takmicar_id = "{{$takmicar->id}}";
                          var stil_id = $('#stil_id').val();
                          var vreme = $('#vreme_id').val();
-                         $.post('/takmicari/rekord', {takmicar_id: takmicar_id, stil_id: stil_id, vreme: vreme,  _token: '{{csrf_token()}}'});
+                         var duzina_bazena_id = $('#duzina_bazena_id').val();
+                         $.post('/takmicari/rekord', {takmicar_id: takmicar_id, stil_id: stil_id, vreme: vreme,duzina_bazena_id: duzina_bazena_id,  _token: '{{csrf_token()}}'});
                          prikazi_rekorde("{{$takmicar->id}}");
                     });
 
@@ -149,6 +153,8 @@
             $('textarea').trumbowyg();
             $('#datetimepicker').datetimepicker();
             $('#datetimepicker').data('DateTimePicker').locale('sr').format('DD.MM.Y. HH:mm:ss');
+            $('#vreme_id').datetimepicker();
+            $('#vreme_id').data('DateTimePicker').locale('sr').format('HH:mm:ss');
             $('[data-toggle=tooltip]').tooltip();
             @if(isset($takmicar['datum_rodjenja'])) $('#datetimepicker').val('{{$takmicar['datum_rodjenja']}}'); @endif
         });

@@ -16,6 +16,7 @@ class AdministracijaController extends Controller{
     public function getIndex(){
         return view('admin.index');
     }
+    
     public function getDodajObjavu(){
         return view('admin.dodaj-objavu');
     }

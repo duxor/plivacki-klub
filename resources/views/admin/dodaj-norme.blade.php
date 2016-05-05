@@ -92,12 +92,31 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
 	            {!!Form::select('stil',$stil,null,['id'=>'disciplina','class'=>'form-control col-sm-6','placeholder'=>'Disciplina'])!!}
 	        </div>
             <div class="col-sm-12 mt20">
-                {!!Form::textarea('norme_informacije',null,['class'=>'form-control','placeholder'=>'Opšte informacije'])!!}
+                <div id="info" ></div>
             </div>
             <div class="col-sm-12 mt20"></div>
 	        <div class="col-sm-12 mt20">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['id'=>'btn_sacuvaj','type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
 	        {!!Form::close()!!}
         </div>
+        <script>
+            $('#takmicenje_naziv').change(function() {
+                var id =$('#takmicenje_naziv').val();
+                console.log(id);
+                $.post('/norme/ucitaj-objavu',
+                        {
+                            _token:'{{csrf_token()}}',
+                            id: id
+                        },function(data){
+                            var info=JSON.parse(data);
+                            console.log(info);
+                            if(info.length == 0){
+                                $('#info').empty();
+                            }else{
+                                $('#info').html(info[0]['sadrzaj']);
+                            }
+                        });
+            });
+        </script>
         <div class="col-sm-6">
         PRIKAZ NORMI
 	        <div class="panel panel-default">
@@ -107,7 +126,7 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
 			  <tbody>
 				  @foreach($naziv_takmicenja as $n)
 				  	<tr >
-				  		<td ><a href="#" class="btn3d btn btn-xs btn-info"  onclick="ucitajRezultate({{$n['id']}})">{{$n['naslov']}}</a>&nbsp &nbsp<a href="#" class="btn3d btn btn-xs btn-info"  onclick="editNorme({{$n['id']}})"><span class="glyphicon glyphicon-edit"></span></a>&nbsp &nbsp<a data-href="/norme/obrisi-normu/{{$n['id']}}" class="btn3d btn btn-xs btn-danger"  data-toggle="confirmation" data-togglee="tooltip"><span class="glyphicon glyphicon-minus"></span></a></td>
+				  		<td ><a href="#" class="btn3d btn btn-xs btn-info"  onclick="ucitajRezultate({{$n['id']}})">{{$n['naslov']}}</a>&nbsp &nbsp<a data-href="/norme/obrisi-normu/{{$n['id']}}" class="btn3d btn btn-xs btn-danger"  data-toggle="confirmation" data-togglee="tooltip"><span class="glyphicon glyphicon-minus"></span></a></td>
                         </tr>
 				  @endforeach
 
@@ -117,19 +136,13 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
 			</div>
 	        <div class="panel panel-default">
 				  <div class="panel-body">
-					<table class="table table-condensed ">
-					  	<thead><tr><th>Naziv takmičenja</th></tr></thead>
-					  	<tbody>
-						  
-						</tbody>
-					</table>
-					    <div id="lista_normi"></div>
+                      <div id="lista_normi"></div>
 				</div>
 	        </div>
 	    </div>
         <script> $(function() {
                 $('[data-togglee=tooltip]').tooltip();
-                $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši',});
+                $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši'});
             });
         </script>
     @endif
@@ -146,7 +159,6 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                     },
                     function(data){
                         var norme=JSON.parse(data);
-                        console.log(norme);
                         if(norme.length<1){
                             $('#lista_normi').html('<h3>Ne postoji ni jedan rezultat.');
                             return;
@@ -154,7 +166,6 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                         var ispis='' +
                                 '<table class="table table-condensed ">' +
                                 '<thead>' +
-                                '<tr>'+ norme[0]['naslov'] +' </tr>'+
                                 '<tr><th>Godište</th><th>Muškarci</th><th>Disciplina</th><th>Žene</th></tr>' +
                                 '</thead>' +
                                 '<tbody>';
@@ -163,33 +174,24 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                             '<td >'+norme[i]['godiste']+'</td>' +
                             '<td >'+norme[i]['norme_muski']+'</td>' +
                             '<td >'+norme[i]['naziv']+'</td>' +
-                            '<td >'+norme[i]['norme_zenski']+'</td>' +
+                            '<td >'+norme[i]['norme_zenski']+'&nbsp&nbsp<a href="#" class="btn3d btn btn-xs btn-info"  onclick="editNorme(\''+norme[i]['id']+'\',\''+norme[i]['takmicenje_naziv']+'\',\''+norme[i]['norme_muski']+'\',\''+norme[i]['norme_zenski']+'\',\''+norme[i]['stil_id']+'\',\''+norme[i]['godiste']+'\')"><span class="glyphicon glyphicon-edit"></span></a></td>' +
                             '</tr>';
-                                if(norme[i]['norme_informacije']){
-                                    ispis+='<tr>'+norme[i]['norme_informacije']+' </tr>';
-                                }
                         }
                         $('#lista_normi').html(ispis+'</tbody></table>');
                         $('#lista_normi').fadeIn();
                         $('[data-togglee=tooltip]').tooltip();
-                        $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši',});
-                        //$('[data-toggle=tooltip]').tooltip();
+                        $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši'});
                     })};
 
-        function editNorme(id){
-            emptyfunction();
-           
+        function editNorme(id, takmicenjenaziv, normemuski, normezenski,disciplina, godiste){
             $("#btn_sacuvaj").html("<span class='glyphicon glyphicon-pencil'></span> Ažuriraj podatke");
-
             $('input[name=update_norme]').val(1);
             $('input[name=norme_id]').val(id);
-            $('[data-toggle=tooltip]').tooltip();
-        }
-        function emptyfunction(){
-
-            $('godiste').empty();
-
-
+            $('select[name=takmicenje_naziv]').val(takmicenjenaziv);
+            $('#datetimepicker').val(normemuski);
+            $('#datetimepicker2').val(normezenski);
+            $('select[name=stil]').val(disciplina);
+            $('#godiste').val(godiste);
         }
           $(function () {
             $('textarea').trumbowyg();
@@ -197,7 +199,6 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
             $('[data-toggle=tooltip]').tooltip();
             @if(isset($takmicar['datum_rodjenja'])) $('#datetimepicker').val('{{$takmicar['datum_rodjenja']}}'); @endif
         });
-
     </script>
     {!! HTML::script('js/bootstrap-confirmation.js') !!}
 @endsection

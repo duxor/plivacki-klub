@@ -46,10 +46,20 @@ class KreiranjeBaze extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();
         });
+
+       Schema::create('pol', function(Blueprint $table){
+            $table->bigIncrements('id');
+            $table->string('naziv', 45)->unique();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->nullable();
+        });
+
         Schema::create('takmicar', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('ime',45);
             $table->string('prezime',45);
+            $table->unsignedBigInteger('pol_id');
+            $table->foreign('pol_id')->references('id')->on('pol');
             $table->string('slug',250);
             $table->timestamp('datum_rodjenja');
             $table->string('foto',250)->nullable();
@@ -64,29 +74,30 @@ class KreiranjeBaze extends Migration
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();
         });
+
+        Schema::create('duzina_bazena', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('naziv', 45)->unique();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->nullable();
+        });
+
         Schema::create('rekord', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('takmicar_id');
             $table->foreign('takmicar_id')->references('id')->on('takmicar');
             $table->unsignedBigInteger('stil_id');
             $table->foreign('stil_id')->references('id')->on('stil');
+            $table->unsignedBigInteger('duzina_bazena_id');
+            $table->foreign('duzina_bazena_id')->references('id')->on('duzina_bazena');
             $table->time('najbolje_vreme');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->nullable();
-        });
-         Schema::create('norme_info', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('norme_informacije')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable();
         });
          Schema::create('norme', function (Blueprint $table) {
              $table->increments('id');
-
              $table->unsignedInteger('takmicenje_naziv');
              $table->foreign('takmicenje_naziv')->references('id')->on('objava');
-             $table->unsignedInteger('norme_info_id')->nullable();
-             $table->foreign('norme_info_id')->references('id')->on('norme_info');
              $table->unsignedBigInteger('stil_id');
              $table->foreign('stil_id')->references('id')->on('stil');
              $table->integer('godiste');
@@ -107,6 +118,5 @@ class KreiranjeBaze extends Migration
         Schema::drop('takmicar');
         Schema::drop('stil');
         Schema::drop('norme');
-        Schema::drop('norme_info');
     }
 }
