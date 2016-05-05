@@ -15,7 +15,7 @@ class TestPodaciSveVezanoZaObjave extends Seeder
      * @return void
      */
     public function run(){
-        $brojTestObjava=30;//<<<<<<<<<<<<
+        $brojTestObjava=100;//<<<<<<<<<<<<
         $duzinaNaslovaBrojRijeci=5;
         $duzinaSadrzajaBrojRijeci=40;
         $randomFotografije=[
@@ -66,7 +66,7 @@ class TestPodaciSveVezanoZaObjave extends Seeder
             //DATUM
             if(rand(0,1)==1){
                 $insert['mesto']=strtoupper($randomRijeci[rand(0,$brojRandomRijeci-1)]);
-                $insert['datum']='2016-04-'.rand(0,31);
+                $insert['datum']='2016-'.str_pad(rand(1,12),2,'0',STR_PAD_LEFT).'-'.rand(0,31);
             }
             $insert['prioritet']=rand(0,1);
             Objava::insert([$insert]);

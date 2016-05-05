@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#moj-meni" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#moj-meni">
                 <span class="sr-only">Prikaži navigaciju</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -28,13 +28,13 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="/kalendar"><i class="glyphicon glyphicon-calendar"></i> Kalendar</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-user"></i> Takmičari</a></li>
-                        <li><a href="#"><i class="glyphicon glyphicon-flag"></i> Rekordi</a></li>
+                        <li><a href="/takmicari"><i class="glyphicon glyphicon-user"></i> Takmičari</a></li>
+                        <li><a href="/rekordi"><i class="glyphicon glyphicon-flag"></i> Rekordi</a></li>
                         <li><a href="/rezultati"><i class="glyphicon glyphicon-indent-right"></i> Rezultati</a></li>
                     </ul>
                 </li>
                 <li><a href="/galerija"><i class="glyphicon glyphicon-picture"></i> Galerija</a></li>
-                <li><a href="#"><i class="glyphicon glyphicon-time"></i> Norme</a></li>
+                <li><a href="/norme"><i class="glyphicon glyphicon-time"></i> Norme</a></li>
                 @if (!Auth::check())
                     <li><a href="/prijava"><i class="glyphicon glyphicon-log-in"></i> Prijava</a></li>
                 @else

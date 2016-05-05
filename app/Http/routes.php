@@ -12,18 +12,19 @@
 */
 use App\Objava;
 use \Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
+use App\Takmicar;
 
 Route::get('/', function () {
     return view('index')
         ->with('objave',Objava::getObjaveZaPocetnu())
         ->with('slajder',Objava::getSlajder())
+        ->with('takmicari',Takmicar::takmicariZaPocetnu())
+        ->with('kalendar',Objava::getKalendarZaTekuci())
         ->with('admin',Auth::check());
 });
 
 Route::auth();
-
-
-
 Route::controller('/rezultati','RezultatiController');
 Route::controller('/norme','NormeController');
 Route::controller('/takmicari','TakmicariController');
@@ -48,7 +49,11 @@ Route::get('/vesti/{x?}',function($stranica=0){
         ->with('aktivna',$stranica)
         ->with('admin',Auth::check());
 });
-
+Route::post('/kontakt',function(){
+    //UNIJETI MEJL NA KOJI SE SALJU PORUKE SA KONTAKT FORME (RADUI NA REALNOM SERVERU)
+    //mail('to@mejl.com','PORUKA SA SAJTA od: '.Input::get('ime'),'Adresa pošiljaoca: '.Input::get('email').' PORUKA: '.Input::get('poruka'));
+    return json_encode(['msg'=>'Poruka uspešno poslata.']);
+});
 Route::get('/{slug}',function($slug){
     return view('objava')
         ->with('objava', Objava::dajObjavu($slug))

@@ -1,6 +1,5 @@
-@extends('layouts.master')
-@section('body')
-    <div class="container">
+@extends('layouts.master-advance')
+@section('container')
         @if(!sizeof($galerije))
             <h3>Ni jedna galerija ne postoji u evidenciji.</h3>
         @else
@@ -18,5 +17,4 @@
                 </div>
             @endforeach
         @endif
-    </div>
 @endsection
