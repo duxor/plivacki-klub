@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\DuzinaBazena;
 use App\Http\Requests\DodajTakmicara;
+use App\Pol;
 use App\Rekord;
 use App\Stil;
 use App\Takmicar;
@@ -14,14 +16,16 @@ use Illuminate\Support\Facades\Redirect;
 
 class TakmicariController extends Controller
 {
-    public function __construct(){
+  /*  public function __construct(){
         $this->middleware('auth');
-    }
+    }*/
     //Prikaz svih takmicara
     public function getIndex(){
             $takmicari = Takmicar::all();
             return view('takmicari.index')->with('takmicari',$takmicari);
     }
+    
+
     //Prikaz forme za dodavanje takmicara
     public function getDodajTakmicara(){
         $stilovi = Stil::lists('naziv','id');
@@ -65,6 +69,7 @@ class TakmicariController extends Controller
         //Unosenje podataka
         $takmicar->ime = $request->ime;
         $takmicar->prezime = $request->prezime;
+        $takmicar->pol_id = $request->pol_id;
         if (!$takmicar_provera) $takmicar->slug = $slug;
         $takmicar->datum_rodjenja = date('Y-m-d H:i', strtotime($request->datum_rodjenja));
         $takmicar->foto = $putanja_slike;
@@ -73,26 +78,28 @@ class TakmicariController extends Controller
 
         if ($takmicar_provera) {
             $takmicar->update();
-            return Redirect::to('takmicari/takmicar/'.$takmicar->slug)->with('poruka', 'Uspešno ste izvršili ažuriranje');
+            return Redirect::to('takmicari/izmeni/'.$takmicar->slug)->with('poruka', 'Uspešno ste izvršili ažuriranje');
         } else {
             $takmicar->save();
-            return Redirect::to('takmicari/takmicar/'.$takmicar->slug)->with('poruka', 'Uspešno sta dodali novog takmičara');
+            return Redirect::to('takmicari/izmeni/'.$takmicar->slug)->with('poruka', 'Uspešno sta dodali novog takmičara');
         }
 
     }
 
     //Pikaz forme za azuriranje takmicara
-    public function getTakmicar($slug){
+    public function getIzmeni($slug){
        $takmicar = Takmicar::where('slug',$slug)->first();
         $stilovi = Stil::lists('naziv','id');
-      return view('takmicari.dodaj-takmicara')->with('takmicar',$takmicar)->with('stilovi',$stilovi);
+        $duzina_bazena = DuzinaBazena::lists('naziv','id');
+      return view('takmicari.dodaj-takmicara')->with('takmicar',$takmicar)->with('stilovi',$stilovi)->with('duzina_bazena',$duzina_bazena);
     }
-    public function postTakmicar(DodajTakmicara $request, $slug){
+    public function postIzmeni(DodajTakmicara $request, $slug){
        return $this->postDodajTakmicara($request, $slug);
     }
     //Brisanje takmicara
-    public function getUkloni(){
-        return "izmeni takimcara";
+    public function getUkloni($slug){
+        Takmicar::where('slug','=',$slug)->delete();
+        return Redirect::to('/takmicari');
     }
 
     //Funkcija za prikazivanje rekorda u tabeli
@@ -118,6 +125,7 @@ class TakmicariController extends Controller
             $rekord->takmicar_id = $request->takmicar_id;
             $rekord->stil_id = $request->stil_id;
             $rekord->najbolje_vreme = $request->vreme;
+             $rekord->duzina_bazena_id = $request->duzina_bazena_id;
             $rekord->save();
 
              $rekordi = DB::table('rekord')
@@ -138,5 +146,14 @@ class TakmicariController extends Controller
         if ($request->ajax()) {
             Rekord::destroy($request->rekord_id);
         }
+    }
+
+
+    public function getRekordi()
+    {
+        $stilovi = Stil::lists('naziv','id');
+        $pol = Pol::lists('naziv','id');
+        $duzina_bazena = DuzinaBazena::lists('naziv','id');
+        return view('takmicari.rekordi')->with('stilovi',$stilovi)->with('pol',$pol)->with('duzina_bazena',$duzina_bazena);
     }
 }
