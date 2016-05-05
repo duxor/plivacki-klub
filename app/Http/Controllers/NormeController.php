@@ -36,7 +36,7 @@ class NormeController extends Controller
     public function postDodajNorme(DodajNorme $podaci, $editMsg=null,$id=null){
     	    $stil=Stil::lists('naziv','id');
 
-    		$konacniPodaci=$podaci->except(['_token','update_norme','norme_id','stil','norme_informacije']);
+    		$konacniPodaci=$podaci->except(['_token','update_norme','norme_id','stil']);
             $konacniPodaci['takmicenje_naziv']=$podaci->get('takmicenje_naziv');
             $konacniPodaci['godiste']=$podaci->get('godiste');
             $konacniPodaci['stil_id']=$podaci->get('stil');
@@ -45,16 +45,8 @@ class NormeController extends Controller
 
 
         if($podaci['update_norme']==1){
-            /*$id=$podaci->get('rezultati_id');
+            $id=$podaci->get('norme_id');
             Norme::where('id',$id)->update($konacniPodaci);
-            $naziv_takmicenjalists=Objava::lists('naslov','id');
-        $naziv_takmicenja=Norme::join('objava','objava.id','=','norme.takmicenje_naziv')->groupBy('norme.takmicenje_naziv')->get(['objava.naslov','objava.id'])->toArray();
-            return view('admin.dodaj-norme',['stil' => $stil,'naziv_takmicenja'=>$naziv_takmicenja,'naziv_takmicenjalists'=>$naziv_takmicenjalists])->with('uspesnoDodavanje',$podaci['update_rezultati']?'Uspešno ste izvršili azuriranje!':'Uspešno ste izvršili izmenu normi!');
-*/
-        }elseif($podaci->get('norme_informacije')){
-            $id_info = DB::table('norme_info')->insertGetId(['norme_informacije' => $podaci->get('norme_informacije')]);
-            $konacniPodaci['norme_info_id']=$id_info;
-            Norme::insert([$konacniPodaci]);
             return Redirect::to('/norme/dodaj-norme');
         }else
             Norme::insert([$konacniPodaci]);
@@ -62,12 +54,15 @@ class NormeController extends Controller
     }
     public function postUcitajRezultate(Request $request){
     	if ($request->ajax()) {
-           $norme= Norme::leftJoin('norme_info','norme_info.id','=','norme.norme_info_id')->join('stil','stil.id','=','norme.stil_id')->where('norme.takmicenje_naziv','=',$request->id)->get();
+           $norme= Norme::join('stil','stil.id','=','norme.stil_id')->where('norme.takmicenje_naziv','=',$request->id)->get(['norme.id','norme.godiste','norme.norme_muski','norme_zenski','norme.takmicenje_naziv','stil.naziv','norme.stil_id']);
             return json_encode($norme);
     	}
     }
     public function getObrisiNormu($id){
         Norme::where('takmicenje_naziv','=',$id)->delete();
         return Redirect::to('/norme/dodaj-norme');
+    }
+    public function postUcitajObjavu(Request $request){
+        return json_encode(Objava::where('objava.id','=',$request->id)->get());
     }
 }
