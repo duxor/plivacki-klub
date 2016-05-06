@@ -169,6 +169,8 @@
     padding-top: 0px;
     margin-top:0px
 }
+#poslednje-objave .objava .col-xs-9{ font-size: 100% }
+#poslednje-objave .objava h2{ font-size: 102% }
 #takmicari{
     background-color: #D0226C;
     text-align: center;
@@ -221,3 +223,4 @@
     right:20px
 }
 #to-top img{ width:100% }
+.prioriteti a{ color: #222 }

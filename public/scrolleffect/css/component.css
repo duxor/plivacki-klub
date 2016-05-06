@@ -19,7 +19,8 @@ html, body, .container-scroll, .header {
 	margin: 0 auto;
 	width: 100%;
 }
-
+@media(max-width: 767px){ .header{ display: none } }
+@media(min-width: 768px){ .header{ display: block } }
 .bg-img {
 	position: absolute;
 	overflow: hidden;

@@ -11,13 +11,20 @@ class Objava extends Model{
     public static $numSlides=5;
     public static $brojObjavaNaPocetnoj=5;
     public static $brObjavaNaStranici=9;
-    public static function getObjaveSkraceno($takmicenja=null,$brojObjava=null,$stranica=null){
-        $objave=$takmicenja?
-            Objava::where('slug','<>','o-nama')
-                ->whereNotNull('mesto')->orderBy('datum')->stranica($stranica)->uzmi_prvih($brojObjava)->get(['naslov','slug','foto','sadrzaj','datum','mesto'])
-            :
-            Objava::where('slug','<>','o-nama')
-                ->orderBy('id','desc')->stranica($stranica)->uzmi_prvih($brojObjava)->get(['naslov','slug','foto','sadrzaj']);
+    public static function getObjaveSkraceno($takmicenja=null,$brojObjava=null,$stranica=null,$sadrzaj=null,$tekuci=null){
+        $objave=Objava::where('slug','<>','o-nama');
+        $polja=['naslov','slug','foto'];
+        if($takmicenja){
+            $polja=array_merge($polja,['sadrzaj','mesto','datum']);
+            $objave=$objave->whereNotNull('mesto')->orderBy('datum');
+            if($tekuci) $objave->where('datum','like','%-'.str_pad(date('m'),2,'0',STR_PAD_LEFT).'-%');
+        }else{
+            if(!$sadrzaj) array_push($polja,'sadrzaj');
+            $objave=$objave->orderBy('id','desc');
+        }
+        $objave=$objave->stranica($stranica)
+            ->uzmi_prvih($brojObjava)
+            ->get($polja);
         foreach($objave as $i=>$objava){
             $pozicija=strpos($objava->sadrzaj,Objava::$readMore);
             if($pozicija>0) $objave[$i]['sadrzaj']=substr($objava->sadrzaj,0,$pozicija);
@@ -53,6 +60,18 @@ class Objava extends Model{
         }
         if(!strstr($kalendar,date('Y-m-d'))) $kalendar .= ($test?'"'.date('Y-m-d').'":{"number":"","badgeClass":"badge-danger","class":"active-danger kalendar-dan "}':'').'}';
         return ['takmicenja'=>$takmicenja, 'kalendar'=>$kalendar];
+    }
+    public static function getKalendarZaTekuci(){
+        $takmicenja=Objava::getObjaveSkraceno(true,null,null,true,true);
+        $test=true;
+        $danasnji=date('Y-m-d');
+        $kalendar='{';
+        foreach($takmicenja as $k=>$takmicenje){
+            if(!strstr($kalendar,date('Y-m-d', strtotime($takmicenje->datum)))) $kalendar .= '"' . date('Y-m-d', strtotime($takmicenje->datum)) . '":{"number": "","badgeClass":"badge-warning","id": "#' . $takmicenje->slug . '","class": "","aclass":"kalendar-a","title":"' . $takmicenje->naslov . '","slug":"' . $takmicenje->slug . '"},';
+            if($danasnji==date('Y-m-d', strtotime($takmicenje->datum))) $test=false;
+        }
+        if(!strstr($kalendar,date('Y-m-d'))) $kalendar .= ($test?'"'.date('Y-m-d').'":{"number":"","badgeClass":"badge-danger","class":"active-danger kalendar-dan "}':'').'}';
+        return $kalendar;
     }
     public static function getGalerije(){
         return Objava::whereNotNull('galerija')->get(['naslov','foto','galerija']);

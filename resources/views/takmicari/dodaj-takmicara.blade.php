@@ -108,17 +108,14 @@
                         '<thead>' +
                         '<tr>' +
                         '   <th>Stil</th>' +
-                        '   <th>Najbolje vreme</th>' +
-                        '   <th>Dužina Bazena</th>' +
-                        '</th><th>'+
+                        '   <th>Najbolje vreme</th>' +'</th><th>'+
                         '</thead>' +
                         '<tbody>'
                 for(var i=0;i<rezultati.length;i++)
                 {
                     txt +=  '<tr>' +
                             '<td>' + rezultati[i]['stil'] + '</td>' +
-                            '<td>' + rezultati[i]['najbolje_vreme'] + '</td>' +
-                            '<td>' + rezultati[i]['duzina_bazena'] + '</td>' +
+                            '<td>' + rezultati[i]['najbolje_vreme'] + '<t/d>' +
                             '<td>'+
                             '<a data-href="#"   onclick="obrisiRezultat(\''+rezultati[i]['id']+'\')" class=" btn btn-xs btn-danger" data-toggle="confirmation" data-togglee="tooltip"><span style="" class="glyphicon glyphicon-trash"></span></a>' +
                             '</td>'

@@ -5,7 +5,7 @@ $(function(){
 })
 /*MAPA START::*/
 var myCenter = new google.maps.LatLng("44.798831","20.4465872");
-function initialize() {
+function initialize(){
     var mapProp = {
         center:myCenter,
         zoom:11,
@@ -147,3 +147,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
     document.getElementById('spin-dalje').addEventListener('click', function() { toggle( 'reveal' ) } )
 })();
 /*scrol-function end::*/
+
+function kontaktirajnas(token){
+    $('.form-horizontal').html('<center><i class="icon-spin6 animate-spin" style="font-size: 350%"></i></center>');
+    $.post('/kontakt',{
+        _token:token,
+        ime:$('input[name=ime]').val(),
+        email:$('input[name=email]').val(),
+        poruka:$('textarea[name=poruka]').val()
+    },function(data){
+        $('.form-horizontal').html(JSON.parse(data)['msg']);
+    });
+}

@@ -20,7 +20,6 @@ class KonfiguracioniPodaci extends Seeder
     {
         Korisnici::insert(['ime'=>'admin','username'=>'admin','password'=>bcrypt('admin'),'email'=>'admin@gmail.com']);
         Objava::insert(['naslov'=>'O nama','slug'=>'o-nama']);
-        Objava::insert(['naslov'=>'Vizija kluba','slug'=>'vizija-kluba']);
         Stil::insert([
             ['naziv'=>'50 slobodno'],
             ['naziv'=>'100 slobodno'],
