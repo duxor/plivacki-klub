@@ -14,7 +14,7 @@ use App\Objava;
 use App\Takmicar;
 use \Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
-use App\Takmicar;
+
 
 Route::get('/', function () {
     return view('index')
@@ -25,17 +25,21 @@ Route::get('/', function () {
         ->with('admin',Auth::check());
 });
 
+
+//Aleksandar Jovic
 Route::auth();
+Route::controller('/takmicari','TakmicariController');
 Route::get('/takmicari/prikazi/{slug}', function ($slug) {
     return view('takmicari.takmicar')->with('takmicar', Takmicar::where('slug',$slug)->get()->first());
 });
+Route::get('/rekordi','TakmicariController@FormaRekordi');
+Route::post('/rekordi/prikazi','TakmicariController@TabelaRekordi');
+//End Aleksandar Jovic
+
 Route::controller('/rezultati','RezultatiController');
 Route::controller('/norme','NormeController');
-Route::controller('/takmicari','TakmicariController');
 Route::controller('/administracija','AdministracijaController');
-Route::get('/vizija-kluba',function(){
-    return view('vizija-kluba');
-});
+
 Route::get('/kalendar',function(){
     $rezultat=Objava::getKalendar();
     return view('kalendar')->with('takmicenja',$rezultat['takmicenja'])->with('kalendar',$rezultat['kalendar'])

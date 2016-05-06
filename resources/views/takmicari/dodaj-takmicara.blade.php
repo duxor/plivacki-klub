@@ -8,7 +8,7 @@
     {!!Html::script('/trumbowyg/trumbowyg.min.js')!!}
 
     <style>
-         img{width: 100%;}
+        img{width: 100%;}
         .mt20{margin-top: 20px}
     </style>
 
@@ -26,20 +26,20 @@
     @endif
 
     {!!Form::model($takmicar,['files'=>true, 'class'=>'form-horizontal'])!!}
-        <h1 class="col-sm-12">Dodavanje takmičara</h1>
-        <div class="col-sm-4">
-            <img id="slikaTakmicara" alt="Slika takmicara" @if(isset($takmicar['foto'])) src="{{$takmicar['foto']}}" @else src="/img/default/foto-takmicari.jpg" @endif onclick="unesiFoto()">
-            {!!Form::file('foto',['onchange'=>'prikaziFoto(this)','style'=>'display:none'])!!}
-        </div>
+    <h1 class="col-sm-12">Dodavanje takmičara</h1>
+    <div class="col-sm-4">
+        <img id="slikaTakmicara" alt="Slika takmicara" @if(isset($takmicar['foto'])) src="{{$takmicar['foto']}}" @else src="/img/default/foto-takmicari.jpg" @endif onclick="unesiFoto()">
+        {!!Form::file('foto',['onchange'=>'prikaziFoto(this)','style'=>'display:none'])!!}
+    </div>
 
-        {!! Form::hidden('foto_pomocna',$takmicar ? $takmicar->foto : '') !!}
-        <div class="col-sm-8 mt20">{!!Form::text('ime',null,['class'=>'form-control','placeholder'=>'Ime'])!!}</div>
-        <div class="col-sm-8 mt20">{!!Form::text('prezime',null,['class'=>'form-control','placeholder'=>'Prezime'])!!}</div>
-        <div class="col-sm-8 mt20"><h4>Pol: Muški {!! Form::radio('pol_id','1',1)!!} Ženski {!! Form::radio('pol_id','2')!!}</h4></div>
-        <div class="col-sm-8 mt20">{!!Form::text('datum_rodjenja',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Datum rodjenja'])!!}</div>
-        <div class="col-sm-8 mt20">{!!Form::text('registracioni_broj',null,['class'=>'form-control','placeholder'=>'Registracioni broj'])!!}</div>
-        <div class="col-sm-12 mt20">{!!Form::textarea('opste_informacije',null,['class'=>'','placeholder'=>'Opšte informacije'])!!}</div>
-        <div class="col-sm-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['type'=>'submit', 'class'=>'btn btn-lg btn-primary ','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
+    {!! Form::hidden('foto_pomocna',$takmicar ? $takmicar->foto : '') !!}
+    <div class="col-sm-8 mt20">{!!Form::text('ime',null,['class'=>'form-control','placeholder'=>'Ime'])!!}</div>
+    <div class="col-sm-8 mt20">{!!Form::text('prezime',null,['class'=>'form-control','placeholder'=>'Prezime'])!!}</div>
+    <div class="col-sm-8 mt20"><h4>Pol: Muški {!! Form::radio('pol_id','1',1)!!} Ženski {!! Form::radio('pol_id','2')!!}</h4></div>
+    <div class="col-sm-8 mt20">{!!Form::text('datum_rodjenja',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Datum rodjenja'])!!}</div>
+    <div class="col-sm-8 mt20">{!!Form::text('registracioni_broj',null,['class'=>'form-control','placeholder'=>'Registracioni broj'])!!}</div>
+    <div class="col-sm-12 mt20">{!!Form::textarea('opste_informacije',null,['class'=>'','placeholder'=>'Opšte informacije'])!!}</div>
+    <div class="col-sm-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['type'=>'submit', 'class'=>'btn btn-lg btn-primary ','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
     {!! Form::close() !!}
 
     <div class="col-sm-6" id="prikazi_formu">
@@ -56,10 +56,10 @@
 
             //Provera takmicara
                 @if($takmicar){
-                     prikazi_rekorde("{{$takmicar->id}}");
+                prikazi_rekorde("{{$takmicar->id}}");
 
-                     //Prikaz forme za unos rekorda
-                     $('#prikazi_formu').append(
+                //Prikaz forme za unos rekorda
+                $('#prikazi_formu').append(
                         '{!!Form::open([ "id"=>"forma_podaci"])!!}' +
                         '<div class="col-sm-4 mt20">{!! Form::label("stil","Stil*", ["data-toggle"=>"tooltip","title"=>"Polje je obavezno za unos"]) !!}</div>' +
                         '<div class="col-sm-8 mt20">{!!Form::select("stil",$stilovi,1,["class"=>"form-control","id"=>"stil_id"])!!}</div>' +
@@ -69,26 +69,26 @@
                         '<div class="col-sm-8 mt20">{!!Form::select("duzina_bazena",array(1 => 'Veliki (50m)', 2 => 'Mali (25m)'),1,["class"=>"form-control","id"=>"duzina_bazena_id"])!!}</div>' +
                         '{!! Form::close() !!}'+
                         '<div class="col-sm-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',["class"=>"btn btn-lg btn-primary", "id"=>"btn","data-toggle"=>"tooltip"])!!}</div>'
-                     )
+                )
 
-                     //Cuvanje rekorda
-                     $("#btn").click(function() {
-                         var takmicar_id = "{{$takmicar->id}}";
-                         var stil_id = $('#stil_id').val();
-                         var vreme = $('#vreme_id').val();
-                         var duzina_bazena_id = $('#duzina_bazena_id').val();
-                         $.post('/takmicari/rekord', {takmicar_id: takmicar_id, stil_id: stil_id, vreme: vreme,duzina_bazena_id: duzina_bazena_id,  _token: '{{csrf_token()}}'});
-                         prikazi_rekorde("{{$takmicar->id}}");
-                    });
+                //Cuvanje rekorda
+                $("#btn").click(function() {
+                    var takmicar_id = "{{$takmicar->id}}";
+                    var stil_id = $('#stil_id').val();
+                    var vreme = $('#vreme_id').val();
+                    var duzina_bazena_id = $('#duzina_bazena_id').val();
+                    $.post('/takmicari/rekord', {takmicar_id: takmicar_id, stil_id: stil_id, vreme: vreme,duzina_bazena_id: duzina_bazena_id,  _token: '{{csrf_token()}}'});
+                    prikazi_rekorde("{{$takmicar->id}}");
+                });
 
 
                 //Ne postoji takmicar
-                }@else{
-                    //Prikazivanje greske
-                    $('#prikazi_poruku').append(
-                            '<div class="alert alert-danger">'+
-                             '<strong><h2>Ukolko želite da dodate rekord, morate prvo dodati takmičara</h2></strong>'+
-                            '</div>')
+            }@else{
+                //Prikazivanje greske
+                $('#prikazi_poruku').append(
+                        '<div class="alert alert-danger">'+
+                        '<strong><h2>Ukolko želite da dodate rekord, morate prvo dodati takmičara</h2></strong>'+
+                        '</div>')
             }@endif
             //Kraj provera takmicara
 
@@ -108,18 +108,21 @@
                         '<thead>' +
                         '<tr>' +
                         '   <th>Stil</th>' +
-                        '   <th>Najbolje vreme</th>' +'</th><th>'+
+                        '   <th>Najbolje vreme</th>' +
+                        '   <th>Dužina Bazena</th>' +
+                        '</th><th>'+
                         '</thead>' +
                         '<tbody>'
                 for(var i=0;i<rezultati.length;i++)
                 {
                     txt +=  '<tr>' +
                             '<td>' + rezultati[i]['stil'] + '</td>' +
-                            '<td>' + rezultati[i]['najbolje_vreme'] + '<t/d>' +
+                            '<td>' + rezultati[i]['najbolje_vreme'] + '</td>' +
+                            '<td>' + rezultati[i]['duzina_bazena'] + '</td>' +
                             '<td>'+
                             '<a data-href="#"   onclick="obrisiRezultat(\''+rezultati[i]['id']+'\')" class=" btn btn-xs btn-danger" data-toggle="confirmation" data-togglee="tooltip"><span style="" class="glyphicon glyphicon-trash"></span></a>' +
                             '</td>'
-                            '</tr>'
+                    '</tr>'
                 }
                 $('#prikazi_rekorde').html(txt+'</tbody></table>')
 

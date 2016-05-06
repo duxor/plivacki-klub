@@ -46,6 +46,7 @@
                             <li><a href="/administracija"><i class="glyphicon glyphicon-blackboard"></i> Administracija</a></li>
                             <li><a href="/administracija/dodaj-objavu"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-bell"></i>  Dodaj objavu</a></li>
                             <li><a href="/administracija/objava/o-nama"><i class="glyphicon glyphicon-pencil"></i>  Izmeni o nama</a></li>
+                            <li><a href="/administracija/objava/vizija-kluba"><i class="glyphicon glyphicon-pencil"></i>  Izmeni viziju kluba</a></li>
                             <li><a href="/administracija/dodaj-rezultate"><i class="glyphicon glyphicon-plus"></i> <i class="glyphicon glyphicon-indent-right"></i> Dodaj rezultate</a></li>
                             <li><a href="/takmicari/dodaj-takmicara"><i class="glyphicon glyphicon-plus"></i><i class="glyphicon glyphicon-user"></i> Dodaj takmičara</a></li>
                             <li><a href="/odjava"><i class="glyphicon glyphicon-log-out"></i> Odjava</a></li>
