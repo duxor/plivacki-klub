@@ -1,8 +1,6 @@
 @extends('layouts.master-advance')
 @section('container')
-    <style>
-        img{width: 100%}
-    </style>
+
 
     <h1 class="col-sm-12"></h1>
     <h1>Takmičari</h1>
@@ -13,7 +11,7 @@
             <div class="row">
 
                 <div class="col-xs-12">
-                    <a href="/takmicari/prikazi/{{$takmicar->slug}}">
+                    <a href="/takmicari/profil/{{$takmicar->slug}}">
                         <h2 class="col-xs-8">{{$takmicar->ime}} {{$takmicar->prezime}}</h2>
                     </a>
                     @if(Auth::check())
@@ -39,6 +37,7 @@
 
             <hr>
     @endforeach
+    <div class="col-sm-12" align="center">{!! $takmicari->links() !!}</div>
 @endsection
 
 

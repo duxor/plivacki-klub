@@ -66,7 +66,7 @@
                         '<div class="col-sm-4 mt20">{!! Form::label("vreme","Vreme*", ["data-toggle"=>"tooltip","title"=>"Polje je obavezno za unos"]) !!}</div>' +
                         '<div class="col-sm-8 mt20">{!!Form::text("vreme",null,["class"=>"form-control","id"=>"vreme_id"])!!}</div>' +
                         '<div class="col-sm-4 mt20">{!! Form::label("stil","Dužina bazena*", ["data-toggle"=>"tooltip","title"=>"Polje je obavezno za unos"]) !!}</div>' +
-                        '<div class="col-sm-8 mt20">{!!Form::select("duzina_bazena",array(1 => 'Veliki (50m)', 2 => 'Mali (25m)'),1,["class"=>"form-control","id"=>"duzina_bazena_id"])!!}</div>' +
+                        '<div class="col-sm-8 mt20">{!!Form::select("duzina_bazena",$duzina_bazena,1,["class"=>"form-control","id"=>"duzina_bazena_id"])!!}</div>' +
                         '{!! Form::close() !!}'+
                         '<div class="col-sm-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',["class"=>"btn btn-lg btn-primary", "id"=>"btn","data-toggle"=>"tooltip"])!!}</div>'
                 )
