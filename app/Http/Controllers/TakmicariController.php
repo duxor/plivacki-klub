@@ -109,8 +109,9 @@ class TakmicariController extends Controller
             $rekordi = DB::table('rekord')
                 ->join('takmicar', 'rekord.takmicar_id','=','takmicar.id')
                 ->join('stil', 'rekord.stil_id','=','stil.id')
+                ->join('duzina_bazena','rekord.duzina_bazena_id', '=','duzina_bazena.id')
                 ->where('rekord.takmicar_id','=',$request->takmicar_id)
-                ->select('rekord.id as id','stil.naziv as stil','rekord.najbolje_vreme as najbolje_vreme')
+                ->select('rekord.id as id','stil.naziv as stil','duzina_bazena.naziv as duzina_bazena','rekord.najbolje_vreme as najbolje_vreme')
                 ->get();
             return json_encode($rekordi);
         }
@@ -131,8 +132,9 @@ class TakmicariController extends Controller
              $rekordi = DB::table('rekord')
                  ->join('takmicar', 'rekord.takmicar_id','=','takmicar.id')
                  ->join('stil', 'rekord.stil_id','=','stil.id')
+                 ->join('duzina_bazena','rekord.duzina_bazena_id', '=','duzina_bazena.id')
                  ->where('rekord.takmicar_id','=',$request->takmicar_id)
-                 ->select('rekord.id as id','stil.naziv as stil','rekord.najbolje_vreme as najbolje_vreme')
+                 ->select('rekord.id as id','stil.naziv as stil','duzina_bazena.naziv as duzina_bazena','rekord.najbolje_vreme as najbolje_vreme')
                  ->get();
 
              return json_encode($rekordi);
@@ -149,11 +151,30 @@ class TakmicariController extends Controller
     }
 
 
-    public function getRekordi()
+    public function FormaRekordi()
     {
         $stilovi = Stil::lists('naziv','id');
         $pol = Pol::lists('naziv','id');
         $duzina_bazena = DuzinaBazena::lists('naziv','id');
         return view('takmicari.rekordi')->with('stilovi',$stilovi)->with('pol',$pol)->with('duzina_bazena',$duzina_bazena);
+    }
+
+    public function TabelaRekordi(Request $request)
+    {
+        if ($request->ajax()) {
+
+            $rekordi = DB::table('rekord')
+                ->join('takmicar', 'rekord.takmicar_id','=','takmicar.id')
+                ->join('stil', 'rekord.stil_id','=','stil.id')
+                ->join('duzina_bazena','rekord.duzina_bazena_id', '=','duzina_bazena.id')
+                ->where('rekord.duzina_bazena_id','=',$request->duzina_bazena_id)
+                ->where('takmicar.pol_id','=',$request->pol_id)
+                ->where('rekord.stil_id','=',$request->stil_id)
+                ->orderBy('rekord.najbolje_vreme')
+                ->select('takmicar.ime as ime','takmicar.prezime as prezime', 'takmicar.datum_rodjenja as godiste', 'rekord.najbolje_vreme as najbolje_vreme' )
+                ->get();
+
+            return json_encode($rekordi);
+        }
     }
 }

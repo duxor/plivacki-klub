@@ -170,13 +170,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////duxor edit!
             $(day).children('a').addClass(dayEvents.aclass);
             $(day).children('a').attr('data-id',dayEvents.id);
-            if(dayEvents.slug){
-              $(day).children('a').attr('href','/'+dayEvents.slug);
-              $(day).children('a').attr('data-toggle','tooltip');
-              $(day).children('a').attr('title',dayEvents.title);
-            }
             $(day).children('a').attr('onclick','skrolToDataId(this)');
-            $('[data-toggle=tooltip]').tooltip();
 //////////////////////////////////////////////////////////////////////////////////////////////////////////duxor edit!
           }
           if (dayEvents.url) {
@@ -407,7 +401,7 @@ function skrolToDataId(el){
 }
 function _skrolToId(id, speed){
     if(!id) return;
-    var offSet = 170;
+    var offSet = 60;
     var targetOffset = $(id).offset().top - offSet;
     $('html,body').animate({scrollTop:targetOffset}, speed);
 }

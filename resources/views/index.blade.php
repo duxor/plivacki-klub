@@ -1,10 +1,8 @@
 @extends('layouts.master-basic')
 @section('body')
-    {!!Html::style('/css/fontello.css')!!}
-    {!!Html::style('/css/animation.css')!!}
     {!!Html::style('/responsive-calendar/responsive-calendar.css')!!}
     {!!Html::script('/responsive-calendar/responsive-calendar.js')!!}
-    {!!Html::script('/js/slider/jssor.slider.mini.js')!!}
+    {!!Html::script('js/slider/jssor.slider.mini.js')!!}
     {!!Html::script('/js/slider/custom.js')!!}
     {!!Html::script('http://maps.google.com/maps/api/js')!!}
 
@@ -17,17 +15,15 @@
     <div class="prioriteti col-sm-5">
         @foreach($slajder as $slajd)
             <div class="row">
-                <a href="/{{$slajd->slug}}">
-                    <div class="col-xs-2">
-                        <img class="img-rounded" src="{{$slajd->foto?$slajd->foto:'/img/default/foto-objave.jpg'}}" alt="{{strtoupper($slajd->naslov)}}">
+                <div class="col-xs-2">
+                    <img class="img-rounded" src="{{$slajd->foto?$slajd->foto:'/img/default/foto-objave.jpg'}}" alt="{{strtoupper($slajd->naslov)}}">
+                </div>
+                <div class="col-xs-10">
+                    <div class="popover fade right in" style="position:relative;display: block">
+                        <div class="arrow"></div>
+                        <div class="popover-content">{{ucfirst($slajd->naslov)}}</div>
                     </div>
-                    <div class="col-xs-10">
-                        <div class="popover fade right in" style="position:relative;display: block">
-                            <div class="arrow"></div>
-                            <div class="popover-content">{{ucfirst($slajd->naslov)}}</div>
-                        </div>
-                    </div>
-                </a>
+                </div>
             </div>
         @endforeach
     </div>
@@ -55,14 +51,14 @@
                 var datum=new Date();
                 $(".responsive-calendar").responsiveCalendar({
                     time: datum.getFullYear()+'-'+(datum.getMonth()+1),
-                    events: {!! $kalendar !!}
+                    events: ''
                 })
             })
         </script>
     </div>
 </div>
     <header id="header" class="header">
-        <div class="img-menu row">
+        <div class="img-menu">
             <a href="#poslednje-objave" class="col-sm-3 scrol">
                 <p>Vesti</p>
             </a>
@@ -82,12 +78,13 @@
                 <p>Kontakt</p>
             </a>
         </div>
+        <br clear="all">
     </header>
     {{--UDARNA START::--}}
     <div class="prioriteti">
         @include('layouts.navbar')
     </div>
-    <div class="">
+    <div class="container">
         {{--SLAJDER START::--}}
         <div id="jssor_1" style="position: relative; margin:0 auto; top: 0px; left: 0px; width: 1510px; height: 600px; overflow: hidden; visibility: hidden; background-color: #fff;">
                 <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -164,29 +161,41 @@
             <h2 class="text-center">Naši takmičari</h2>
             <br>
             <div class="slideanim">
-                @for($i=0;$i<5;$i++)
-                    @if(isset($takmicari[$i]))
-                        <div class="col-sm-2">
-                            <a href="/takmicari/profil/{{$takmicari[$i]['slug']}}">
-                                <img src="{{$takmicari[$i]['foto']?$takmicari[$i]['foto']:'/img/default/takmicar.jpg'}}" class="img-circle" alt="{{$takmicari[$i]['ime']}} {{$takmicari[$i]['prezime']}}">
-                                <h4>{{$takmicari[$i]['ime']}} {{$takmicari[$i]['prezime']}}</h4>
-                            </a>
-                        </div>
-                    @else
-                        <div class="col-sm-2">
-                            <a href="#">
-                                <img src="/img/test/takmicar-{{$i}}.jpg" class="img-circle" alt="Test Takmičar">
-                                <h4>Test Takmičar</h4>
-                            </a>
-                        </div>
-                    @endif
-                @endfor
-                <div class="col-sm-2">
-                    <a href="/takmicari" data-toggle="tooltip" title="Svi takmičari">
-                        <img src="/img/default/takmicari-svi.jpg" class="img-circle" alt="Svi takmičari">
-                    </a>
-                </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-1.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
             </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-2.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-3.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-4.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="#">
+                    <img src="/img/test/takmicar-5.jpg" class="img-circle" alt="Ime Prezime">
+                    <h4>Ime Prezime</h4>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="/takmicari" data-toggle="tooltip" title="Svi takmičari">
+                    <img src="/img/default/takmicari-svi.jpg" class="img-circle" alt="Svi takmičari">
+                </a>
+            </div></div>
         </div>
     </div>
     {{--takmicari end::--}}
@@ -234,7 +243,7 @@
                 <div class="form-group slideanim">
                     <div class="col-sm-4"></div>
                     <div class="col-sm-8 slideanim">
-                        {!! Form::button('<i class="glyphicon glyphicon-envelope"></i> Pošalji',['class'=>'btn btn-lg btn-success btn-success-c','onclick'=>'kontaktirajnas("'.csrf_token().'")']) !!}
+                        {!! Form::button('<i class="glyphicon glyphicon-envelope"></i> Pošalji',['class'=>'btn btn-lg btn-success btn-success-c']) !!}
                     </div>
                 </div>
             </div>
@@ -244,7 +253,6 @@
 
     <a id="to-top" class="scrol col-xs-1" href="#header" data-toggle="tooltip" title="Povratak na vrh"><img src="/img/to-top.png" alt="Na vrh"></a>
 </div>
-    <i class="icon-spin6 animate-spin" style="font-size: 1px;rgba(0,0,0,0)"></i>
 
     {!!Html::style('/scrolleffect/css/normalize.css')!!}
     {!!Html::style('/scrolleffect/css/component.css')!!}

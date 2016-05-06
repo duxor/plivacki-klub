@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Funkcije;
 use App\Http\Requests\DodajObjavu;
 use Illuminate\Support\Facades\Redirect;
 use App\Objava;
@@ -49,7 +48,14 @@ class AdministracijaController extends Controller{
         // DODACI END::
         if($podaci->exists('naslov')) {
             // SLUG-KREATOR START::
-            Funkcije::kreirajSlug($podaci['naslov'],new Objava());
+            $slug = null;
+            $tmp = strtolower(preg_replace("/[^a-zA-Z0-9]+/", "-", $podaci['naslov']));
+            if ($tmp[strlen($tmp) - 1] == '-') $tmp = substr($tmp, 0, strlen($tmp) - 1);
+            $i = 0;
+            while (!$slug) {
+                if (!Objava::where('slug', $tmp . ($i == 0 ? '' : '-' . $i))->exists()) $slug = $tmp . ($i == 0 ? '' : '-' . $i);
+                $i++;
+            }
             // SLUG-KREATOR END::
         }
         $konacniPodaci=$podaci->except(['_token','dodaci','foto','datum']);
