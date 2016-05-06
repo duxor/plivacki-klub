@@ -49,7 +49,9 @@ class AdministracijaController extends Controller{
         // DODACI END::
         if($podaci->exists('naslov')) {
             // SLUG-KREATOR START::
+
             $slug=Funkcije::kreirajSlug($podaci['naslov'],new Objava());
+
             // SLUG-KREATOR END::
         }
         $konacniPodaci=$podaci->except(['_token','dodaci','foto','datum']);

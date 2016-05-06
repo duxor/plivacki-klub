@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DuzinaBazena;
+use App\Funkcije;
 use App\Http\Requests\DodajTakmicara;
 use App\Pol;
 use App\Rekord;
@@ -21,10 +22,9 @@ class TakmicariController extends Controller
     }*/
     //Prikaz svih takmicara
     public function getIndex(){
-            $takmicari = Takmicar::all();
+            $takmicari = Takmicar::paginate(3);
             return view('takmicari.index')->with('takmicari',$takmicari);
     }
-    
 
     //Prikaz forme za dodavanje takmicara
     public function getDodajTakmicara(){
@@ -48,7 +48,7 @@ class TakmicariController extends Controller
         }
 
         //Slug
-        $tmp = strtolower(preg_replace("/[^a-zA-Z0-9]+/", "-", $request->ime . '-' . $request->prezime));
+      /*  $tmp = strtolower(preg_replace("/[^a-zA-Z0-9]+/", "-", $request->ime . '-' . $request->prezime));
         $i = 0;
         $x = true;
         while ($x) {
@@ -60,6 +60,11 @@ class TakmicariController extends Controller
             }
         }
         $slug = $tmp . ($i == 0 ? '' : ('-' . ($i - 1)));
+*/
+        $podaci = $request->ime . '-' . $request->prezime;
+        $slug = Funkcije::kreirajSlug($podaci,new Takmicar());
+
+
         //Provera insert ili updat
         $takmicar_provera = Takmicar::where('slug', $_slug)->get()->first();
         if ($takmicar_provera)
@@ -109,8 +114,9 @@ class TakmicariController extends Controller
             $rekordi = DB::table('rekord')
                 ->join('takmicar', 'rekord.takmicar_id','=','takmicar.id')
                 ->join('stil', 'rekord.stil_id','=','stil.id')
+                ->join('duzina_bazena', 'rekord.duzina_bazena_id','=','duzina_bazena.id')
                 ->where('rekord.takmicar_id','=',$request->takmicar_id)
-                ->select('rekord.id as id','stil.naziv as stil','rekord.najbolje_vreme as najbolje_vreme')
+                ->select('rekord.id as id','stil.naziv as stil','rekord.najbolje_vreme as najbolje_vreme','duzina_bazena.naziv as duzina_bazena')
                 ->get();
             return json_encode($rekordi);
         }
@@ -128,14 +134,6 @@ class TakmicariController extends Controller
              $rekord->duzina_bazena_id = $request->duzina_bazena_id;
             $rekord->save();
 
-             $rekordi = DB::table('rekord')
-                 ->join('takmicar', 'rekord.takmicar_id','=','takmicar.id')
-                 ->join('stil', 'rekord.stil_id','=','stil.id')
-                 ->where('rekord.takmicar_id','=',$request->takmicar_id)
-                 ->select('rekord.id as id','stil.naziv as stil','rekord.najbolje_vreme as najbolje_vreme')
-                 ->get();
-
-             return json_encode($rekordi);
         }
 
     }

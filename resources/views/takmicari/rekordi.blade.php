@@ -1,9 +1,6 @@
 @extends('layouts.master-advance')
 @section('container')
-    <style>
-        img{width: 100%;}
-        .mt20{margin-top: 20px}
-    </style>
+
     <h2>Najbolja vremena</h2>
 
     <div class="col-sm-12" id="prikazi_formu">
