@@ -25,8 +25,6 @@ class DodajRezultat extends Request
     {
         return [
             'takmicenje_naziv'=>'required',
-            'mesto'=>'required',
-            'datum'=>'required|date',
             'klupski_rezultati'=>'required',
             'sumarni_rezultati'=>'required',
         ];
@@ -35,8 +33,6 @@ class DodajRezultat extends Request
     {
         return [
             'takmicenje_naziv.required' => 'Naziv je obavezan za unos.',
-            'mesto.required' => 'Obavezan unos mesta.',
-            'datum.required' => 'Datum je obavezna stavka objave.',
             'klupski_rezultati.required' => 'Obavezan unos klupskih rezultata.',
             'sumarni_rezultati.required' => 'Obavezan unos sumarnih rezultata.',
         ];

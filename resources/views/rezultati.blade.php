@@ -7,7 +7,7 @@
         <tbody>
             @foreach($rezultati as $rezultat)
                 <tr >
-                    <td  id="rezultat-'+rezultati[i]['id']+'">{{$rezultat['takmicenje_naziv']}}</td>
+                    <td  id="rezultat-'+rezultati[i]['id']+'">{{$rezultat['naslov']}}</td>
                     <td >{{$rezultat['mesto']}}</td>
                     <td >{{$rezultat['datum']}}</td>
                     <td><a href="{{$rezultat['klupski_rezultati']}}"><img style="width: 19px; height: 18px;" src="../img/pdf.png"></a></td>

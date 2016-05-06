@@ -80,25 +80,13 @@ if(!isset($slugEdit)) $slugEdit=null;
             img{width: 100%;}
             .mt20{margin-top: 20px}
         </style>
-        <script>
-            $(function () {
-                $('#datetimepicker').datetimepicker();
-                $('#datetimepicker').data('DateTimePicker').locale('sr').format('YYYY-MM-DD HH:mm:SS');
-                @if(isset($rezultati['datum'])) $('#datetimepicker').val('{{$rezultati['datum']}}'); @endif
-            });
-        </script>
         {!!Form::model($rezultati,['files'=>true, 'class'=>'form-horizontal'])!!}
         {!!Form::hidden("update_rezultati",false)!!}
         {!!Form::hidden("rezultati_id",false)!!}
         <h1 class="col-sm-12">Dodaj rezultate</h1>
         <div class="col-sm-8">
-            {!!Form::text('takmicenje_naziv',null,['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
+            {!!Form::select('takmicenje_naziv',$naziv_takmicenjalists, null, ['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
         </div>
-        <div class="col-sm-8 mt20">
-            {!!Form::text('mesto',null,['id'=>'mesto','class'=>'form-control col-sm-6','placeholder'=>'Mesto takmičenja'])!!}
-        </div>
-        <div class="col-sm-8 mt20">{!!Form::text('datum',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Datum događaja'])!!}</div>
-
          <div class="col-sm-5 mt20">
                 <span class="btn btn-c btn-file">
                     <i class="glyphicon glyphicon-cloud-upload"></i> Klupski rezultati
@@ -156,13 +144,13 @@ if(!isset($slugEdit)) $slugEdit=null;
                                 '<tbody>';
                         for(var i=0;i<rezultati.length;i++){
                             ispis+='<tr >' +
-                            '<td  id="rezultat-'+rezultati[i]['id']+'">'+rezultati[i]['takmicenje_naziv']+'</td>' +
+                            '<td  id="rezultat-'+rezultati[i]['id']+'">'+rezultati[i]['naslov']+'</td>' +
                             '<td >'+rezultati[i]['mesto']+'</td>' +
                             '<td >'+rezultati[i]['datum']+'</td>' +
                             '<td><a href="'+rezultati[i]['klupski_rezultati']+'"><img style="width: 19px; height: 18px;" src="../img/pdf.png"></a></td>' +
                             '<td><a href="'+rezultati[i]['sumarni_rezultati']+'"><img style="width: 19px; height: 18px;" src="../img/html.png"></a></td>' +
                             '<td>' +
-                            '<a href="#" class="btn3d btn btn-xs btn-info" data-toggle="tooltip" title="Ажурирај" onclick="editRezultata(\''+rezultati[i]['id']+'\',\''+rezultati[i]['takmicenje_naziv']+'\',\''+rezultati[i]['mesto']+'\',\''+rezultati[i]['datum']+'\',\''+rezultati[i]['klupski_rezultati']+'\',\''+rezultati[i]['sumarni_rezultati']+'\')"><span style="font-size: 14px;" class="glyphicon glyphicon-pencil"></span></a> &nbsp' +
+                            '<a href="#" class="btn3d btn btn-xs btn-info" data-toggle="tooltip" title="Ažuriraj" onclick="editRezultata(\''+rezultati[i]['id']+'\',\''+rezultati[i]['takmicenje_naziv']+'\',\''+rezultati[i]['mesto']+'\',\''+rezultati[i]['datum']+'\',\''+rezultati[i]['klupski_rezultati']+'\',\''+rezultati[i]['sumarni_rezultati']+'\')"><span style="font-size: 14px;" class="glyphicon glyphicon-pencil"></span></a> &nbsp' +
                             '<a data-href="/rezultati/obrisi-rezultat/'+rezultati[i]['id']+'" class=" btn btn-xs btn-danger" data-toggle="confirmation" data-togglee="tooltip"><span style="" class="glyphicon glyphicon-trash"></span></a>' +
                             '</td>' +
                             '</tr>';
@@ -170,8 +158,7 @@ if(!isset($slugEdit)) $slugEdit=null;
                         $('#lista_rezultata').html(ispis+'</tbody></table>');
                         $('#lista_rezultata').fadeIn();
                         $('[data-togglee=tooltip]').tooltip();
-                        $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši',});
-                        //$('[data-toggle=tooltip]').tooltip();
+                        $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši'});
                     })};
 
         function editRezultata(id,takmicenje_naziv, mesto,datum, klupski_rezultati, sumarni_rezultati){
