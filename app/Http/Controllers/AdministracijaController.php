@@ -1,12 +1,13 @@
-﻿<?php
+<?php
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Funkcije;
 use App\Http\Requests\DodajObjavu;
 use Illuminate\Support\Facades\Redirect;
 use App\Objava;
-use App\Rezultati;
 
 class AdministracijaController extends Controller{
     private $imgFolder='img/objava';
@@ -16,7 +17,6 @@ class AdministracijaController extends Controller{
     public function getIndex(){
         return view('admin.index');
     }
-    
     public function getDodajObjavu(){
         return view('admin.dodaj-objavu');
     }
@@ -71,7 +71,7 @@ class AdministracijaController extends Controller{
         if($editMsg)
             Objava::where('slug',$_slug)->update($konacniPodaci);
         else
-        Objava::insert([$konacniPodaci]);
+            Objava::insert([$konacniPodaci]);
         return view('admin.dodaj-objavu')
             ->with('objava',$editMsg?$konacniPodaci:null)
             ->with('uspesnoDodavanje',$editMsg?$editMsg:
@@ -86,10 +86,4 @@ class AdministracijaController extends Controller{
     public function postObjava($slug,DodajObjavu $request){
         return $this->postDodajObjavu($request, 'Uspešno ste ažurirali postojeću objavu.',$slug);
     }
-
-
-    
-
-
-
 }

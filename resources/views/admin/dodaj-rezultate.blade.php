@@ -2,8 +2,8 @@
 if(!isset($rezultati)) $rezultati=null;
 if(!isset($slugEdit)) $slugEdit=null;
 ?>
-@extends('admin.master')
-@section('container')
+@extends('admin.master-admin')
+@section('body')
     {!!Html::style('/datepicker/datetimepicker.css')!!}
     {!!Html::script('/datepicker/moment.js')!!}
     {!!Html::script('/datepicker/datetimepicker.js')!!}
@@ -88,7 +88,7 @@ if(!isset($slugEdit)) $slugEdit=null;
             {!!Form::select('takmicenje_naziv',$naziv_takmicenjalists, null, ['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
         </div>
          <div class="col-sm-5 mt20">
-                <span class="btn btn-c btn-file">
+                <span class="btn btn-file">
                     <i class="glyphicon glyphicon-cloud-upload"></i> Klupski rezultati
                     {!!Form::file('klupski_rezultati',['id'=>'klupski_rezultati','onchange'=>'prikaziDodatke(this,1);'])!!}
                 </span>
@@ -101,7 +101,7 @@ if(!isset($slugEdit)) $slugEdit=null;
             </ul></p>
         </div>
         <div class="col-sm-5 mt20">
-                <span class="btn btn-c btn-file">
+                <span class="btn btn-file">
                     <i class="glyphicon glyphicon-cloud-upload"></i> Sumarni rezultati
                     {!!Form::file('sumarni_rezultati',['id'=>'sumarni_rez','onchange'=>'prikaziDodatke(this,2);'])!!}
                 </span>

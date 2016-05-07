@@ -1,6 +1,6 @@
 <?php if(!isset($takmicar)) $takmicar=null; ?>
-@extends('admin.master')
-@section('container')
+@extends('admin.master-admin')
+@section('body')
     {!!Html::style('/datepicker/datetimepicker.css')!!}
     {!!Html::script('/datepicker/moment.js')!!}
     {!!Html::script('/datepicker/datetimepicker.js')!!}
