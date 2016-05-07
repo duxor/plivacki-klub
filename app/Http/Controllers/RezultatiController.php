@@ -6,17 +6,20 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\DodajRezultat;
 use Storage;
 use App\Rezultati;
+use App\Objava;
 
 class RezultatiController extends Controller{
 	 private $rezultatiFolder='rezultati-takmicenja';
 
     public function getIndex(){
 
-        $rezultati=Rezultati::all();
+        $rezultati=Rezultati::join('objava','objava.id','=','rezultati.objava_id')->orderBy('rezultati.created_at','desc')->get();
+
         return view('rezultati',compact('rezultati'));
     }
     public function getDodajRezultate(){
-        return view('admin.dodaj-rezultate');
+        $naziv_takmicenjalists=Objava::lists('naslov','id');
+        return view('admin.dodaj-rezultate',compact(['naziv_takmicenjalists']));
     }
     public function postDodajRezultate(DodajRezultat $podaci, $editMsg=null,$id=null){
         if(!is_dir($this->rezultatiFolder)) mkdir($this->rezultatiFolder);
@@ -43,22 +46,20 @@ class RezultatiController extends Controller{
                 }else $sumarni_rezultati=null;
             else $sumarni_rezultati=null;
 
-            $konacniPodaci=$podaci->except(['_token','update_rezultati','rezultati_id']);
+            $konacniPodaci=$podaci->except(['_token','update_rezultati','rezultati_id','takmicenje_naziv']);
             $konacniPodaci['sumarni_rezultati']=$podaci->get('sumarni_rezultati');
             $konacniPodaci['klupski_rezultati']=$klupski_rezultati;
             $konacniPodaci['sumarni_rezultati']=$sumarni_rezultati;
-            $konacniPodaci['datum']=date('Y-m-d H:i',strtotime($podaci->get('datum')));
-            $konacniPodaci['mesto']=$podaci->get('mesto');
+            $konacniPodaci['objava_id']=$podaci->get('takmicenje_naziv');
 
         if($podaci['update_rezultati']==1){
             $id=$podaci->get('rezultati_id');
             Rezultati::where('id',$id)->update($konacniPodaci);
         }else  Rezultati::insert([$konacniPodaci]);
-        
-        return view('admin.dodaj-rezultate') ->with('uspesnoDodavanje',$podaci['update_rezultati']?'Uspešno ste izvršili azuriranje!':'Uspešno ste izvršili dodavanje novog rezultata!');
+        return Redirect::to('/rezultati/dodaj-rezultate')->with('uspesnoDodavanje','Uspešno uneto!');
     }
     public function postUcitajRezultate(){
-        return json_encode(Rezultati::orderBy('created_at','desc')->get()->toArray());
+        return json_encode(Rezultati::join('objava','objava.id','=','rezultati.objava_id')->orderBy('rezultati.created_at','desc')->get()->toArray());
     }
     public function getObrisiRezultat($id,$editMsg=null){
         $klupski_rez_path=Rezultati::where('id',$id)->pluck('klupski_rezultati');

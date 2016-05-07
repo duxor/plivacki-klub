@@ -38,9 +38,8 @@ class KreiranjeBaze extends Migration
         });
         Schema::create('rezultati',function(Blueprint $table){
             $table->increments('id');
-            $table->string('takmicenje_naziv', 128);
-            $table->string('mesto',45);
-            $table->dateTime('datum')->nullable();
+            $table->unsignedInteger('objava_id');
+            $table->foreign('objava_id')->references('id')->on('objava');
             $table->string('klupski_rezultati',128);
             $table->string('sumarni_rezultati',128);
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

@@ -28,10 +28,12 @@ Route::get('/', function () {
 
 //Aleksandar Jovic
 Route::auth();
-Route::controller('/takmicari','TakmicariController');
-Route::get('/takmicari/prikazi/{slug}', function ($slug) {
+Route::get('/takmicari/profil/{slug}', function ($slug) {
     return view('takmicari.takmicar')->with('takmicar', Takmicar::where('slug',$slug)->get()->first());
 });
+Route::controller('/takmicari','TakmicariController');
+
+
 Route::get('/rekordi','TakmicariController@FormaRekordi');
 Route::post('/rekordi/prikazi','TakmicariController@TabelaRekordi');
 //End Aleksandar Jovic
