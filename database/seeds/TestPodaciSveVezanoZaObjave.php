@@ -6,7 +6,7 @@ use App\Stil;
 use App\Takmicar;
 use Illuminate\Database\Seeder;
 use App\User as Korisnici;
-
+use App\Funkcije;
 class TestPodaciSveVezanoZaObjave extends Seeder
 {
     /**
@@ -52,13 +52,7 @@ class TestPodaciSveVezanoZaObjave extends Seeder
             //NASLOV
             for($j=0; $j<$duzinaNaslovaBrojRijeci; $j++) $insert['naslov'].=$randomRijeci[rand(0,$brojRandomRijeci-1)].' ';
             //SLUG
-            $tmp = strtolower(preg_replace("/[^a-zA-Z0-9]+/", "-", $insert['naslov']));
-            if ($tmp[strlen($tmp) - 1] == '-') $tmp = substr($tmp, 0, strlen($tmp) - 1);
-            $ii = 0;
-            while (!$insert['slug']) {
-                if (!Objava::where('slug', $tmp . ($ii == 0 ? '' : '-' . $ii))->exists()) $insert['slug'] = $tmp . ($ii == 0 ? '' : '-' . $ii);
-                $ii++;
-            }
+            $insert['slug']=Funkcije::kreirajSlug($insert['naslov'],new Objava());
             //SADRZAJ
             for($j=0; $j<$duzinaSadrzajaBrojRijeci; $j++) $insert['sadrzaj'].=$randomRijeci[rand(0,$brojRandomRijeci-1)].' ';
             //FOTO
@@ -66,7 +60,7 @@ class TestPodaciSveVezanoZaObjave extends Seeder
             //DATUM
             if(rand(0,1)==1){
                 $insert['mesto']=strtoupper($randomRijeci[rand(0,$brojRandomRijeci-1)]);
-                $insert['datum']='2016-'.str_pad(rand(1,12),2,'0',STR_PAD_LEFT).'-'.rand(0,31);
+                $insert['datum']='2016-'.str_pad(rand(1,12),2,'0',STR_PAD_LEFT).'-'.rand(0,31).' '.str_pad(rand(7,20),2,'0',STR_PAD_LEFT).':'.str_pad(rand(0,59),2,'0',STR_PAD_LEFT);
             }
             $insert['prioritet']=rand(0,1);
             Objava::insert([$insert]);

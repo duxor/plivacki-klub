@@ -2,48 +2,76 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0244b8f4-ba84-4332-a28b-8f2daefe3dae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontello.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontello.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontello.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontello.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/default/takmicar.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Funkcije.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/animation.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/fontello.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/font/fontello.svg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/thumbs/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/thumbs/2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/thumbs/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/thumbs/5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/thumbs/6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/img/thumbs/8.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="$PROJECT_DIR$/public/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/master-admin.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/004.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/005.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/006.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/1461529786930_model_baze_pkdubocica.mwb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/arrow-up-curve.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/facebook-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/facebook.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/footer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/header-img.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/html.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/linkedin-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/linkedin.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/nav-bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461251231872_scrum_process_big3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461266289994_005.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461266857061_004.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461424542951_thumb-002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461424568578_002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461443254281_005.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461443254297_002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461486601124_005.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461486601126_footer.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461489933842_002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461489933844_003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461505380348_foto-objave.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/objava/1461505380350_foto-objave.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/pdf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/thumb-002.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/thumb-003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/thumb-004.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/thumb-005.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/thumb-006.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/twitter-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/twitter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/scrolleffect/css/component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/admin/objave.blade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/index-SALE.blade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/default/baner-sponzori.jpg" afterPath="$PROJECT_DIR$/public/img/default/baner-sponzori.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/default/foto-objave.jpg" afterPath="$PROJECT_DIR$/public/img/default/foto-objave.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/default/takmicar.jpg" afterPath="$PROJECT_DIR$/public/img/default/takmicar.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/default/takmicari-svi.jpg" afterPath="$PROJECT_DIR$/public/img/default/takmicari-svi.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/meni/kalendar.jpg" afterPath="$PROJECT_DIR$/public/img/meni/kalendar.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/meni/sponzori.jpg" afterPath="$PROJECT_DIR$/public/img/meni/sponzori.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/meni/takmicari.jpg" afterPath="$PROJECT_DIR$/public/img/meni/takmicari.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/meni/vesti.jpg" afterPath="$PROJECT_DIR$/public/img/meni/vesti.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/test/takmicar-1.jpg" afterPath="$PROJECT_DIR$/public/img/test/takmicar-1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/test/takmicar-2.jpg" afterPath="$PROJECT_DIR$/public/img/test/takmicar-2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/test/takmicar-3.jpg" afterPath="$PROJECT_DIR$/public/img/test/takmicar-3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/test/takmicar-4.jpg" afterPath="$PROJECT_DIR$/public/img/test/takmicar-4.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/test/takmicar-5.jpg" afterPath="$PROJECT_DIR$/public/img/test/takmicar-5.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Objava.php" afterPath="$PROJECT_DIR$/app/Objava.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Takmicar.php" afterPath="$PROJECT_DIR$/app/Takmicar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/TestPodaciSveVezanoZaObjave.php" afterPath="$PROJECT_DIR$/database/seeds/TestPodaciSveVezanoZaObjave.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/advance.css" afterPath="$PROJECT_DIR$/public/css/advance.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/basic.css" afterPath="$PROJECT_DIR$/public/css/basic.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/index.css" afterPath="$PROJECT_DIR$/public/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/index.js" afterPath="$PROJECT_DIR$/public/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/responsive-calendar/responsive-calendar.js" afterPath="$PROJECT_DIR$/public/responsive-calendar/responsive-calendar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scrolleffect/css/component.css" afterPath="$PROJECT_DIR$/public/scrolleffect/css/component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/galerije.blade.php" afterPath="$PROJECT_DIR$/resources/views/galerije.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master-advance.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master-advance.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/master-basic.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/master-basic.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/kalendar.blade.php" afterPath="$PROJECT_DIR$/resources/views/kalendar.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/objava.blade.php" afterPath="$PROJECT_DIR$/resources/views/objava.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/objave.blade.php" afterPath="$PROJECT_DIR$/resources/views/objave.blade.php" />
     </list>
     <ignored path="plivacki-klub.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,7 +99,15 @@
     <favorites_list name="plivacki-klub" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -97,27 +133,39 @@
         <option value="$PROJECT_DIR$/public/css/style-advance.css" />
         <option value="$PROJECT_DIR$/public/css/style-objave" />
         <option value="$PROJECT_DIR$/public/css/objave.css" />
-        <option value="$PROJECT_DIR$/resources/views/objava.blade.php" />
         <option value="$PROJECT_DIR$/public/css/kalendar.css" />
-        <option value="$PROJECT_DIR$/resources/views/kalendar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/objave.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master-basic.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" />
-        <option value="$PROJECT_DIR$/database/seeds/TestPodaciSveVezanoZaObjave.php" />
         <option value="$PROJECT_DIR$/app/Funkcije.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php" />
-        <option value="$PROJECT_DIR$/public/css/advance.css" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" />
         <option value="$PROJECT_DIR$/app/Takmicar.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Objava.php" />
         <option value="$PROJECT_DIR$/public/responsive-calendar/responsive-calendar.js" />
         <option value="$PROJECT_DIR$/resources/views/galerije.blade.php" />
-        <option value="$PROJECT_DIR$/public/scrolleffect/css/component.css" />
-        <option value="$PROJECT_DIR$/public/css/index.css" />
-        <option value="$PROJECT_DIR$/public/js/index.js" />
         <option value="$PROJECT_DIR$/public/css/basic.css" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master-advance.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/index-admin.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php" />
+        <option value="$PROJECT_DIR$/resources/views/objave.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/objava.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/public/css/login.css" />
+        <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/navbar.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/funkcije-admin.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/master-admin.blade.php" />
+        <option value="$PROJECT_DIR$/public/scrolleffect/css/component.css" />
+        <option value="$PROJECT_DIR$/public/scrolleffect/css/normalize.css" />
+        <option value="$PROJECT_DIR$/public/css/advance.css" />
+        <option value="$PROJECT_DIR$/public/js/index.js" />
+        <option value="$PROJECT_DIR$/public/css/year-calendar.css" />
+        <option value="$PROJECT_DIR$/public/js/year-calendar.js" />
+        <option value="$PROJECT_DIR$/database/seeds/TestPodaciSveVezanoZaObjave.php" />
+        <option value="$PROJECT_DIR$/public/css/basic-admin.css" />
+        <option value="$PROJECT_DIR$/resources/views/kalendar.blade.php" />
+        <option value="$PROJECT_DIR$/app/Objava.php" />
+        <option value="$PROJECT_DIR$/public/css/test.css" />
+        <option value="$PROJECT_DIR$/public/css/index.css" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
       </list>
     </option>
@@ -138,7 +186,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1292" />
+    <option name="width" value="1284" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -169,8 +217,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -225,7 +271,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -272,6 +318,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plivacki-klub" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plivacki-klub" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datepicker" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,6 +463,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -406,19 +472,20 @@
     <property name="options.lastSelected" value="Configurable.PHP" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_25d850739bc178b2eb13c3e2a9faafea2f9143c0/cmd/git.exe" />
+    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_d76a6a98c9315931ec4927243517bc09e9b731a0/cmd/git.exe" />
     <property name="SearchEverywhereHistoryKey" value="formbu&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;Form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;Router&#9;null&#9;null&#10;Rout&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/symfony/routing/Router.php&#10;router.p&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/symfony/routing/Router.php&#10;form&#9;FILE&#9;file://D:/PROJEKTI/plivacki-klub/vendor/laravelcollective/html/src/FormBuilder.php&#10;FormBu&#9;null&#9;null" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJEKTI\plivacki-klub\public\js" />
+      <recent name="D:\PROJEKTI\plivacki-klub\resources\views" />
       <recent name="D:\PROJEKTI\plivacki-klub\app" />
       <recent name="D:\PROJEKTI\plivacki-klub\public" />
       <recent name="D:\PROJEKTI\plivacki-klub\resources\views\layouts" />
-      <recent name="D:\PROJEKTI\plivacki-klub\resources\views" />
-      <recent name="D:\PROJEKTI\plivacki-klub\public\img\mreze" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.seeds">
@@ -491,11 +558,17 @@
       <workItem from="1462310467116" duration="1974000" />
       <workItem from="1462377114764" duration="12748000" />
       <workItem from="1462459567377" duration="19591000" />
+      <workItem from="1462548640362" duration="12434000" />
+      <workItem from="1462612203043" duration="33000" />
+      <workItem from="1462613069682" duration="113000" />
+      <workItem from="1462613331709" duration="2000" />
+      <workItem from="1462613759215" duration="4000" />
+      <workItem from="1462615633331" duration="16569000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90586000" />
+    <option name="totallyTimeSpent" value="119741000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -518,14 +591,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1292" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1284" height="1000" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23376623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938075" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295082" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32756633" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938075" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30184332" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -540,7 +614,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328341" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -563,398 +636,375 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/classie.js" />
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/master.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="56" selection-start-line="26" selection-start-column="56" selection-end-line="32" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/img/thumbs/4.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/img/thumbs/2.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/img/thumbs/1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/img/thumbs/5.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/img/thumbs/8.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/css/demo.css" />
-    <entry file="file://$PROJECT_DIR$/public/css/style-SALE.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/responsive-calendar/responsive-calendar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/js/classie.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravelcollective/html/src/FormBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="920" column="27" selection-start-line="920" selection-start-column="20" selection-end-line="920" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/slider.css" />
-    <entry file="file://$PROJECT_DIR$/resources/views/objava.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/kalendar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/index-SALE.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="174" column="12" selection-start-line="174" selection-start-column="12" selection-end-line="192" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/funkcije.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="2" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/objave.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/objave.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master-basic.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/footer.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RezultatiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TakmicariController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Funkcije.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracijaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/navbar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="21" column="108" selection-start-line="21" selection-start-column="108" selection-end-line="21" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/KonfiguracioniPodaci.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_17_111708_kreiranje_baze.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Takmicar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/TestPodaciSveVezanoZaObjave.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="68" column="79" selection-start-line="68" selection-start-column="79" selection-end-line="68" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/kalendar.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-309">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Objava.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="69" column="304" selection-start-line="69" selection-start-column="304" selection-end-line="69" selection-end-column="304" />
-          <folding>
-            <element signature="e#395#1448#0#PHP" expanded="false" />
-            <element signature="e#1453#1554#0#PHP" expanded="false" />
-            <element signature="e#1559#1686#0#PHP" expanded="false" />
-            <element signature="e#1691#1819#0#PHP" expanded="false" />
-            <element signature="e#1824#1990#0#PHP" expanded="false" />
-            <element signature="e#1995#2270#0#PHP" expanded="false" />
-            <element signature="e#2275#3148#0#PHP" expanded="false" />
-            <element signature="e#4042#4169#0#PHP" expanded="false" />
-            <element signature="e#4174#4462#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/responsive-calendar/responsive-calendar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="409" column="19" selection-start-line="409" selection-start-column="19" selection-end-line="409" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bootstrap-3.3.5-dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/bootstrap-3.3.5-dist/css/bootstrap.css.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/img/1.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/img/3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/css/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="0" column="158" selection-start-line="0" selection-start-column="156" selection-end-line="0" selection-end-column="158" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scrolleffect/css/component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="22" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/advance.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="27" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="27" />
-          <folding>
-            <element signature="e#645#1433#0#HTML" expanded="false" />
-            <element signature="e#4511#4646#0#HTML" expanded="true" />
-            <element signature="e#5357#5539#0#HTML" expanded="true" />
-            <element signature="e#5602#5626#0#HTML" expanded="true" />
-            <element signature="e#7766#9227#0#HTML" expanded="false" />
-            <element signature="e#9290#10079#0#HTML" expanded="false" />
-            <element signature="e#10140#11903#0#HTML" expanded="false" />
-            <element signature="e#12125#12161#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="24" />
-          <folding>
-            <element signature="e#393#408#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/basic.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="47" column="49" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master-advance.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        <state relative-caret-position="4267">
+          <caret line="251" column="38" selection-start-line="251" selection-start-column="38" selection-end-line="251" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
+        <state relative-caret-position="1462">
+          <caret line="149" column="51" selection-start-line="149" selection-start-column="51" selection-end-line="149" selection-end-column="51" />
           <folding>
-            <element signature="e#783#1253#0" expanded="false" />
-            <element signature="e#1452#1582#0" expanded="false" />
-            <element signature="e#1606#1778#0" expanded="false" />
-            <element signature="e#1860#1947#0" expanded="false" />
-            <element signature="e#1978#2130#0" expanded="false" />
-            <element signature="e#2160#2275#0" expanded="false" />
-            <element signature="e#2495#2557#0" expanded="false" />
-            <element signature="e#2584#3106#0" expanded="false" />
-            <element signature="e#3892#4082#0" expanded="false" />
-            <marker date="1462480835622" expanded="true" signature="4874:4889" placeholder="..." />
+            <element signature="e#814#1284#0" expanded="false" />
+            <element signature="e#1483#1613#0" expanded="false" />
+            <element signature="e#1637#1809#0" expanded="false" />
+            <element signature="e#1891#1978#0" expanded="false" />
+            <element signature="e#2009#2161#0" expanded="false" />
+            <element signature="e#2191#2306#0" expanded="false" />
+            <element signature="e#2526#2588#0" expanded="false" />
+            <element signature="e#3965#4155#0" expanded="false" />
+            <element signature="e#4278#4646#0" expanded="false" />
+            <marker date="1462632307585" expanded="true" signature="5247:5262" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/master-admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="58" column="97" selection-start-line="58" selection-start-column="97" selection-end-line="58" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/TestPodaciSveVezanoZaObjave.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
+          <folding>
+            <element signature="e#444#1657#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="12" />
+        <state relative-caret-position="3791">
+          <caret line="223" column="15" selection-start-line="223" selection-start-column="15" selection-end-line="223" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/galerije.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="643">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/navbar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="50" column="61" selection-start-line="50" selection-start-column="61" selection-end-line="50" selection-end-column="141" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/master.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/objave.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="3" column="148" selection-start-line="3" selection-start-column="148" selection-end-line="3" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/funkcije-admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/master-admin.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scrolleffect/css/component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master-basic.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scrolleffect/css/normalize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="82" column="8" selection-start-line="82" selection-start-column="8" selection-end-line="82" selection-end-column="8" />
+          <folding>
+            <element signature="e#814#1284#0" expanded="false" />
+            <element signature="e#1483#1613#0" expanded="false" />
+            <element signature="e#1637#1809#0" expanded="false" />
+            <element signature="e#1891#1978#0" expanded="false" />
+            <element signature="e#2009#2161#0" expanded="false" />
+            <element signature="e#2191#2306#0" expanded="false" />
+            <element signature="e#2526#2588#0" expanded="false" />
+            <element signature="e#3965#4155#0" expanded="false" />
+            <element signature="e#4278#4646#0" expanded="false" />
+            <marker date="1462632307585" expanded="true" signature="5247:5262" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/advance.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/year-calendar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="6" column="3445" selection-start-line="6" selection-start-column="3445" selection-end-line="6" selection-end-column="3445" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/master-advance.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/year-calendar-backup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="9" column="2145" selection-start-line="9" selection-start-column="2145" selection-end-line="9" selection-end-column="2145" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/year-calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="9" column="17564" selection-start-line="9" selection-start-column="17564" selection-end-line="9" selection-end-column="17564" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dodaj-objavu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="51" />
+          <folding>
+            <marker date="1462625534911" expanded="true" signature="5392:5608" placeholder="..." />
+            <marker date="1462625534911" expanded="true" signature="5405:5607" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/kalendar-backup.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/TestPodaciSveVezanoZaObjave.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="62" column="181" selection-start-line="62" selection-start-column="181" selection-end-line="62" selection-end-column="181" />
+          <folding>
+            <element signature="e#444#1657#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/kalendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/basic-admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/test.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="268" column="39" selection-start-line="268" selection-start-column="39" selection-end-line="268" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/kalendar.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <element signature="e#335#358#0#HTML" expanded="true" />
+            <marker date="1462640921395" expanded="true" signature="3179:3536" placeholder="..." />
+            <marker date="1462640921395" expanded="true" signature="3325:3331" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Objava.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="53" column="52" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
+          <folding>
+            <element signature="e#395#1448#0#PHP" expanded="false" />
+            <element signature="e#616#1006#0#PHP" expanded="false" />
+            <element signature="e#884#1006#0#PHP" expanded="false" />
+            <element signature="e#1023#1089#0#PHP" expanded="false" />
+            <element signature="e#1023#1115#0#PHP" expanded="false" />
+            <element signature="e#1125#1418#0#PHP" expanded="false" />
+            <element signature="e#1453#1554#0#PHP" expanded="false" />
+            <element signature="e#1559#1686#0#PHP" expanded="false" />
+            <element signature="e#1691#1819#0#PHP" expanded="false" />
+            <element signature="e#1824#1990#0#PHP" expanded="false" />
+            <element signature="e#1995#2270#0#PHP" expanded="false" />
+            <element signature="e#3102#3986#0#PHP" expanded="false" />
+            <element signature="e#3305#3778#0#PHP" expanded="false" />
+            <element signature="e#3991#4118#0#PHP" expanded="false" />
+            <element signature="e#4123#4411#0#PHP" expanded="false" />
+            <element signature="e#4193#4404#0#PHP" expanded="false" />
+            <element signature="e#4416#4541#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+          <folding>
+            <element signature="e#7#70#0" expanded="false" />
+            <element signature="e#80#256#0" expanded="false" />
+            <element signature="e#269#383#0" expanded="false" />
+            <element signature="e#438#546#0" expanded="false" />
+            <element signature="e#589#667#0" expanded="false" />
+            <element signature="e#748#838#0" expanded="false" />
+            <element signature="e#932#1006#0" expanded="false" />
+            <element signature="e#1284#1478#0" expanded="false" />
+            <element signature="e#1610#1688#0" expanded="false" />
+            <element signature="e#1771#1861#0" expanded="false" />
+            <element signature="e#1899#2052#0" expanded="false" />
+            <element signature="e#2243#2368#0" expanded="false" />
+            <element signature="e#2705#2815#0" expanded="false" />
+            <element signature="e#2829#2933#0" expanded="false" />
+            <element signature="e#2971#3091#0" expanded="false" />
+            <element signature="e#3112#3149#0" expanded="false" />
+            <element signature="e#3232#3434#0" expanded="false" />
+            <element signature="e#3528#3725#0" expanded="false" />
+            <element signature="e#3809#3931#0" expanded="false" />
+            <element signature="e#4026#4132#0" expanded="false" />
+            <element signature="e#4261#4423#0" expanded="false" />
+            <element signature="e#4463#4558#0" expanded="false" />
+            <element signature="e#5480#5520#0" expanded="false" />
+            <element signature="e#5580#5670#0" expanded="false" />
+            <element signature="e#5753#5823#0" expanded="false" />
+            <element signature="e#5868#5908#0" expanded="false" />
+            <element signature="e#5929#6238#0" expanded="false" />
+            <element signature="e#6346#6426#0" expanded="false" />
+            <element signature="e#6882#6926#0" expanded="false" />
+            <element signature="e#7040#7124#0" expanded="false" />
+            <element signature="e#7139#7178#0" expanded="false" />
+            <element signature="e#7275#7326#0" expanded="false" />
+            <element signature="e#7407#7457#0" expanded="false" />
+            <element signature="e#7481#7525#0" expanded="false" />
+            <element signature="e#7537#7588#0" expanded="false" />
+            <element signature="e#7636#7743#0" expanded="false" />
+            <element signature="e#7899#8001#0" expanded="false" />
+            <element signature="e#8009#8103#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

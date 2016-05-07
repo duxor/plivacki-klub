@@ -58,6 +58,8 @@ Route::get('/vesti/{x?}',function($stranica=0){
 });
 Route::post('/kontakt',function(){
     //UNIJETI MEJL NA KOJI SE SALJU PORUKE SA KONTAKT FORME (RADUI NA REALNOM SERVERU)
+    if(strlen(Input::get('ime')) && strlen(Input::get('email')) && strlen(Input::get('poruka')))
+        return json_encode(['msg'=>'Proverite podatke, iz bezbednosnih razlogo, ponovo učitajte stranicu i pokušajte ponovo.']);
     //mail('to@mejl.com','PORUKA SA SAJTA od: '.Input::get('ime'),'Adresa pošiljaoca: '.Input::get('email').' PORUKA: '.Input::get('poruka'));
     return json_encode(['msg'=>'Poruka uspešno poslata.']);
 });

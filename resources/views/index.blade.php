@@ -146,12 +146,29 @@
                             <a href="/administracija/objava/{{$objava->slug}}" class="btn btn-default">
                                 <i class="glyphicon glyphicon-pencil"></i>
                             </a>
+                            <button data-href="/administracija/objava/{{$objava->slug}}/ukloni" class="btn btn-danger ukloniObjavu" data-toggle="tooltip" title="Ukloni objavu">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </button>
                         @endif
                     </h2>
                     {!!$objava->sadrzaj!!}
                 </div>
             </div>
         @endforeach
+        @if($admin)
+            <div class="modal fade" id="sigurniSte">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h3 class="alert alert-danger">Da li ste sigurni da želite da uklonite <span id="naslovObjave"></span>? Nakon toga nećetze biti u mogućnosti da je vratite.</h3>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Otkaži</button>
+                                <a id="ukloniObjavu" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Ukloni</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        @endif
         <hr>
         <div class="text-center"><a href="/vesti" class="btn btn-default"><i class="glyphicon glyphicon-sort-by-alphabet"></i> Pogledaj sve</a></div>
     </div>
@@ -213,6 +230,7 @@
             </div>
             <div class="col-sm-6 form-horizontal">
                 <h3><i class="glyphicon glyphicon-earphone"></i> Kontaktirajte nas putem e-maila</h3>
+                <div id="poruka" class="alert alert-danger"></div>
                 <div class="form-group slideanim">
                     {!! Form::label('lime','Ime',['class'=>'control-label col-sm-4']) !!}
                     <div class="col-sm-8">
@@ -231,9 +249,9 @@
                         {!! Form::textarea('poruka',null,['class'=>'form-control form-control-c']) !!}
                     </div>
                 </div>
-                <div class="form-group slideanim">
+                <div class="form-group">
                     <div class="col-sm-4"></div>
-                    <div class="col-sm-8 slideanim">
+                    <div class="col-sm-8">
                         {!! Form::button('<i class="glyphicon glyphicon-envelope"></i> Pošalji',['class'=>'btn btn-lg btn-success btn-success-c','onclick'=>'kontaktirajnas("'.csrf_token().'")']) !!}
                     </div>
                 </div>
@@ -247,8 +265,10 @@
     <i class="icon-spin6 animate-spin" style="font-size: 1px;rgba(0,0,0,0)"></i>
 
     {!!Html::style('/scrolleffect/css/normalize.css')!!}
-    {!!Html::style('/scrolleffect/css/component.css')!!}
     {!!Html::script('/scrolleffect/js/classie.js')!!}
     {!!Html::style('/css/index.css')!!}
     {!!Html::script('/js/index.js')!!}
+    @if($admin)
+        {!!Html::script('/js/objave-admin.js')!!}
+    @endif
 @endsection

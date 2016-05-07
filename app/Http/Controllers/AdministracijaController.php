@@ -49,7 +49,7 @@ class AdministracijaController extends Controller{
         // DODACI END::
         if($podaci->exists('naslov')) {
             // SLUG-KREATOR START::
-            Funkcije::kreirajSlug($podaci['naslov'],new Objava());
+            $slug=Funkcije::kreirajSlug($podaci['naslov'],new Objava());
             // SLUG-KREATOR END::
         }
         $konacniPodaci=$podaci->except(['_token','dodaci','foto','datum']);
@@ -79,8 +79,9 @@ class AdministracijaController extends Controller{
             )
             ->with('slugEdit',$_slug?($konacniPodaci['slug']==$_slug?0:1):0);
     }
-    public function getObjava($slug){
-        return view('admin.dodaj-objavu')->with('objava',Objava::where('slug',$slug)->get()->first());
+    public function getObjava($slug,$action=null){
+        if(in_array($action,['ukloni'])) return Objava::$action($slug);
+        else return view('admin.dodaj-objavu')->with('objava',Objava::where('slug',$slug)->get()->first());
     }
     public function postObjava($slug,DodajObjavu $request){
         return $this->postDodajObjavu($request, 'Uspešno ste ažurirali postojeću objavu.',$slug);

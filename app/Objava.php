@@ -52,13 +52,19 @@ class Objava extends Model{
     }
     public static function getKalendar(){
         $takmicenja=Objava::getObjaveSkraceno(true);
-        $test=true; $danasnji=date('Y-m-d');
-        $kalendar='{';
+        $kalendar='[';
         foreach($takmicenja as $k=>$takmicenje){
-            if(!strstr($kalendar,date('Y-m-d', strtotime($takmicenje->datum)))) $kalendar .= '"' . date('Y-m-d', strtotime($takmicenje->datum)) . '":{"number": "' . substr($takmicenje->naslov, 0, 20) . '...","badgeClass":"badge-warning","id": "#' . $takmicenje->slug . '","class": "active scrol","aclass":"kalendar-a"},';
-            if($danasnji==date('Y-m-d', strtotime($takmicenje->datum))) $test=false;
+            if(!strstr($kalendar,date('Y-m-d', strtotime($takmicenje->datum))))
+                $kalendar .= "{
+                        id: {$k},
+                        naslov: '{$takmicenje->naslov}',
+                        mesto: '{$takmicenje->mesto}',
+                        vreme: '".date('H:i',strtotime($takmicenje->datum))."',
+                        startDate: new Date(".date('Y, m, d',strtotime($takmicenje->datum))."),
+                        endDate:  new Date(".date('Y, m, d',strtotime($takmicenje->datum)).")
+                    },";
         }
-        if(!strstr($kalendar,date('Y-m-d'))) $kalendar .= ($test?'"'.date('Y-m-d').'":{"number":"","badgeClass":"badge-danger","class":"active-danger kalendar-dan "}':'').'}';
+        $kalendar.=']';
         return ['takmicenja'=>$takmicenja, 'kalendar'=>$kalendar];
     }
     public static function getKalendarZaTekuci(){
@@ -81,5 +87,9 @@ class Objava extends Model{
             'objave'=>Objava::getObjaveSkraceno(null,Objava::$brObjavaNaStranici,$stranica),
             'brojStranica'=>ceil(Objava::where('slug','<>','o-nama')->count()/Objava::$brObjavaNaStranici)
         ];
+    }
+    public static function ukloni($slug){
+        Objava::where('slug',$slug)->delete();
+        return redirect('/vesti');
     }
 }

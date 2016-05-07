@@ -1,68 +1,87 @@
 @extends('layouts.master-advance')
-@section('body')
-    {!!Html::style('/responsive-calendar/responsive-calendar.css')!!}
-    {!!Html::script('/responsive-calendar/responsive-calendar.js')!!}
-    <div class="container">
-        <div class="kalendar">
-            <div class="responsive-calendar">
-                <div class="controls">
-                    <a class="pull-left" data-go="prev">
-                        <div class="btn btn-primary">
-                            <i class="glyphicon glyphicon-chevron-left"></i>
-                        </div>
-                    </a>
-                    <h4>Kalendar takmičenja za <span data-head-month></span> <span data-head-year></span></h4>
-                    <a class="pull-right" data-go="next">
-                        <div class="btn btn-primary"><i class="glyphicon glyphicon-chevron-right"></i></div>
-                    </a>
-                </div><hr/>
-                <div class="day-headers">
-                    <div class="day header">Pon</div>
-                    <div class="day header">Uto</div>
-                    <div class="day header">Sre</div>
-                    <div class="day header">Čet</div>
-                    <div class="day header">Pet</div>
-                    <div class="day header">Sub</div>
-                    <div class="day header">Ned</div>
+@section('container')
+    {!!Html::style('/css/year-calendar.css')!!}
+    {!!Html::script('/js/year-calendar.js')!!}
+    {!!Html::style('/datepicker/datetimepicker.css')!!}
+    {!!Html::script('/datepicker/moment.js')!!}
+    {!!Html::script('/datepicker/datetimepicker.js')!!}
+    <div id="kalendar" style="margin-top:30px"></div>
+    <div class="modal modal-fade in" id="event-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">
+                        Event
+                    </h4>
                 </div>
-                <div class="days" data-group="days"></div>
+                <div class="modal-body">
+                    <input type="hidden" name="event-index" value="">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="min-date" class="col-sm-4 control-label">Name</label>
+                            <div class="col-sm-7">
+                                <input name="event-name" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="min-date" class="col-sm-4 control-label">Location</label>
+                            <div class="col-sm-7">
+                                <input name="event-location" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="min-date" class="col-sm-4 control-label">Dates</label>
+                            <div class="col-sm-7">
+                                <div class="input-group input-daterange" data-provide="datepicker">
+                                    <input name="event-start-date" type="text" class="form-control" value="2012-04-05">
+                                    <span class="input-group-addon">to</span>
+                                    <input name="event-end-date" type="text" class="form-control" value="2012-04-19">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="save-event">
+                        Save
+                    </button>
+                </div>
             </div>
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    var datum=new Date();
-                    $(".responsive-calendar").responsiveCalendar({
-                        time: datum.getFullYear()+'-'+(datum.getMonth()+1),
-                        events: {!!$kalendar!!}
-                    })
-                })
-            </script>
         </div>
     </div>
-@endsection
-@section('container')
-    @foreach($takmicenja as $takmicenje)
-        <hr>
-        <h3 id="{{$takmicenje->slug}}">
-            <a href="/{{$takmicenje->slug}}">{{$takmicenje->naslov}}</a>
-            @if($admin)
-                <a href="/administracija/objava/{{$takmicenje->slug}}" class="btn btn-default">
-                    <i class="glyphicon glyphicon-pencil"></i>
-                </a>
-            @endif
-        </h3>
-        <div class="row">
-            <div class="col-xs-3">
-                <a  href="/{{$takmicenje->slug}}">
-                    <img src="{{$takmicenje->foto?$takmicenje->foto:'/img/default/foto-objave.jpg'}}" alt="{{$takmicenje->naziv}}" class="img-responsiveimg-thumbnail">
-                </a>
-            </div>
-            <div class="col-xs-8">
-                <b>
-                    <i class="glyphicon glyphicon-time"></i> {{$takmicenje->datum}}<br>
-                    <span><i class="glyphicon glyphicon-map-marker"></i> {{$takmicenje->mesto}}</span>
-                </b><br>
-                {!!$takmicenje->sadrzaj!!}
-            </div>
-        </div>
-    @endforeach
+    <script>
+        $(function(){
+            $('#kalendar').calendar({
+                enableRangeSelection: true,
+                mouseOnDay: function(e){
+                    if(e.events.length > 0){
+                        var content = '';
+                        for(var i in e.events){
+                            content += '<div class="event-tooltip-content">'
+                                    + '<b>' + e.events[i].vreme + '</b>'
+                                    + '<div class="event-name" style="color:' + e.events[i].color + '">' + e.events[i].naslov + '</div>'
+                                    + '<div class="event-location">' + e.events[i].mesto + '</div>'
+                                    + '</div><hr>'
+                        }
+                        $(e.element).popover({
+                            trigger: 'manual',
+                            container: 'body',
+                            html:true,
+                            content: content
+                        });
+                        $(e.element).popover('show')
+                    }
+                },
+                mouseOutDay: function(e) {
+                    if(e.events.length > 0){ $(e.element).popover('hide') }
+                },
+                dayContextMenu: function(e) {
+                    $(e.element).popover('hide')
+                },
+                dataSource: {!!$kalendar!!}
+            });
+        });
+    </script>
 @endsection

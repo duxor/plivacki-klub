@@ -21,6 +21,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 /*SCROL-FUNCTION START::*/
 (function() {
+    var sirinaZaSkrivanje=767;
     var ie = (function(){
         var undef,rv = -1;
         var ua = window.navigator.userAgent;
@@ -79,6 +80,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     }
     function scrollPage() {
         scrollVal = scrollY();
+        if(window.innerWidth<768) return;
         if( noscroll && !ie ) {
             if( scrollVal < 0 ) return false;
             window.scrollTo( 0, 0 )
@@ -145,10 +147,16 @@ google.maps.event.addDomListener(window, 'load', initialize);
     }
     window.addEventListener('scroll',scrollPage);
     document.getElementById('spin-dalje').addEventListener('click', function() { toggle( 'reveal' ) } )
+
+    if(window.innerWidth<sirinaZaSkrivanje) return;
 })();
 /*scrol-function end::*/
-
 function kontaktirajnas(token){
+    if(!($('input[name=ime]').val().length && $('input[name=email]').val().length && $('textarea[name=poruka]').val().length)){
+        $('#poruka').html('Proverite podatke i pokušajte ponovo.');
+        $('#poruka').fadeIn();
+        return
+    }
     $('.form-horizontal').html('<center><i class="icon-spin6 animate-spin" style="font-size: 350%"></i></center>');
     $.post('/kontakt',{
         _token:token,

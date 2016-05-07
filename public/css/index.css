@@ -1,5 +1,76 @@
-#moj-meni>ul>li:first-child{ display: none }
-.navbar-header .logo{ display: none }
+.header{
+    position: relative;
+    margin: 0 auto;
+    width: 100%
+}
+
+.bg-img {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+.bg-img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    min-width: 100%;
+    min-height: 100%
+}
+.intro-effect-grid:not(.notrans) .grid li:nth-child(5){
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity
+}
+.intro-effect-grid:not(.notrans) .header p{
+    -webkit-transition-property: opacity;
+    transition-property: opacity
+}
+.intro-effect-grid:not(.notrans) .bg-img,.intro-effect-grid:not(.notrans) .title{
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform
+}
+.intro-effect-grid:not(.notrans) .header h1,.intro-effect-grid:not(.notrans) .codrops-demos a{
+    -webkit-transition-property: color;
+    transition-property: color
+}
+.intro-effect-grid:not(.notrans) .grid li:nth-child(5),
+.intro-effect-grid:not(.notrans) .bg-img,
+.intro-effect-grid:not(.notrans) .title,
+.intro-effect-grid:not(.notrans) .header h1,
+.intro-effect-grid:not(.notrans) .header p,
+.intro-effect-grid:not(.notrans) .codrops-demos a{
+    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s
+}
+.intro-effect-grid.modify .header h1{ color: #2d3b44 }
+.intro-effect-grid .header p{ opacity: 1 }
+.intro-effect-grid.modify .bg-img{
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%)
+}
+@media screen and (max-width: 47em){
+    .intro-effect-side.modify .bg-img::before{
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%)
+    }
+    .intro-effect-side .bg-img::after{
+        border-left-width: 0px;
+        border-right-width: 0px;
+        right: 0px;
+        left: 0px;
+        background: rgba(255,255,255,0.1)
+    }
+    .intro-effect-side.modify .bg-img::after{ background: rgba(255,255,255,0.8) }
+    .intro-effect-sidefixed .bg-img::after{ width: 95% }
+}
+.bg-img img{ width:100% }
 .jssora02l, .jssora02r {
     display: block;
     position: absolute;
@@ -100,14 +171,6 @@
     text-decoration: none
 }
 .img-menu .col-sm-3:hover,.img-menu .col-sm-6:hover{ opacity: 0.7 }
-@media (max-width: 768px) {
-    .img-menu .col-sm-3,.img-menu .col-sm-6{ height:100px }
-}
-@media (min-width: 789px) {
-    .img-menu .col-sm-3,.img-menu .col-sm-6{ height:200px }
-    .img-menu .col-sm-3:nth-child(2){ height: 400px }
-    .img-menu .col-sm-3:nth-child(6){ margin-top:-200px }
-}
 .img-menu .col-sm-3:first-child{ background-image: url('/img/meni/vesti.jpg') }
 .img-menu .col-sm-3:nth-child(2){ background-image: url('/img/meni/takmicari.jpg') }
 .img-menu .col-sm-3:nth-child(2) p{ color: #333 }
@@ -151,7 +214,6 @@
     border-bottom-right-radius: 30px
 }
 .responsive-calendar .day.not-current a{ color: #fff }
-
 @media (max-width: 500px) {
     .prioriteti .popover{
         background-color: rgba(255,255,255,0.7);
@@ -163,7 +225,8 @@
 .udarna,#poslednje-objave,#takmicari,#sponzori,#kontakt{ padding: 60px 0 }
 #poslednje-objave{ background-color: #28a4c9 }
 #poslednje-objave,#poslednje-objave h2 a,#takmicari,#takmicari a{ color: #eee }
-#poslednje-objave h2 a i{ color: #000 }
+#poslednje-objave h2 .btn-default{ color: #000 }
+#poslednje-objave h2 .btn-danger{ color: #fff }
 #poslednje-objave .objava{ padding: 10px 0 }
 #poslednje-objave .objava h2{
     padding-top: 0px;
@@ -220,7 +283,21 @@
     display: none;
     position: fixed;
     bottom:20px;
-    right:20px
+    right:20px;
+    z-index: 2000
 }
 #to-top img{ width:100% }
 .prioriteti a{ color: #222 }
+#poruka{ display:none }
+@media (max-width: 768px) {
+    .img-menu .col-sm-3,.img-menu .col-sm-6{ height:100px }
+    .header,.bg-img,.first-look-hide,.navbar-header #spin-dalje{ display: none }
+    .navbar-header .logo,#moj-meni>ul>li:first-child{ display: block }
+}
+@media (min-width: 789px) {
+    .img-menu .col-sm-3,.img-menu .col-sm-6{ height:200px }
+    .img-menu .col-sm-3:nth-child(2){ height: 400px }
+    .img-menu .col-sm-3:nth-child(6){ margin-top:-200px }
+    .first-look-hide,#moj-meni>ul>li:first-child{ display: block }
+    .navbar-header .logo{ display: none }
+}
