@@ -13,6 +13,7 @@
             {!!Form::button('<i class="glyphicon glyphicon-search"></i> Prikazi',["class"=>"btn btn-lg btn-primary", "id"=>"btn","data-toggle"=>"tooltip"])!!}
         </div>
     </div>
+
     <div class="col-sm-12" id="prikazi_rekorde">
     </div>
 
@@ -25,8 +26,8 @@
             $.post('/rekordi/prikazi', {stil_id: stil_id, pol_id: pol_id, duzina_bazena_id: duzina_bazena_id,  _token: '{{csrf_token()}}'}, function (data) {
                 var rezultati = JSON.parse(data);
 
-                var txt = '<table class="table table-condensed ">' +
-                        '<thead>' +
+                var txt = '<table class="table table-hover">' +
+                '<thead>' +
                         '<tr>' +
                         '   <th>Ime</th>' +
                         '   <th>Prezime</th>' +
