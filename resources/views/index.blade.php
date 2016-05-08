@@ -142,6 +142,7 @@
                 <div class="col-xs-9">
                     <h2>
                         <a href="/{{$objava->slug}}">{{$objava->naslov}}</a>
+                        <p class="datum"><i class="glyphicon glyphicon-time"></i> {{date('d.m.Y. H:i',strtotime($objava->created_at))}}</p>
                         @if($admin)
                             <a href="/administracija/objava/{{$objava->slug}}" class="btn btn-default">
                                 <i class="glyphicon glyphicon-pencil"></i>

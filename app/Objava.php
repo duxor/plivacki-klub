@@ -11,9 +11,10 @@ class Objava extends Model{
     public static $numSlides=5;
     public static $brojObjavaNaPocetnoj=5;
     public static $brObjavaNaStranici=9;
-    public static function getObjaveSkraceno($takmicenja=null,$brojObjava=null,$stranica=null,$sadrzaj=null,$tekuci=null){
+    public static function getObjaveSkraceno($takmicenja=null,$brojObjava=null,$stranica=null,$sadrzaj=null,$tekuci=null,$dodatnoPolje=null){
         $objave=Objava::where('slug','<>','o-nama');
         $polja=['naslov','slug','foto'];
+        if($dodatnoPolje) $polja=array_merge($polja,$dodatnoPolje);
         if($takmicenja){
             $polja=array_merge($polja,['sadrzaj','mesto','datum']);
             $objave=$objave->whereNotNull('mesto')->orderBy('datum');
@@ -39,7 +40,7 @@ class Objava extends Model{
         return $broj?$query->skip($broj*Objava::$brObjavaNaStranici):$query;
     }
     public static function getObjaveZaPocetnu(){
-        return Objava::getObjaveSkraceno(null,Objava::$brojObjavaNaPocetnoj);
+        return Objava::getObjaveSkraceno(null,Objava::$brojObjavaNaPocetnoj,null,null,null,['created_at']);
     }
     public static function getSlajder(){
         return Objava::where('prioritet',1)->orderBy('id','desc')->take(Objava::$numSlides)->get(['naslov','slug','foto']);
@@ -59,6 +60,7 @@ class Objava extends Model{
                 $kalendar .= "{
                         id: {$k},
                         naslov: '{$takmicenje->naslov}',
+                        slug: '{$takmicenje->slug}',
                         mesto: '{$takmicenje->mesto}',
                         vreme: '".date('H:i',strtotime($takmicenje->datum))."',
                         startDate: new Date(".date('Y, m, d',strtotime($takmicenje->datum))."),
@@ -85,7 +87,7 @@ class Objava extends Model{
     }
     public static function ucitajStranicu($stranica=null){
         return [
-            'objave'=>Objava::getObjaveSkraceno(null,Objava::$brObjavaNaStranici,$stranica),
+            'objave'=>Objava::getObjaveSkraceno(null,Objava::$brObjavaNaStranici,$stranica,null,null,['created_at']),
             'brojStranica'=>ceil(Objava::where('slug','<>','o-nama')->count()/Objava::$brObjavaNaStranici)
         ];
     }

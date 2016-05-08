@@ -3,7 +3,6 @@
     margin: 0 auto;
     width: 100%
 }
-
 .bg-img {
     position: absolute;
     overflow: hidden;
@@ -289,6 +288,12 @@
 #to-top img{ width:100% }
 .prioriteti a{ color: #222 }
 #poruka{ display:none }
+.datum{
+    font-size: 70%;
+    font-style: italic;
+    font-weight: normal;
+    color: #eee
+}
 @media (max-width: 768px) {
     .img-menu .col-sm-3,.img-menu .col-sm-6{ height:100px }
     .header,.bg-img,.first-look-hide,.navbar-header #spin-dalje{ display: none }

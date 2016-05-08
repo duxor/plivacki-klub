@@ -63,8 +63,11 @@ $(function(){
         return window.pageYOffset || docElem.scrollTop
     }
     function scrollPage() {
+        if(window.innerWidth<768){
+            enable_scroll();
+            return true
+        }
         scrollVal = scrollY();
-        if(window.innerWidth<768) return;
         if( noscroll && !ie ) {
             if( scrollVal < 0 ) return false;
             window.scrollTo( 0, 0 )
