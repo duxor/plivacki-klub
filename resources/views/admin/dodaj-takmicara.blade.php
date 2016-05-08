@@ -26,34 +26,37 @@
     @endif
 
     {!!Form::model($takmicar,['files'=>true, 'class'=>'form-horizontal'])!!}
-    <h1 class="col-xs-12">Dodavanje takmičara</h1>
-    <div class="col-xs-4">
+
+    <h1 class="col-sm-12">Dodavanje takmičara</h1>
+
+    <div class="col-sm-4">
         <img id="slikaTakmicara" alt="Slika takmicara" @if(isset($takmicar['foto'])) src="{{$takmicar['foto']}}" @else src="/img/default/foto-takmicari.jpg" @endif onclick="unesiFoto()">
         {!!Form::file('foto',['onchange'=>'prikaziFoto1(this)','style'=>'display:none'])!!}
     </div>
 
-
+    <div class="col-sm-8">
         {!! Form::hidden('foto_pomocna',$takmicar ? $takmicar->foto : '') !!}
-        <div class="col-xs-8 mt20">{!!Form::text('ime',null,['class'=>'form-control','placeholder'=>'Ime'])!!}</div>
-        <div class="col-xs-8 mt20">{!!Form::text('prezime',null,['class'=>'form-control','placeholder'=>'Prezime'])!!}</div>
-        <div class="col-xs-8 mt20"><h4>Pol: Muški {!! Form::radio('pol_id','1',1)!!} Ženski {!! Form::radio('pol_id','2')!!}</h4></div>
-        <div class="col-xs-8 mt20">{!!Form::text('datum_rodjenja',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Datum rodjenja'])!!}</div>
-        <div class="col-xs-8 mt20">{!!Form::text('registracioni_broj',null,['class'=>'form-control','placeholder'=>'Registracioni broj'])!!}</div>
-        <div class="col-xs-12 mt20">{!!Form::textarea('opste_informacije',null,['class'=>'','placeholder'=>'Opšte informacije'])!!}</div>
-        <div class="col-xs-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['type'=>'submit', 'class'=>'btn btn-lg btn-primary ','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
+        <div class="col-sm-12 mt20">{!!Form::text('ime',null,['class'=>'form-control','placeholder'=>'Ime'])!!}</div>
+        <div class="col-sm-12 mt20">{!!Form::text('prezime',null,['class'=>'form-control','placeholder'=>'Prezime'])!!}</div>
+        <div class="col-sm-12 mt20"><h4>Pol: Muški {!! Form::radio('pol_id','1',1)!!} Ženski {!! Form::radio('pol_id','2')!!}</h4></div>
+        <div class="col-sm-12 mt20">{!!Form::text('datum_rodjenja',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Datum rodjenja'])!!}</div>
+        <div class="col-sm-12 mt20">{!!Form::text('registracioni_broj',null,['class'=>'form-control','placeholder'=>'Registracioni broj'])!!}</div>
+    </div>
+        <div class="col-sm-12 mt20">{!!Form::textarea('opste_informacije',null,['class'=>'','placeholder'=>'Opšte informacije'])!!}</div>
+        <div class="col-sm-12 mt20 " align="center">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['type'=>'submit', 'class'=>'btn btn-lg btn-primary ','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
         {!! Form::close() !!}
 
 
 
 
 
-    <div class="col-xs-6" id="prikazi_formu">
+    <div class="col-sm-6" id="prikazi_formu">
     </div>
 
-    <div class="col-xs-6" id="prikazi_rekorde">
+    <div class="col-sm-6" id="prikazi_rekorde">
     </div>
 
-    <div class="col-xs-12 mt20" id="prikazi_poruku" align="center">
+    <div class="col-sm-12 mt20" id="prikazi_poruku" align="center">
     </div>
 
     <script>

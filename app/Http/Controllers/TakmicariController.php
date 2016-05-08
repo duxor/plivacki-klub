@@ -23,13 +23,13 @@ class TakmicariController extends Controller
     //Prikaz svih takmicara
     public function getIndex(){
             $takmicari = Takmicar::paginate(3);
-            return view('takmicari.index')->with('takmicari',$takmicari);
+            return view('takmicari')->with('takmicari',$takmicari);
     }
 
     //Prikaz forme za dodavanje takmicara
     public function getDodajTakmicara(){
         $stilovi = Stil::lists('naziv','id');
-        return view('takmicari.dodaj-takmicara')->with('stilovi',$stilovi);
+        return view('admin.dodaj-takmicara')->with('stilovi',$stilovi);
     }
 
     //Dodavanje novog i azuriranje postojeceg takmicara
@@ -96,7 +96,7 @@ class TakmicariController extends Controller
        $takmicar = Takmicar::where('slug',$slug)->first();
         $stilovi = Stil::lists('naziv','id');
         $duzina_bazena = DuzinaBazena::lists('naziv','id');
-      return view('takmicari.dodaj-takmicara')->with('takmicar',$takmicar)->with('stilovi',$stilovi)->with('duzina_bazena',$duzina_bazena);
+      return view('admin.dodaj-takmicara')->with('takmicar',$takmicar)->with('stilovi',$stilovi)->with('duzina_bazena',$duzina_bazena);
     }
     public function postIzmeni(DodajTakmicara $request, $slug){
        return $this->postDodajTakmicara($request, $slug);
@@ -152,7 +152,7 @@ class TakmicariController extends Controller
         $stilovi = Stil::lists('naziv','id');
         $pol = Pol::lists('naziv','id');
         $duzina_bazena = DuzinaBazena::lists('naziv','id');
-        return view('takmicari.rekordi')->with('stilovi',$stilovi)->with('pol',$pol)->with('duzina_bazena',$duzina_bazena);
+        return view('rekordi')->with('stilovi',$stilovi)->with('pol',$pol)->with('duzina_bazena',$duzina_bazena);
     }
 
 
