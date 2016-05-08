@@ -40,7 +40,7 @@
                     txt +=  '<tr>' +
                             '<td>' + rezultati[i]['ime'] + '</td>' +
                             '<td>' + rezultati[i]['prezime'] + '</td>' +
-                            '<td>' + rezultati[i]['godiste'] + '</td>' +
+                            '<td>' + rezultati[i]['godiste'].substring(0,4) + '</td>' +
                             '<td>'+ rezultati[i]['najbolje_vreme'] +'</td>'+
                             '</tr>'
                 }

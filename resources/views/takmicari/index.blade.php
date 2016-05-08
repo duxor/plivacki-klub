@@ -1,6 +1,6 @@
 @extends('layouts.master-advance')
 @section('container')
-
+    {!!Html::style('/css/objave.css')!!}
 
     <h1 class="col-sm-12"></h1>
     <h1>Takmičari</h1>
@@ -29,7 +29,7 @@
 
                 <div class="col-xs-12">
                     <div class="col-xs-4"><img css="img-thumbnail" src="{{$takmicar->foto}}"></div>
-                    <h2 class="col-xs-8">Rodjen: {{$takmicar->datum_rodjenja}}</h2>
+                    <h2 class="col-xs-8">Rodjen: {{date('d.m.Y ',strtotime($takmicar->datum_rodjenja))}}</h2>
                     <h2 class="col-xs-8">{!! $takmicar->opste_informacije !!}</h2>
                 </div>
 
