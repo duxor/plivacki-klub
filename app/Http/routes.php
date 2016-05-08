@@ -29,7 +29,7 @@ Route::get('/', function () {
 //Aleksandar Jovic
 Route::auth();
 Route::get('/takmicari/profil/{slug}', function ($slug) {
-    return view('takmicari.takmicar')->with('takmicar', Takmicar::where('slug',$slug)->get()->first());
+    return view('/takmicar')->with('takmicar', Takmicar::where('slug',$slug)->get()->first());
 });
 Route::controller('/takmicari','TakmicariController');
 
