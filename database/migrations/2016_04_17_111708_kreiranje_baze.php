@@ -111,11 +111,13 @@ class KreiranjeBaze extends Migration
     {
         Schema::drop('korisnici');
         Schema::drop('password_resets');
-        Schema::drop('objava');
         Schema::drop('rezultati');
+        Schema::drop('norme');
+        Schema::drop('objava');
         Schema::drop('rekord');
         Schema::drop('takmicar');
+        Schema::drop('pol');
         Schema::drop('stil');
-        Schema::drop('norme');
+        Schema::drop('duzina_bazena');
     }
 }

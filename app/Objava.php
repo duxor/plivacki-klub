@@ -46,6 +46,7 @@ class Objava extends Model{
     }
     public static function dajObjavu($slug){
         $objava=Objava::where('slug',$slug)->get()->first();
+        if(!$objava) return null;
         $objava->datum=$objava->datum?date('d.m.Y. H:i', strtotime($objava->datum)):null;
         $objava->dodaci=json_decode($objava->dodaci);
         return $objava;

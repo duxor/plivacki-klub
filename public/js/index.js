@@ -3,24 +3,8 @@ $(function(){
     $('[data-toggle=tooltip]').tooltip();
     $('[data-toggle="popover"]').popover('show')
 })
-/*MAPA START::*/
-var myCenter = new google.maps.LatLng("44.798831","20.4465872");
-function initialize(){
-    var mapProp = {
-        center:myCenter,
-        zoom:11,
-        scrollwheel:false,
-        draggable:false,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    var marker=new google.maps.Marker({position:myCenter,});marker.setMap(map)
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-/*mapa end::*/
-
 /*SCROL-FUNCTION START::*/
-(function() {
+$(function(){
     var sirinaZaSkrivanje=767;
     var ie = (function(){
         var undef,rv = -1;
@@ -149,7 +133,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     document.getElementById('spin-dalje').addEventListener('click', function() { toggle( 'reveal' ) } )
 
     if(window.innerWidth<sirinaZaSkrivanje) return;
-})();
+});
 /*scrol-function end::*/
 function kontaktirajnas(token){
     if(!($('input[name=ime]').val().length && $('input[name=email]').val().length && $('textarea[name=poruka]').val().length)){
@@ -167,3 +151,18 @@ function kontaktirajnas(token){
         $('.form-horizontal').html(JSON.parse(data)['msg']);
     });
 }
+/*MAPA START::*/
+var myCenter = new google.maps.LatLng("44.798831","20.4465872");
+function initialize(){
+    var mapProp = {
+        center:myCenter,
+        zoom:11,
+        scrollwheel:false,
+        draggable:false,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker=new google.maps.Marker({position:myCenter,});marker.setMap(map)
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+/*mapa end::*/

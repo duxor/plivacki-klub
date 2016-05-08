@@ -66,8 +66,11 @@ Route::post('/kontakt',function(){
     return json_encode(['msg'=>'Poruka uspešno poslata.']);
 });
 Route::get('/{slug}',function($slug){
-    return view('objava')
-        ->with('objava', Objava::dajObjavu($slug))
-        ->with('admin',Auth::check());
+    $objava=Objava::dajObjavu($slug);
+    if($objava)
+        return view('objava')
+            ->with('objava', $objava)
+            ->with('admin',Auth::check());
+    else return view('errors.503');
 });
 
