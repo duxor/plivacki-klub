@@ -18,9 +18,9 @@
         <br clear="all">
         <div class="link-tag">
             <a href="/o-nama">#o-nama</a>
-            <a href="/vizija">#vizija</a>
+            <a href="/vizija-kluba">#vizija</a>
             <a href="/galerija">#galerija</a>
-            <a href="/takmicenja">#takmičenja</a>
+            <a href="/kalendar">#takmičenja</a>
             <a href="/takmicari">#takmičari</a>
             <a href="/norme">#norme</a>
             <a href="/vesti">#vesti</a>

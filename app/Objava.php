@@ -28,7 +28,7 @@ class Objava extends Model{
         foreach($objave as $i=>$objava){
             $pozicija=strpos($objava->sadrzaj,Objava::$readMore);
             if($pozicija>0) $objave[$i]['sadrzaj']=substr($objava->sadrzaj,0,$pozicija);
-            if($takmicenja) $objave[$i]['datum']=date('d.m.Y H:i',strtotime($objava['datum']));
+            if($takmicenja) $objave[$i]['datum']=date('d.m.Y. H:i',strtotime($objava['datum']));
         }
         return $objave;
     }

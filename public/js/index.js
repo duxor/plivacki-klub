@@ -152,11 +152,11 @@ function kontaktirajnas(token){
     });
 }
 /*MAPA START::*/
-var myCenter = new google.maps.LatLng("44.798831","20.4465872");
+var myCenter = new google.maps.LatLng("42.976912","21.951340");
 function initialize(){
     var mapProp = {
         center:myCenter,
-        zoom:11,
+        zoom:13,
         scrollwheel:false,
         draggable:false,
         mapTypeId:google.maps.MapTypeId.ROADMAP

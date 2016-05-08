@@ -7,7 +7,7 @@
     <title>Administracija</title>
     {!!Html::style('/bootstrap-3.3.5-dist/css/bootstrap.min.css')!!}
     {!!Html::style('/css/basic-admin.css')!!}
-    {!!Html::script('/bootstrap-3.3.5-dist/js/jquery-3.0.js')!!}
+    {!!Html::script('/bootstrap-3.3.5-dist/js/jquery.min.js')!!}
     {!!Html::script('/bootstrap-3.3.5-dist/js/bootstrap.min.js')!!}
 </head>
 <body data-target=".vertikalni-nav">

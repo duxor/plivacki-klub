@@ -52,19 +52,21 @@ class AdministracijaController extends Controller{
             $slug=Funkcije::kreirajSlug($podaci['naslov'],new Objava());
             // SLUG-KREATOR END::
         }
-        $konacniPodaci=$podaci->except(['_token','dodaci','foto','datum']);
+        $konacniPodaci=$podaci->except(['_token','dodaci','foto','datum','galerija']);
         if($editMsg){
             $stariPodaci=Objava::where('slug',$_slug)->get(['foto','dodaci','datum','slug','naslov'])->first();
             if(!$dodaci) $konacniPodaci['dodaci']=$stariPodaci->dodaci;
             else $konacniPodaci['dodaci']=json_encode($dodaci);
             if(!$foto) $foto=$stariPodaci->foto;
             if($podaci['datum']) $konacniPodaci['datum']=date('Y-m-d H:i',strtotime($podaci->get('datum')));
-            else $konacniPodaci['datum']=$stariPodaci->datum;
+            else $konacniPodaci['datum']=null;
             if(!isset($konacniPodaci['prioritet'])) $konacniPodaci['prioritet']=0;
             if($stariPodaci->naslov==$konacniPodaci['naslov']) $slug=$stariPodaci->slug;
+            if(!$podaci['galerija']) $konacniPodaci['galerija']=null;
         }else{
             $konacniPodaci['dodaci']=json_encode($dodaci);
-            $konacniPodaci['datum']=date('Y-m-d H:i',strtotime($podaci->get('datum')));
+            if($podaci['datum']) $konacniPodaci['datum']=date('Y-m-d H:i',strtotime($podaci->get('datum')));
+            if(!$podaci['galerija']) $konacniPodaci['galerija']=null;
         }
         $konacniPodaci['foto']=$foto;
         $konacniPodaci['slug']=$slug;
