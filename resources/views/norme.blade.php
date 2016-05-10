@@ -3,10 +3,8 @@
     <div class="col-md-8">
         <div class="pre-scrollable" id="lista_normi"></div>
         <div id="info"></div>
-
         <table id="prva_norma" class="table table-condensed table-hover ">
             <thead>
-
                 <tr><th>Godište</th><th>Muškarci</th><th>Disciplina</th><th>Žene</th></tr>
             </thead>
             <tbody>
@@ -38,28 +36,7 @@
             </div>
         </div>
     </div>
-    @if(Auth::check())
-        <div class="modal fade" id="sigurniSte">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h3 class="alert alert-danger">Da li ste sigurni da želite da uklonite normu?</h3>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Otkaži</button>
-                        <a id="ukloniObjavu" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Ukloni</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            $('.ukloniObjavu').click(function(){
-                $('#ukloniObjavu').attr('href',$(this).data('href'));
-                $('#sigurniSte').modal('show');
-            })
-        </script>
-    @endif
     <script>
-
         function ucitajRezultate(id){
             $('#prva_norma').hide();
             $.post('/norme/ucitaj-rezultate',
@@ -81,13 +58,13 @@
                                 '<tr><div align="right"><a href="/norme/izmeni-normu/'+id+'" class="btn btn-default">'+
                                     '<i class="glyphicon glyphicon-pencil"></i>'+
                                     '</a>'+
-                                    '<button data-href="/norme/ukloni/" class="btn btn-danger ukloniObjavu" data-toggle="tooltip" title="Ukloni takmičara">'+
+                                    '<button data-href="/norme/obrisi-normu/'+norme[0]['takmicenje_naziv']+'" class="btn btn-danger ukloniObjavu" data-toggle="tooltip" title="Ukloni takmičara">'+
                                     '<i class="glyphicon glyphicon-trash"></i>'+
                                     '</button>'+
                                     '</div>'+
                                     '</tr>'+
                                 '@endif'+
-                                            '<tr><th>Godište</th><th>Muškarci</th><th>Disciplina</th><th>Žene</th></tr>' +
+                                 '<tr><th>Godište</th><th>Muškarci</th><th>Disciplina</th><th>Žene</th></tr>' +
                                 '</thead>' +
                                 '<tbody>';
                         for(var i=0;i<norme.length;i++){
@@ -97,16 +74,31 @@
                             '<td >'+norme[i]['naziv']+'</td>' +
                             '<td >'+norme[i]['norme_zenski']+'</td>' +
                             '</tr>';
-
                         }
+
+                        ispis+='<div class="modal fade" id="sigurniSte">'+
+                        '<div class="modal-dialog">'+
+                        '<div class="modal-content">'+
+                        '<div class="modal-body">'+
+                        '<button type="button" class="close" data-dismiss="modal">&times;</button>'+
+                        '<h3 class="alert alert-danger">Da li ste sigurni da želite da uklonite normu?</h3>'+
+                        '<button type="button" class="btn btn-default" data-dismiss="modal">Otkaži</button>'+
+                        '<a id="ukloniObjavu" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Ukloni</a>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>';
+
                         $('#lista_normi').html(ispis+'</tbody></table>');
                         $('#lista_normi').fadeIn();
                         ispis2=norme[0]['sadrzaj'];
                         $('#info').html(ispis2);
                         $('#info').fadeIn();
-
+                        $('.ukloniObjavu').click(function(){
+                            $('#ukloniObjavu').attr('href',$(this).data('href'));
+                            $('#sigurniSte').modal('show');
+                        })
                     })}
-
     </script>
 
 @endsection

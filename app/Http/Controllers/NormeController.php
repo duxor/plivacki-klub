@@ -18,8 +18,11 @@ class NormeController extends Controller
 {
     public function getIndex(){
         $id_takmicenja= Norme::join('stil','stil.id','=','norme.stil_id')->pluck('norme.takmicenje_naziv')->first();
-        $norme=Norme::join('stil','stil.id','=','norme.stil_id')->join('objava','objava.id','=','norme.takmicenje_naziv')->where('norme.takmicenje_naziv','=',$id_takmicenja)->get(['norme.godiste','norme.norme_muski','norme_zenski','objava.naslov','stil.naziv'])->toArray();
-        $naziv_takmicenja=Norme::join('objava','objava.id','=','norme.takmicenje_naziv')->groupBy('norme.takmicenje_naziv')->get(['objava.naslov','objava.id'])->toArray();
+        $norme=Norme::join('stil','stil.id','=','norme.stil_id')->join('objava','objava.id','=','norme.takmicenje_naziv')
+            ->where('norme.takmicenje_naziv','=',$id_takmicenja)
+            ->get(['norme.godiste','norme.norme_muski','norme_zenski','objava.naslov','stil.naziv'])->toArray();
+        $naziv_takmicenja=Norme::join('objava','objava.id','=','norme.takmicenje_naziv')->groupBy('norme.takmicenje_naziv')
+            ->get(['objava.naslov','objava.id'])->toArray();
         return view('norme',compact(['naziv_takmicenja','norme']));
     }
     public function getDodajNorme(){
