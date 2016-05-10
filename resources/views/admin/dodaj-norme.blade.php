@@ -76,9 +76,10 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
         
         <div class="col-sm-6">
         {{--Forma za unos normi --}}
+
             @if (isset($izmene[0]['takmicenje_naziv']))
                 <h1 class="col-sm-12">Dodaj norme</h1>
-                {!!Form::model($norme,['files'=>true, 'class'=>'form-horizontal'])!!}
+                {!!Form::open(['url'=>'/norme/izmeni','class'=>'form-horizontal'])!!}
                 {!!Form::hidden("update_norme",1)!!}
                 {!!Form::hidden("norme_id",$izmene[0]['takmicenje_naziv'])!!}
                 <div class="col-sm-12  mt20">
@@ -100,7 +101,7 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
                     <div id="info" ></div>
                 </div>
                 <div class="col-sm-12 mt20"></div>
-                <div class="col-sm-12 mt20">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['id'=>'btn_sacuvaj','type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
+                <div class="col-sm-12 mt20">{!!Form::button('<i class="glyphicon glyphicon-pencil"></i> Ažuriraj podatke',['id'=>'btn_sacuvaj','type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
                 {!!Form::close()!!}
             @else
                 <h1 class="col-sm-12">Dodaj norme</h1>

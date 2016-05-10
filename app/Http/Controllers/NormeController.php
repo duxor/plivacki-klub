@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DodajNorme;
 use Illuminate\Http\Request;
  use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 use Session;
 
 use App\Http\Requests;
@@ -40,8 +41,18 @@ class NormeController extends Controller
             ->where('norme.takmicenje_naziv','=',$id)
             ->get(['norme.godiste','norme.norme_muski','norme_zenski','objava.naslov','stil.naziv','norme.takmicenje_naziv'])->toArray();
         return view('admin.dodaj-norme',compact('stil','norme_takmicenja','naziv_takmicenjalists','naziv_takmicenja','poslednja_godina','izmene'));
-
     }
+    public function postIzmeni()
+    {
+        $konacniPodaci['takmicenje_naziv']= Input::get('takmicenje_naziv');
+        $konacniPodaci['godiste']= Input::get('godiste');
+        $konacniPodaci['stil_id']= Input::get('stil');
+        $konacniPodaci['norme_zenski']=date('Y-m-d H:i',strtotime( Input::get('norme_zenski')));
+        $konacniPodaci['norme_muski']=date('Y-m-d H:i',strtotime( Input::get('norme_muski')));
+        Norme::where('id',Input::get('norme_id'))->update($konacniPodaci);
+        return Redirect::to('/norme/dodaj-norme')->with('poruka', 'Uspešno ste izvršili ažuriranje')->with('old',Input::get('takmicenje_naziv'));
+    }
+
     public function postDodajTakmicenje(Request $request){
     	$takmicenje=new Takmicenja();
     	$takmicenje->takmicenje=$request->takmicenje;
@@ -51,7 +62,6 @@ class NormeController extends Controller
     }
     public function postDodajNorme(DodajNorme $podaci, $editMsg=null,$id=null){
     	    $stil=Stil::lists('naziv','id');
-
     		$konacniPodaci=$podaci->except(['_token','update_norme','norme_id','stil']);
             $konacniPodaci['takmicenje_naziv']=$podaci->get('takmicenje_naziv');
             $konacniPodaci['godiste']=$podaci->get('godiste');
