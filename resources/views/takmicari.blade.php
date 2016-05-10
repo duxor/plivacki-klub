@@ -26,7 +26,7 @@
                         <div class="col-xs-4"><img css="img-thumbnail" src="{{$takmicar->foto}}"></div>
                     </a>
                     <h2 class="col-xs-8">Rodjen: {{date('d.m.Y ',strtotime($takmicar->datum_rodjenja))}}.godine</h2>
-                    <h2 class="col-xs-8">{!! $takmicar->opste_informacije !!}</h2>
+                    <h5 class="col-xs-8">{!! $takmicar->opste_informacije !!}</h5>
                 </div>
             </div>
             <hr>
