@@ -146,11 +146,11 @@ if(!isset($slugEdit)) $slugEdit=null;
                             ispis+='<tr >' +
                             '<td  id="rezultat-'+rezultati[i]['id']+'">'+rezultati[i]['naslov']+'</td>' +
                             '<td >'+rezultati[i]['mesto']+'</td>' +
-                            '<td >'+rezultati[i]['datum']+'</td>' +
-                            '<td><a href="'+rezultati[i]['klupski_rezultati']+'"><img style="width: 19px; height: 18px;" src="../img/pdf.png"></a></td>' +
-                            '<td><a href="'+rezultati[i]['sumarni_rezultati']+'"><img style="width: 19px; height: 18px;" src="../img/html.png"></a></td>' +
+                            '<td >'+rezultati[i]['datum'].substring(0,10)+'</td>' +
+                            '<td><a href="'+rezultati[i]['klupski_rezultati']+'"><img style="width: 19px; height: 18px;" src="../img/default/pdf.png"></a></td>' +
+                            '<td><a href="'+rezultati[i]['sumarni_rezultati']+'"><img style="width: 19px; height: 18px;" src="../img/default/html.png"></a></td>' +
                             '<td>' +
-                            '<a href="#" class="btn3d btn btn-xs btn-info" data-toggle="tooltip" title="Ažuriraj" onclick="editRezultata(\''+rezultati[i]['id']+'\',\''+rezultati[i]['takmicenje_naziv']+'\',\''+rezultati[i]['mesto']+'\',\''+rezultati[i]['datum']+'\',\''+rezultati[i]['klupski_rezultati']+'\',\''+rezultati[i]['sumarni_rezultati']+'\')"><span style="font-size: 14px;" class="glyphicon glyphicon-pencil"></span></a> &nbsp' +
+                            '<a href="#" class="btn3d btn btn-xs btn-info" data-toggle="tooltip" title="Ažuriraj" onclick="editRezultata(\''+rezultati[i]['id']+'\',\''+rezultati[i]['objava_id']+'\',\''+rezultati[i]['klupski_rezultati']+'\',\''+rezultati[i]['sumarni_rezultati']+'\')"><span style="font-size: 14px;" class="glyphicon glyphicon-pencil"></span></a> &nbsp' +
                             '<a data-href="/rezultati/obrisi-rezultat/'+rezultati[i]['id']+'" class=" btn btn-xs btn-danger" data-toggle="confirmation" data-togglee="tooltip"><span style="" class="glyphicon glyphicon-trash"></span></a>' +
                             '</td>' +
                             '</tr>';
@@ -161,11 +161,9 @@ if(!isset($slugEdit)) $slugEdit=null;
                         $('[data-toggle="confirmation"]').confirmation({placement: 'left',singleton: true,popout: true,title: 'Da li ste sigurni?',btnCancelLabel: '<i class="icon-remove-sign"></i> Otkaži',btnOkLabel: ' &nbsp<i class="icon-ok-sign icon-white"></i> Obriši'});
                     })};
 
-        function editRezultata(id,takmicenje_naziv, mesto,datum, klupski_rezultati, sumarni_rezultati){
-            emptyfunction();
-            $('#takmicenje_naziv').val(takmicenje_naziv);
-            $('#mesto').val(mesto);
-            $('datetimepicker'). val(datum);
+        function editRezultata(id,objava_id, klupski_rezultati, sumarni_rezultati){
+
+            $('select[name=takmicenje_naziv]').val(objava_id);
             $('#klupski_rez').append('<li>'+encodeURIComponent(klupski_rezultati)+'</li>');
             $('#sum_rez').append('<li>'+encodeURIComponent(sumarni_rezultati)+'</li>')
             $("#btn_sacuvaj").html("<span class='glyphicon glyphicon-pencil'></span> Ažuriraj podatke");

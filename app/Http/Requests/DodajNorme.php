@@ -27,7 +27,7 @@ class DodajNorme extends Request
             'takmicenje_naziv'=>'required',
             'norme_muski'=>'required',
             'norme_zenski'=>'required',
-            'godiste'=>'required|size:4',
+            'godiste'=>'required',
         ];
     }
      public function messages()
@@ -37,7 +37,7 @@ class DodajNorme extends Request
             'norme_muski.required' => 'Obavezan unos normi.',
             'norme_zenski.required' => 'Obavezan unos normi.',
             'godiste.required' => 'Godište je obavezan unos.',
-            'godiste.size'    => 'Godište :mora biti u formi: 1981.',
+            'godiste.size'    => 'Godište mora biti uneto.',
         ];
     }
 }

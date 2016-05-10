@@ -59,7 +59,9 @@ class RezultatiController extends Controller{
         return Redirect::to('/rezultati/dodaj-rezultate')->with('uspesnoDodavanje','Uspešno uneto!');
     }
     public function postUcitajRezultate(){
-        return json_encode(Rezultati::join('objava','objava.id','=','rezultati.objava_id')->orderBy('rezultati.created_at','desc')->get()->toArray());
+        return json_encode(Rezultati::join('objava','objava.id','=','rezultati.objava_id')
+            ->orderBy('rezultati.created_at','desc')
+            ->get(['rezultati.id','objava.id as objava_id','objava.naslov','objava.mesto','objava.datum','rezultati.klupski_rezultati','rezultati.sumarni_rezultati'])->toArray());
     }
     public function getObrisiRezultat($id,$editMsg=null){
         $klupski_rez_path=Rezultati::where('id',$id)->pluck('klupski_rezultati');

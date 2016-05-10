@@ -1,6 +1,7 @@
 <?php
 if(!isset($norme)) $norme=null;
 if(!isset($norme_takmicenja)) $norme_takmicenja=null;
+
 ?>
 @extends('admin.master-admin')
 @section('body')
@@ -13,6 +14,9 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
         <div class="alert alert-success alert-autocloseable-success">
             <h2>{{$uspesnoDodavanje}}</h2>
         </div>
+    @endif
+    @if (Session::has('poruka'))
+        <h3 class="alert alert-success alert-autocloseable-success" align="center">{{ Session::get('poruka') }}</h3>
     @endif
     @if(count($errors)>0)
         <div class="alert alert-danger alert-autocloseable-success">
@@ -72,31 +76,59 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
         
         <div class="col-sm-6">
         {{--Forma za unos normi --}}
-        	<h1 class="col-sm-12">Dodaj norme</h1>
-	        {!!Form::model($norme,['files'=>true, 'class'=>'form-horizontal'])!!}
-	        {!!Form::hidden("update_norme",false)!!}
-	        {!!Form::hidden("norme_id",false)!!}
-	        <div class="col-sm-12  mt20">
-	            {!!Form::select('takmicenje_naziv',$naziv_takmicenjalists, null, ['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
-	        </div>    
-	        <div class="col-sm-6  mt20">
-	        {!!Form::text('norme_muski',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Norme muškarci'])!!}
-	        </div> 
-	        <div class="col-sm-6  mt20">
-	             {!!Form::text('norme_zenski',null,['class'=>'form-control','id'=>'datetimepicker2','placeholder'=>'Norme zenski'])!!}
-	        </div> 
-	        <div class="col-sm-12  mt20">    
-	            {!!Form::text('godiste',null,['id'=>'godiste','class'=>'form-control col-sm-6','placeholder'=>'Godište'])!!}
-	        </div>
-	         <div class="col-sm-12 mt20">
-	            {!!Form::select('stil',$stil,null,['id'=>'disciplina','class'=>'form-control col-sm-6','placeholder'=>'Disciplina'])!!}
-	        </div>
-            <div class="col-sm-12 mt20">
-                <div id="info" ></div>
-            </div>
-            <div class="col-sm-12 mt20"></div>
-	        <div class="col-sm-12 mt20">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['id'=>'btn_sacuvaj','type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
-	        {!!Form::close()!!}
+            @if (isset($izmene[0]['takmicenje_naziv']))
+                <h1 class="col-sm-12">Dodaj norme</h1>
+                {!!Form::model($norme,['files'=>true, 'class'=>'form-horizontal'])!!}
+                {!!Form::hidden("update_norme",1)!!}
+                {!!Form::hidden("norme_id",$izmene[0]['takmicenje_naziv'])!!}
+                <div class="col-sm-12  mt20">
+                    {!!Form::select('takmicenje_naziv',$naziv_takmicenjalists,  $izmene[0]['takmicenje_naziv'], ['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
+                </div>
+                <div class="col-sm-6  mt20">
+                    {!!Form::text('norme_muski',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Norme muškarci'])!!}
+                </div>
+                <div class="col-sm-6  mt20">
+                    {!!Form::text('norme_zenski',null,['class'=>'form-control','id'=>'datetimepicker2','placeholder'=>'Norme zenski'])!!}
+                </div>
+                <div class="col-sm-12  mt20">
+                    {!!Form::select('godiste',array_combine(range(1985,$poslednja_godina),range(1985,$poslednja_godina)),null, ['id'=>'godiste','class'=>'form-control col-sm-6','placeholder'=>'Godiste'])!!}
+                </div>
+                <div class="col-sm-12 mt20">
+                    {!!Form::select('stil',$stil,null,['id'=>'disciplina','class'=>'form-control col-sm-6','placeholder'=>'Disciplina'])!!}
+                </div>
+                <div class="col-sm-12 mt20">
+                    <div id="info" ></div>
+                </div>
+                <div class="col-sm-12 mt20"></div>
+                <div class="col-sm-12 mt20">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['id'=>'btn_sacuvaj','type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
+                {!!Form::close()!!}
+            @else
+                <h1 class="col-sm-12">Dodaj norme</h1>
+                {!!Form::model($norme,['files'=>true, 'class'=>'form-horizontal'])!!}
+                {!!Form::hidden("update_norme",false)!!}
+                {!!Form::hidden("norme_id",false)!!}
+                <div class="col-sm-12  mt20">
+                    {!!Form::select('takmicenje_naziv',$naziv_takmicenjalists,  (Session::has('old'))?Session::get('old'):null, ['id'=>'takmicenje_naziv','class'=>'form-control col-sm-6','placeholder'=>'Naziv takmicenja'])!!}
+                </div>
+                <div class="col-sm-6  mt20">
+                    {!!Form::text('norme_muski',null,['class'=>'form-control','id'=>'datetimepicker','placeholder'=>'Norme muškarci'])!!}
+                </div>
+                <div class="col-sm-6  mt20">
+                    {!!Form::text('norme_zenski',null,['class'=>'form-control','id'=>'datetimepicker2','placeholder'=>'Norme zenski'])!!}
+                </div>
+                <div class="col-sm-12  mt20">
+                    {!!Form::select('godiste',array_combine(range(1985,$poslednja_godina),range(1985,$poslednja_godina)),null, ['id'=>'godiste','class'=>'form-control col-sm-6','placeholder'=>'Godiste'])!!}
+                </div>
+                <div class="col-sm-12 mt20">
+                    {!!Form::select('stil',$stil,null,['id'=>'disciplina','class'=>'form-control col-sm-6','placeholder'=>'Disciplina'])!!}
+                </div>
+                <div class="col-sm-12 mt20">
+                    <div id="info" ></div>
+                </div>
+                <div class="col-sm-12 mt20"></div>
+                <div class="col-sm-12 mt20">{!!Form::button('<i class="glyphicon glyphicon-floppy-disk"></i> Sačuvaj',['id'=>'btn_sacuvaj','type'=>'submit','class'=>'btn btn-lg btn-primary','data-toggle'=>'tooltip','title'=>'Preporuka: proverite da li ste uneli sve podatke.'])!!}</div>
+                {!!Form::close()!!}
+            @endif
         </div>
         <script>
             $('#takmicenje_naziv').change(function() {
@@ -146,12 +178,9 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
             });
         </script>
     @endif
- 	
     <br>
     <script>
         function ucitajRezultate(id){
-            $('#lista_normi').hide();
-            $('#lista_normi').html('<div style="text-align:center"><i class="icon-spin5 animate-spin" style="font-size: 100%;margin-top:80px"></i></div>');
             $.post('/norme/ucitaj-rezultate',
                     {
                         _token:'{{csrf_token()}}',
@@ -191,14 +220,18 @@ if(!isset($norme_takmicenja)) $norme_takmicenja=null;
             $('#datetimepicker').val(normemuski);
             $('#datetimepicker2').val(normezenski);
             $('select[name=stil]').val(disciplina);
-            $('#godiste').val(godiste);
+            $('select[name=godiste]').val(godiste);
         }
           $(function () {
-            $('textarea').trumbowyg();
+                         $('textarea').trumbowyg();
             $('#datetimepicker').datetimepicker();
             $('[data-toggle=tooltip]').tooltip();
             @if(isset($takmicar['datum_rodjenja'])) $('#datetimepicker').val('{{$takmicar['datum_rodjenja']}}'); @endif
         });
+        window.onload = function() {
+            @if(isset($izmene[0]['takmicenje_naziv']))ucitajRezultate({{$izmene[0]['takmicenje_naziv']}})@endif;
+        };
+
     </script>
     {!! HTML::script('js/bootstrap-confirmation.js') !!}
 @endsection

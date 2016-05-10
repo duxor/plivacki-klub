@@ -3,8 +3,10 @@
     <div class="col-md-8">
         <div class="pre-scrollable" id="lista_normi"></div>
         <div id="info"></div>
+
         <table id="prva_norma" class="table table-condensed table-hover ">
             <thead>
+
                 <tr><th>Godište</th><th>Muškarci</th><th>Disciplina</th><th>Žene</th></tr>
             </thead>
             <tbody>
@@ -15,6 +17,7 @@
                         <td >{{$norma['naziv']}}</td>
                         <td >{{$norma['norme_zenski']}}</td>
                     </tr>
+
                 @endforeach
             </tbody>
         </table>
@@ -35,6 +38,26 @@
             </div>
         </div>
     </div>
+    @if(Auth::check())
+        <div class="modal fade" id="sigurniSte">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h3 class="alert alert-danger">Da li ste sigurni da želite da uklonite normu?</h3>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Otkaži</button>
+                        <a id="ukloniObjavu" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Ukloni</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('.ukloniObjavu').click(function(){
+                $('#ukloniObjavu').attr('href',$(this).data('href'));
+                $('#sigurniSte').modal('show');
+            })
+        </script>
+    @endif
     <script>
 
         function ucitajRezultate(id){
@@ -54,7 +77,17 @@
                         var ispis='' +
                                 '<table class="table table-condensed ">' +
                                 '<thead>' +
-                                '<tr><th>Godište</th><th>Muškarci</th><th>Disciplina</th><th>Žene</th></tr>' +
+                                '@if(Auth::check())'+
+                                '<tr><div align="right"><a href="/norme/izmeni-normu/'+id+'" class="btn btn-default">'+
+                                    '<i class="glyphicon glyphicon-pencil"></i>'+
+                                    '</a>'+
+                                    '<button data-href="/norme/ukloni/" class="btn btn-danger ukloniObjavu" data-toggle="tooltip" title="Ukloni takmičara">'+
+                                    '<i class="glyphicon glyphicon-trash"></i>'+
+                                    '</button>'+
+                                    '</div>'+
+                                    '</tr>'+
+                                '@endif'+
+                                            '<tr><th>Godište</th><th>Muškarci</th><th>Disciplina</th><th>Žene</th></tr>' +
                                 '</thead>' +
                                 '<tbody>';
                         for(var i=0;i<norme.length;i++){
@@ -66,7 +99,6 @@
                             '</tr>';
 
                         }
-
                         $('#lista_normi').html(ispis+'</tbody></table>');
                         $('#lista_normi').fadeIn();
                         ispis2=norme[0]['sadrzaj'];
@@ -76,4 +108,5 @@
                     })}
 
     </script>
+
 @endsection
