@@ -47,17 +47,12 @@ body{
 .navbar-default{ background-color: rgba(255,255,255,0.5) }
 .navbar-default .navbar-nav>li>a{ color:#464545 }
 .navbar-brand{ padding-top: 60px }
-@media (max-width: 767px){
-    .navbar-header .logo img{ margin-top: -45px }
-    *{ font-size: 100% }
-}
-@media (max-width: 980px){ #moj-meni>ul>li:first-child{ display: none } }
-@media (min-width: 768px){ .navbar-nav>li>a{ padding:70px 5px } }
 #spin-dalje{
     font-size: 250%;
     color: #494A4A;
     cursor: pointer
 }
+#spin-dalje:hover{ color:#222 }
 footer{
     padding:60px 0;
     text-align: center;
@@ -73,31 +68,40 @@ footer .kontakt-osoba{
     font-size: 65%;
     font-style: italic
 }
-.slideanim {visibility:hidden;}
-.slide {
+.plavo{ color:#1d86c8 }
+.plavo:hover{ color: #e9f0f9
+}
+.slideanim{ visibility:hidden }
+.slide{
     animation-name: slide;
     -webkit-animation-name: slide;
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     visibility: visible;
 }
-@keyframes slide {
-    0% {
+@keyframes slide{
+    0%{
+        opacity: 0;
+        -webkit-transform: translateY(70%)
+    }
+    100%{
+        opacity: 1;
+        -webkit-transform: translateY(0%)
+    }
+}
+@-webkit-keyframes slide{
+    0%{
         opacity: 0;
         -webkit-transform: translateY(70%);
     }
-    100% {
+    100%{
         opacity: 1;
         -webkit-transform: translateY(0%);
     }
 }
-@-webkit-keyframes slide {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateY(70%);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: translateY(0%);
-    }
+@media (max-width: 767px){
+    .navbar-header .logo img{ margin-top: -45px }
+    *{ font-size: 100% }
 }
+@media (max-width: 980px){ #moj-meni>ul>li:first-child{ display: none } }
+@media(min-width: 768px){ .navbar-nav>li>a{ padding:70px 5px } }

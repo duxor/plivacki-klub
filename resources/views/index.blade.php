@@ -24,7 +24,7 @@
                     <div class="col-xs-10">
                         <div class="popover fade right in" style="position:relative;display: block">
                             <div class="arrow"></div>
-                            <div class="popover-content">{{ucfirst($slajd->naslov)}}</div>
+                            <div class="popover-content">{{ucfirst($slajd->naslov)}} <i class="plavo glyphicon glyphicon-play-circle"></i></div>
                         </div>
                     </div>
                 </a>
@@ -56,7 +56,8 @@
                 $(".responsive-calendar").responsiveCalendar({
                     time: datum.getFullYear()+'-'+(datum.getMonth()+1),
                     events: {!! $kalendar !!}
-                })
+                });
+                $('[data-toggle=tooltip]').tooltip()
             })
         </script>
     </div>
@@ -87,20 +88,20 @@
     <div class="prioriteti">
         @include('layouts.navbar')
     </div>
-    <div class="">
+    <div>
         {{--SLAJDER START::--}}
         <div id="jssor_1" style="position: relative; margin:0 auto; top: 0px; left: 0px; width: 1510px; height: 600px; overflow: hidden; visibility: hidden; background-color: #fff;">
-                <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
-                    <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
-                    <div style="position:absolute;display:block;background:url('img/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+                <div data-u="loading" class="loading">
+                    <div class="lo1"></div>
+                    <div class="lo2"></div>
                 </div>
-                <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 1200px; height: 600px; overflow: hidden;">
+                <div data-u="slides" class="slides">
                     @foreach($slajder as $slajd)
-                        <div data-p="112.50" style="display: none;">
+                        <div data-p="112.50" class="sliderS">
                             <img data-u="image" src="{{$slajd->foto?$slajd->foto:'/img/default/foto-objave.jpg'}}" />
-                            <div style="position: absolute; margin-right: 0px; width: 100%; height: 20%; background-color: rgba(201, 201, 201, 0.9);bottom:0; left: 0; ">
-                                <a style="color: #131313; font-size: 18px; text-decoration: none;" href="/{{$slajd->slug}}">
-                                    <h2 style="padding: 20px 60px;font-weight: bold">{{strtoupper($slajd->naslov)}}</h2>
+                            <div class="textBlock">
+                                <a href="/{{$slajd->slug}}">
+                                    <h2>{{strtoupper($slajd->naslov)}}</h2>
                                 </a>
                             </div>
                             <div data-u="thumb">
@@ -110,15 +111,15 @@
                         </div>
                     @endforeach
                 </div>
-                <div data-u="thumbnavigator" class="jssort11" style="position:absolute;right:5px;top:0px;font-family:Arial, Helvetica, sans-serif;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;width:300px;" data-autocenter="2">
+                <div data-u="thumbnavigator" class="jssort11" data-autocenter="2">
                     <div data-u="slides" style="cursor: pointer;" id="dsdasdasdas">
                         <div data-u="prototype" class="p">
                             <div data-u="thumbnailtemplate" class="tp"></div>
                         </div>
                     </div>
                 </div>
-                <span data-u="arrowleft" class="jssora02l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
-                <span data-u="arrowright" class="jssora02r" style="top:0px;right:418px;width:55px;height:55px;" data-autocenter="2"></span>
+                <span data-u="arrowleft" class="jssora02l" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora02r" data-autocenter="2"></span>
             </div><br>
         {{--slajder end::--}}
     </div>
